@@ -317,10 +317,23 @@
     <div class="atitle">We enter a Rs 2,000 crore market at the very bottom, by design.</div>
     <p class="sub">Established agencies book hundreds of crore a year. ACER starts small and climbs a credible ladder toward the smaller-CRA tier.</p>
     <div class="card" style="margin-top:26px;">
-      <h3 style="margin-bottom:4px;">The CRA market pie, and where ACER concentrates</h3>
-      <p class="cap" style="margin:0 0 12px;">Share of the roughly Rs 2,000 Cr rating industry, by agency</p>
-      <div id="mktShare"></div>
-      <p class="csrc">Source: shares estimated from official rating revenues, CRISIL [3], CARE [5], ICRA [4], India Ratings [6], Infomerics [7], Acuite [8]; industry ~Rs 2,000 Cr is an analyst estimate. ACER [1][2].</p>
+      <h3 style="margin-bottom:4px;">Is rating Rs 1,600 Cr a month doable? The market capacity is not the constraint</h3>
+      <p class="cap" style="margin:0 0 14px;">ACER target: Rs 1,600 Cr rated per month, Rs 19,200 Cr per year, about 192 mandates. Set against the market and what peers already handle, that is a small, credible slice.</p>
+      <div class="grid g4" style="gap:14px;">
+        <div class="card" style="padding:14px 16px;"><div class="stat"><div class="v">~0.27%</div><div class="l">of India's ~Rs 70 lakh crore outstanding bank credit</div></div></div>
+        <div class="card" style="padding:14px 16px;"><div class="stat"><div class="v">~1.9%</div><div class="l">of annual corporate bond issuance (~Rs 10 lakh crore)</div></div></div>
+        <div class="card" style="padding:14px 16px;"><div class="stat"><div class="v">~1%</div><div class="l">of Brickwork's lifetime rated debt (Rs 19.18 lakh crore)</div></div></div>
+        <div class="card" style="padding:14px 16px;"><div class="stat"><div class="v">192</div><div class="l">mandates a year, vs CRISIL's ~19,500 rated issuers</div></div></div>
+      </div>
+      <div style="margin-top:20px;">
+        <div style="display:flex; height:36px; border:1px solid var(--line); border-radius:4px; overflow:hidden;">
+          <div style="width:4px; background:var(--rate); flex:none;"></div>
+          <div style="flex:1; background:var(--band); display:flex; align-items:center; padding-left:14px; font-size:12.5px; color:var(--muted);">Rest of India's ~Rs 70 lakh crore of outstanding bank credit</div>
+        </div>
+        <div style="font-size:12.5px; color:var(--rate); font-weight:700; margin-top:8px;">The teal sliver is ACER's entire Rs 19,200 Cr yearly target, about 0.27% of outstanding bank credit.</div>
+      </div>
+      <div style="margin-top:18px; padding:14px 16px; background:var(--band); border-left:3px solid var(--rate); font-size:13.5px; color:var(--ink);"><b>The takeaway.</b> Market capacity is not the constraint. Even one small peer has rated debt a hundred times ACER's yearly target over its life. The binding constraint is winning mandates against seven incumbents, which is why execution and the BLR licence, not demand, decide the pace.</div>
+      <p class="csrc">Source: India bank credit ~Rs 70 lakh crore, RBI via Business Standard [11]; corporate bond issuance ~Rs 10 to 11 lakh crore FY25 [13]; Brickwork lifetime rated debt Rs 19.18 lakh crore across 11,560+ entities, brickworkratings.com [9]; CRISIL ~19,500 rated issuers, FY25 default study [12]. Peer figures are cumulative (lifetime), used to show scale; the industry's annual BLR flow is not publicly disclosed.</p>
     </div>
     <div class="grid g2" style="align-items:start; margin-top:20px;">
       <div class="card">
@@ -426,6 +439,9 @@
         <tr><td>[8]</td><td>Acuite FY2025 to FY2026 receipts</td><td><a href="https://acuite.in/Upload/Acuite/0001/FY_2025-26_Total-Receipts.pdf">acuite.in receipts disclosure</a></td></tr>
         <tr><td>[9]</td><td>Brickwork revenue and SEBI action</td><td><a href="https://www.brickworkratings.com/Disclosure.aspx">brickworkratings.com regulatory disclosure</a></td></tr>
         <tr><td>[10]</td><td>SEBI Rs 25 Cr net worth requirement</td><td><a href="https://www.sebi.gov.in/acts/CreditRatingAgencies.pdf">SEBI (CRA) Regulations, 2018 amendment</a></td></tr>
+        <tr><td>[11]</td><td>India outstanding bank credit ~Rs 70 lakh crore</td><td><a href="https://www.business-standard.com/markets/capital-market-news/total-outstanding-credit-to-commercial-sector-up-by-13-125112500446_1.html">Business Standard, RBI data</a></td></tr>
+        <tr><td>[12]</td><td>CRISIL ~19,500 rated issuers</td><td><a href="https://www.crisil.com/content/dam/crisil/our-analysis/publications/default-study/crisil-ratings-annual-default-and-ratings-transition-study-fy-2025.pdf">CRISIL FY25 default study</a></td></tr>
+        <tr><td>[13]</td><td>Corporate bond market and issuance</td><td><a href="https://www.crisilratings.com/content/dam/crisilrating/report/2025/03/creating-the-bonds-of-viksit-bharat/creating-the-bonds-of-viksit-bharat.pdf">CRISIL bond market report</a></td></tr>
       </table>
       <p class="src">Actuals are ACER internal management accounts to 21 Jul 2026; peer figures are each company's official disclosures. Estimates are labelled. Periods differ by company.</p>
     </div>
@@ -609,27 +625,6 @@
     svg+='<text x="274" y="200" font-size="10.5" fill="#9aa7b4">rising toward 0.8% by FY30</text>';
     svg+='</svg>';
     document.getElementById('tamCircle').innerHTML=svg;
-  })();
-
-  // CRA market share donut
-  (function(){
-    var data=[{l:"CRISIL",v:44,c:"#1e4e79"},{l:"CARE",v:21,c:"#356f9c"},{l:"ICRA",v:14,c:"#5f9bc0"},{l:"India Ratings",v:12,c:"#93bdd6"},{l:"Infomerics",v:5,c:"#0f766e"},{l:"Acuite",v:3,c:"#4ca596"},{l:"Others, incl. ACER",v:1,c:"#c3ccd6"}];
-    var tot=100,r=64,C=2*Math.PI*r,off=0;
-    var svg='<div style="display:flex; align-items:center; gap:26px; flex-wrap:wrap;">';
-    svg+='<svg viewBox="0 0 180 180" width="168" height="168" role="img" aria-label="CRA market share by agency">';
-    data.forEach(function(d){ var len=C*d.v/tot;
-      svg+='<circle cx="90" cy="90" r="'+r+'" fill="none" stroke="'+d.c+'" stroke-width="26" stroke-dasharray="'+len.toFixed(1)+' '+(C-len).toFixed(1)+'" stroke-dashoffset="'+(-off).toFixed(1)+'" transform="rotate(-90 90 90)"/>';
-      off+=len;
-    });
-    svg+='<text x="90" y="85" text-anchor="middle" font-size="17" font-weight="700" font-family="Georgia,serif" fill="#0a1f33">Rs 2,000</text>';
-    svg+='<text x="90" y="103" text-anchor="middle" font-size="10.5" fill="#5b6b7b">Cr CRA market</text></svg>';
-    svg+='<div style="flex:1; min-width:260px;">';
-    svg+='<div style="display:grid; grid-template-columns:1fr 1fr; gap:5px 20px; font-size:12.5px; color:#2b3f52;">';
-    data.forEach(function(d){ svg+='<div style="display:flex; align-items:center; gap:8px;"><span style="width:11px;height:11px;background:'+d.c+';display:inline-block;flex:none;"></span>'+d.l+' <b style="margin-left:auto;">'+d.v+'%</b></div>'; });
-    svg+='</div>';
-    svg+='<div style="margin-top:14px; padding:12px 14px; background:#eef4f3; border-left:3px solid #0f766e; font-size:13px; color:#0a1f33;"><b>Where ACER concentrates.</b> Today under 0.1% of the pie. The FY28 target of Rs 8 Cr is about 0.4%, won entirely in the Rs 100 Cr plus bank loan rating segment, where a new entrant can compete on price and service.</div>';
-    svg+='</div></div>';
-    document.getElementById('mktShare').innerHTML=svg;
   })();
 
   // ACER FY28 donut
