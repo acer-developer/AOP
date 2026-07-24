@@ -8,7 +8,7 @@
   :root{
     --ink:#0f172a; --ink2:#334155; --muted:#64748b; --faint:#94a3b8;
     --bg:#f1f5f9; --card:#ffffff; --line:#e2e8f0; --line2:#eef2f6;
-    --accent:#2b5cc4; --fd:#94a3b8; --rate:#0f766e; --annuity:#2b5cc4;
+    --accent:#2b5cc4; --fd:#94a3b8; --rate:#0f766e; --exp:#334155; --annuity:#2b5cc4;
     --pos:#0f766e; --loss:#dc2626; --tint:#f8fafc;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -26,7 +26,7 @@
   h1{font-size:37px; line-height:1.12; font-weight:700; letter-spacing:-.02em; margin:12px 0;}
   h2{font-size:23px; font-weight:700; letter-spacing:-.01em; margin:0 0 6px;}
   h3{font-size:15px; font-weight:600;}
-  .lead{font-size:16.5px; color:var(--muted); max-width:760px;}
+  .lead{font-size:16.5px; color:var(--muted); max-width:770px;}
   section{padding:26px 0; border-top:1px solid var(--line);}
   .sectlbl{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); font-weight:600; margin-bottom:10px;}
   .grid{display:grid; gap:14px;}
@@ -59,6 +59,8 @@
   .legend span{display:flex; align-items:center; gap:6px;}
   .sw{width:12px; height:12px; border-radius:3px; display:inline-block;}
   .dash{width:16px; height:0; border-top:2px dashed currentColor; display:inline-block;}
+  .becard{margin-bottom:16px;}
+  .behead{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:4px;}
   table.data{width:100%; border-collapse:collapse; font-size:14px;}
   table.data th{text-align:right; font-weight:600; color:var(--muted); font-size:12px; padding:9px 8px; border-bottom:1px solid var(--line);}
   table.data th:first-child{text-align:left;}
@@ -70,9 +72,6 @@
   .hbar-track{flex:1; background:var(--line2); border-radius:5px; height:19px;}
   .hbar-fill{height:19px; border-radius:5px;}
   .hbar-val{width:56px; text-align:right; font-weight:600; color:var(--ink); flex:none;}
-  .funnel{display:flex; flex-direction:column; gap:9px;}
-  .fbar{min-height:54px; border-radius:10px; display:flex; align-items:center; justify-content:space-between; padding:10px 18px; color:#fff; font-weight:600; font-size:13.5px;}
-  .fbar small{display:block; font-weight:400; font-size:11px; opacity:.9;}
   .steps{display:flex; flex-direction:column;}
   .step{display:flex; gap:14px; padding:9px 0; border-bottom:1px solid var(--line2);}
   .step:last-child{border-bottom:none;}
@@ -198,18 +197,16 @@
   <section id="path">
     <div class="sectlbl">5 · Monthly path to break even</div>
     <h2>When each case turns cash positive</h2>
-    <p class="lead">Green area is total monthly income, FD plus ratings. The dark line is all in monthly expense. Solid is actual (Apr to Jun), dashed is projected (Jul to Mar). Where green rises above the line, the month is cash positive.</p>
-    <div class="grid g3" style="margin-top:14px;">
-      <div class="card"><h3>S1. BLR by Oct</h3><div style="color:var(--pos); font-weight:600; font-size:13px; margin:2px 0 6px;">Break even from October</div><div id="ga1"></div></div>
-      <div class="card"><h3>S2. BLR by Jan</h3><div style="color:var(--accent); font-weight:600; font-size:13px; margin:2px 0 6px;">Break even from January</div><div id="ga2"></div></div>
-      <div class="card"><h3>S3. No BLR</h3><div style="color:var(--loss); font-weight:600; font-size:13px; margin:2px 0 6px;">Not reached in FY27</div><div id="ga3"></div></div>
+    <p class="lead" style="margin-bottom:6px;">Each bar is a real number in Rs Lakh per month: FD returns, earning (existing ratings plus the new BLR cases), and all in expense. The month a case turns cash positive (FD plus earning above expense) is shaded. Apr to Jun are actual, the rest projected.</p>
+    <div class="legend" style="margin:10px 0 16px;">
+      <span><span class="sw" style="background:var(--fd)"></span>FD returns</span>
+      <span><span class="sw" style="background:var(--rate)"></span>Earning (existing + BLR)</span>
+      <span><span class="sw" style="background:var(--exp)"></span>Expense, all in</span>
     </div>
-    <div class="legend" style="margin-top:10px;">
-      <span><span class="sw" style="background:var(--rate)"></span>Income, FD plus ratings</span>
-      <span style="color:var(--ink2)"><span class="dash"></span>Expense, all in</span>
-      <span>Solid = actual, dashed = projected</span>
-    </div>
-    <p class="src">Source: actual months from Internal ledger [1]; projected months from Internal run rate [1] and BLR assumptions [2]. Values in Rs Cr.</p>
+    <div class="card becard"><div class="behead"><h3>S1. BLR by October</h3><span class="badge" style="background:#d7f0eb; color:#0f766e;">Break even from October</span></div><div id="ga1"></div></div>
+    <div class="card becard"><div class="behead"><h3>S2. BLR by January</h3><span class="badge" style="background:#e6ecfb; color:#2b5cc4;">Break even from January</span></div><div id="ga2"></div></div>
+    <div class="card becard"><div class="behead"><h3>S3. No BLR this FY</h3><span class="badge" style="background:#fbe4e4; color:#b91c1c;">Not reached in FY27</span></div><div id="ga3"></div></div>
+    <p class="src">Source: actual months from Internal ledger [1]; projected months from Internal run rate [1] and BLR assumptions [2]. Earning = existing ratings plus 16 new cases at Rs 3 L each once BLR is live.</p>
   </section>
 
   <section id="budget">
@@ -233,8 +230,13 @@
         <div id="costBars"></div>
       </div>
     </div>
+    <div class="card" style="margin-top:14px;">
+      <h3 style="margin-bottom:4px;">Salary breakup, run rate <span class="pill">People cost Rs 3.95 Cr / yr</span></h3>
+      <p class="cap" style="margin:0 0 10px;">Existing team plus the two new hires, Rs Cr per year</p>
+      <div id="salaryBreak"></div>
+    </div>
     <p style="font-size:14px; color:var(--ink2); margin-top:12px;">Salary is 58% of actual spend to date and rises further as the two new hires annualise. Full year cost base is budgeted at Rs 5.24 Cr. This is the single lever the Board controls.</p>
-    <p class="src">Source: cost heads are Internal actuals to 21 Jul [1]; quarterly build uses Internal run rate [1] and BLR assumptions [2].</p>
+    <p class="src">Source: cost heads and payroll are Internal actuals and run rate [1]; the two hires are Board approved CTCs [2].</p>
   </section>
 
   <section id="cash">
@@ -285,13 +287,19 @@
     <h2>What the CRAs earn, and where we go</h2>
     <p class="lead" style="margin-bottom:14px;">The Indian rating industry is about Rs 2,000 Cr. We enter small and climb a credible ladder.</p>
     <div class="grid g2" style="align-items:start;">
+      <div class="card">
+        <h3 style="margin-bottom:10px;">Market size, where ACER stands</h3>
+        <div id="tamCircle"></div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:4px;">What ACER earns in FY28, Rs 8.3 Cr</h3>
+        <p class="cap" style="margin:0 0 8px;">Revenue by source, and share of the industry</p>
+        <div id="fy28Donut"></div>
+      </div>
+    </div>
+    <div class="grid g2" style="align-items:start; margin-top:14px;">
       <div class="card"><h3 style="margin-bottom:4px;">Rating revenue, latest year (Rs Cr) <span class="pill">Official filings</span></h3><div style="margin-top:10px;" id="peerBars"></div></div>
       <div class="card"><h3 style="margin-bottom:4px;">Our revenue trajectory (Rs Cr)</h3><p class="cap" style="margin:0 0 8px;">FY26 actual, FY27 to FY30 projected</p><div id="projChart"></div></div>
-    </div>
-    <div class="funnel" style="margin-top:14px;">
-      <div class="fbar" style="background:var(--ink); width:100%;"><span>TAM, Indian rating industry<small>total pure rating revenue pool</small></span><span>~Rs 2,000 Cr</span></div>
-      <div class="fbar" style="background:var(--annuity); width:74%;"><span>SAM, Rs 100 Cr plus BLR segment<small>mid and large corporate BLR</small></span><span>~Rs 500 Cr</span></div>
-      <div class="fbar" style="background:var(--rate); width:38%;"><span>SOM, ACER by FY28<small>about 0.4% of the industry, rising to about 0.8% by FY30</small></span><span>~Rs 8 Cr</span></div>
     </div>
     <p class="src">Source: peer figures from official disclosures, CRISIL [3], CARE [5], India Ratings [6], Infomerics [7], Acuite [8]. ACER, Internal [1] and plan [2]. TAM and SAM are estimates.</p>
   </section>
@@ -363,7 +371,7 @@
         <tr><td>[9]</td><td>Brickwork revenue history and SEBI action</td><td><a href="https://www.brickworkratings.com/Disclosure.aspx">brickworkratings.com regulatory disclosure</a></td></tr>
         <tr><td>[10]</td><td>SEBI Rs 25 Cr net worth requirement</td><td><a href="https://www.sebi.gov.in/acts/CreditRatingAgencies.pdf">SEBI (CRA) Regulations, 2018 amendment</a></td></tr>
       </table>
-      <p class="src">Estimates are labelled as such. Actual figures are ACER internal management accounts to 21 Jul 2026, and peer figures are each company's official disclosures. Periods differ by company (CRISIL Jan to Dec, others Apr to Mar).</p>
+      <p class="src">Estimates are labelled as such. Actual figures are ACER internal management accounts to 21 Jul 2026; peer figures are each company's official disclosures. Periods differ by company.</p>
     </div>
   </section>
 
@@ -379,9 +387,9 @@
     {title:"S3. No BLR this financial year",badge:"Downside 2",bc:"#fbe4e4",btc:"#b91c1c",fd:1.80,rate:0.87,total:2.67,exp:5.24,net:-2.57,fds:67,rs:33,cases:"0 BLR mandates in FY27",narr:"An invest through year funded by reserves. Solvency is never in question given the Rs 26 Cr corpus, but the business erodes about Rs 2.6 Cr of value with no BLR offset. Tight cost discipline required."}
   ];
   function cr(v){return (v<0?"Rs -":"Rs ")+Math.abs(v).toFixed(2)+" Cr";}
-  function donut(fds,rs){
+  function donutSvg(fds,rs){
     var r=64,c=2*Math.PI*r,fdlen=c*fds/100;
-    return '<svg viewBox="0 0 170 170" width="160" height="160" role="img" aria-label="Income share FD versus ratings">'
+    return '<svg viewBox="0 0 170 170" width="150" height="150" role="img" aria-label="Income share FD versus ratings">'
       +'<circle cx="85" cy="85" r="64" fill="none" stroke="#0f766e" stroke-width="24"/>'
       +'<circle cx="85" cy="85" r="64" fill="none" stroke="#94a3b8" stroke-width="24" stroke-dasharray="'+fdlen+' '+(c-fdlen)+'" transform="rotate(-90 85 85)"/>'
       +'<text x="85" y="79" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">'+rs+'%</text>'
@@ -398,7 +406,7 @@
     var net=document.getElementById('sc-net');
     net.textContent=(d.net>=0?"+ ":"")+cr(d.net);
     net.parentNode.querySelector('td:last-child').style.color=d.net>=0?"#0f766e":"#dc2626";
-    document.getElementById('donut').innerHTML=donut(d.fds,d.rs);
+    document.getElementById('donut').innerHTML=donutSvg(d.fds,d.rs);
     document.getElementById('lg-fd').textContent=d.fds+"%";
     document.getElementById('lg-rate').textContent=d.rs+"%";
     document.getElementById('sc-cases').textContent=d.cases;
@@ -470,35 +478,105 @@
   hbars(document.getElementById('costBars'),[
     {l:"Salary",v:71.99,c:"#0f766e"},{l:"Rent",v:14.65},{l:"Professional",v:6.01},{l:"Sitting fees (board)",v:5.50},{l:"Travel",v:3.70},{l:"Admin & maintenance",v:2.77},{l:"Repairs",v:2.74},{l:"IT & internet",v:2.04},{l:"Other heads",v:13.88}
   ],71.99);
+  hbars(document.getElementById('salaryBreak'),[
+    {l:"Existing team",v:3.00,c:"#0f766e"},{l:"New hire 1 (CTC)",v:0.45,c:"#2b5cc4"},{l:"New hire 2 (CTC)",v:0.50,c:"#2b5cc4"}
+  ],3.00);
 
-  function areaChart(el,inc,exp,actualN,beIdx,ymax,labels){
-    var W=380,H=170,padB=22,padT=12,padL=6,padR=6,n=inc.length,max=ymax;
-    var xw=(W-padL-padR)/(n-1), yb=H-padB;
-    function X(i){return +(padL+i*xw).toFixed(1);} function Y(v){return +(yb-v/max*(yb-padT)).toFixed(1);}
-    function seg(arr,a,b){var d="";for(var i=a;i<=b;i++)d+=(i===a?"M":" L")+X(i)+","+Y(arr[i]);return d;}
-    var i, area="M"+X(0)+","+yb; for(i=0;i<n;i++)area+=" L"+X(i)+","+Y(inc[i]); area+=" L"+X(n-1)+","+yb+" Z";
-    var aN=(actualN>0?actualN:n);
-    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="income area versus expense line">';
-    svg+='<path d="'+area+'" fill="#0f766e" fill-opacity="0.15"/>';
-    svg+='<path d="'+seg(inc,0,aN-1)+'" fill="none" stroke="#0f766e" stroke-width="2"/>';
-    if(aN<n)svg+='<path d="'+seg(inc,aN-1,n-1)+'" fill="none" stroke="#0f766e" stroke-width="2" stroke-dasharray="4 3"/>';
-    svg+='<path d="'+seg(exp,0,aN-1)+'" fill="none" stroke="#334155" stroke-width="1.75"/>';
-    if(aN<n)svg+='<path d="'+seg(exp,aN-1,n-1)+'" fill="none" stroke="#334155" stroke-width="1.75" stroke-dasharray="4 3"/>';
-    if(aN<n){var dx=X(aN-1); svg+='<line x1="'+dx+'" y1="'+padT+'" x2="'+dx+'" y2="'+yb+'" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/>';}
-    if(beIdx>=0){var bx=X(beIdx); svg+='<circle cx="'+bx+'" cy="'+Y(inc[beIdx])+'" r="4" fill="#0f766e"/>';}
-    if(labels)for(i=0;i<n;i++){ if(labels[i])svg+='<text x="'+X(i)+'" y="'+(H-6)+'" text-anchor="middle" font-size="8" fill="#94a3b8">'+labels[i]+'</text>'; }
+  // grouped monthly columns with data labels + break-even band
+  var MONTHS=["Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar"];
+  function groups(el,series,beIdx,max){
+    var W=960,H=300,padB=34,padT=30,padL=10,padR=10,n=12,ns=series.length;
+    var gw=(W-padL-padR)/n, bw=Math.min(20,(gw*0.8)/ns), inner=3;
+    var span=ns*bw+(ns-1)*inner, sc=(H-padB-padT)/max, yb=H-padB;
+    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="monthly FD, earning and expense in Rs Lakh">';
+    if(beIdx>=0){ var gx=padL+beIdx*gw;
+      svg+='<rect x="'+gx.toFixed(1)+'" y="'+padT+'" width="'+gw.toFixed(1)+'" height="'+(yb-padT)+'" fill="#0f766e" fill-opacity="0.08"/>';
+      svg+='<text x="'+(gx+gw/2).toFixed(1)+'" y="'+(padT-10)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">Break even</text>';
+    }
+    for(var m=0;m<n;m++){
+      var base=padL+m*gw+(gw-span)/2;
+      for(var si=0;si<ns;si++){
+        var v=series[si].vals[m], h=v*sc, x=base+si*(bw+inner);
+        svg+='<rect x="'+x.toFixed(1)+'" y="'+(yb-h).toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+h.toFixed(1)+'" fill="'+series[si].color+'" rx="1.5"/>';
+        if(v>0)svg+='<text x="'+(x+bw/2).toFixed(1)+'" y="'+(yb-h-3).toFixed(1)+'" text-anchor="middle" font-size="9" font-weight="600" fill="#334155">'+v+'</text>';
+      }
+      svg+='<text x="'+(padL+m*gw+gw/2).toFixed(1)+'" y="'+(yb+16)+'" text-anchor="middle" font-size="11" fill="#64748b">'+MONTHS[m]+'</text>';
+    }
     svg+='</svg>'; el.innerHTML=svg;
   }
-  var MON=["A","M","J","J","A","S","O","N","D","J","F","M"];
-  var EXP=[0.36,0.33,0.46,0.40,0.46,0.46,0.46,0.46,0.46,0.46,0.46,0.46];
-  areaChart(document.getElementById('ga1'),[0.18,0.19,0.23,0.23,0.23,0.23,0.71,0.71,0.71,0.71,0.71,0.71],EXP,3,6,0.8,MON);
-  areaChart(document.getElementById('ga2'),[0.18,0.19,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.71,0.71,0.71],EXP,3,9,0.8,MON);
-  areaChart(document.getElementById('ga3'),[0.18,0.19,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.23],EXP,3,-1,0.8,MON);
+  var FD=[15,15,15,15,15,15,15,15,15,15,15,15];
+  var EXP=[36,33,46,40,46,46,46,46,46,46,46,46];
+  var E1=[2,5,8,8,8,8,56,56,56,56,56,56];
+  var E2=[2,5,8,8,8,8,8,8,8,56,56,56];
+  var E3=[2,5,8,8,8,8,8,8,8,8,8,8];
+  var C_FD="#94a3b8",C_E="#0f766e",C_X="#334155";
+  groups(document.getElementById('ga1'),[{color:C_FD,vals:FD},{color:C_E,vals:E1},{color:C_X,vals:EXP}],6,62);
+  groups(document.getElementById('ga2'),[{color:C_FD,vals:FD},{color:C_E,vals:E2},{color:C_X,vals:EXP}],9,62);
+  groups(document.getElementById('ga3'),[{color:C_FD,vals:FD},{color:C_E,vals:E3},{color:C_X,vals:EXP}],-1,62);
 
+  // actual monthly income vs expense area+line (real ledger)
+  function areaLine(el,inc,exp,ymax,labels){
+    var W=780,H=210,padB=22,padL=8,padR=8,padT=12,n=inc.length,max=ymax;
+    var xw=(W-padL-padR)/(n-1), yb=H-padB;
+    function X(i){return +(padL+i*xw).toFixed(1);} function Y(v){return +(yb-v/max*(yb-padT)).toFixed(1);}
+    function seg(a){var d="";for(var i=0;i<n;i++)d+=(i?" L":"M")+X(i)+","+Y(a[i]);return d;}
+    var area="M"+X(0)+","+yb; for(var i=0;i<n;i++)area+=" L"+X(i)+","+Y(inc[i]); area+=" L"+X(n-1)+","+yb+" Z";
+    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="actual income area versus expense line">';
+    svg+='<path d="'+area+'" fill="#0f766e" fill-opacity="0.15"/>';
+    svg+='<path d="'+seg(inc)+'" fill="none" stroke="#0f766e" stroke-width="2"/>';
+    svg+='<path d="'+seg(exp)+'" fill="none" stroke="#334155" stroke-width="1.75"/>';
+    for(i=0;i<n;i++)if(labels[i])svg+='<text x="'+X(i)+'" y="'+(H-6)+'" text-anchor="middle" font-size="8.5" fill="#94a3b8">'+labels[i]+'</text>';
+    svg+='</svg>'; el.innerHTML=svg;
+  }
   var incA=[0,0,0.134,0.015,0.146,0.290,0.146,0.145,0.145,0.156,0.235,0.149,0.175,0.194,0.232];
   var expA=[0.036,0.095,0.171,0.100,0.140,0.183,0.177,0.196,0.334,0.267,0.359,0.380,0.364,0.330,0.463];
   var labA=["Apr25","","","Jul","","","Oct","","","Jan26","","","Apr","","Jun"];
-  areaChart(document.getElementById('actualsChart'),incA,expA,0,-1,0.5,labA);
+  areaLine(document.getElementById('actualsChart'),incA,expA,0.5,labA);
+
+  // TAM SAM SOM nested circles (bottom aligned)
+  (function(){
+    var W=440,H=250, cx=140, floor=225;
+    function ring(v,color,stroke){ return 100*Math.sqrt(v/2000); }
+    var rT=100, rS=100*Math.sqrt(500/2000), rO=100*Math.sqrt(8/2000);
+    if(rO<7)rO=7;
+    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="TAM SAM SOM nested circles">';
+    svg+='<circle cx="'+cx+'" cy="'+(floor-rT)+'" r="'+rT+'" fill="#eef2f9" stroke="#cbd5e1"/>';
+    svg+='<circle cx="'+cx+'" cy="'+(floor-rS)+'" r="'+rS+'" fill="#dbe6fb" stroke="#2b5cc4"/>';
+    svg+='<circle cx="'+cx+'" cy="'+(floor-rO)+'" r="'+rO+'" fill="#0f766e" stroke="#0f766e"/>';
+    // leader labels
+    svg+='<line x1="'+cx+'" y1="'+(floor-2*rT+3)+'" x2="270" y2="30" stroke="#cbd5e1"/>';
+    svg+='<text x="276" y="27" font-size="12" font-weight="700" fill="#0f172a">TAM  Rs 2,000 Cr</text>';
+    svg+='<text x="276" y="43" font-size="11" fill="#64748b">whole rating industry</text>';
+    svg+='<line x1="'+(cx+rS*0.7)+'" y1="'+(floor-rS-rS*0.7)+'" x2="270" y2="95" stroke="#93b0e6"/>';
+    svg+='<text x="276" y="92" font-size="12" font-weight="700" fill="#2b5cc4">SAM  Rs 500 Cr</text>';
+    svg+='<text x="276" y="108" font-size="11" fill="#64748b">Rs 100 Cr+ BLR segment</text>';
+    svg+='<line x1="'+(cx+rO)+'" y1="'+(floor-rO)+'" x2="270" y2="165" stroke="#0f766e"/>';
+    svg+='<text x="276" y="162" font-size="12" font-weight="700" fill="#0f766e">SOM  Rs 8 Cr</text>';
+    svg+='<text x="276" y="178" font-size="11" fill="#64748b">ACER FY28, about 0.4%</text>';
+    svg+='<text x="276" y="200" font-size="10.5" fill="#94a3b8">rising toward 0.8% by FY30</text>';
+    svg+='</svg>';
+    document.getElementById('tamCircle').innerHTML=svg;
+  })();
+
+  // ACER FY28 revenue donut
+  (function(){
+    var data=[{l:"BLR initial fees",v:5.76,c:"#0f766e"},{l:"Surveillance annuity",v:1.44,c:"#2b5cc4"},{l:"Existing ratings",v:1.10,c:"#94a3b8"}];
+    var tot=0; data.forEach(function(d){tot+=d.v;});
+    var r=62,C=2*Math.PI*r,off=0;
+    var svg='<div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">';
+    svg+='<svg viewBox="0 0 170 170" width="150" height="150" role="img" aria-label="ACER FY28 revenue by source">';
+    data.forEach(function(d){ var len=C*d.v/tot;
+      svg+='<circle cx="85" cy="85" r="'+r+'" fill="none" stroke="'+d.c+'" stroke-width="24" stroke-dasharray="'+len.toFixed(1)+' '+(C-len).toFixed(1)+'" stroke-dashoffset="'+(-off).toFixed(1)+'" transform="rotate(-90 85 85)"/>';
+      off+=len;
+    });
+    svg+='<text x="85" y="80" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Rs 8.3</text>';
+    svg+='<text x="85" y="97" text-anchor="middle" font-size="10" fill="#64748b">Cr, FY28</text></svg>';
+    svg+='<div style="font-size:12.5px; color:#334155;">';
+    data.forEach(function(d){ svg+='<div style="display:flex; align-items:center; gap:7px; margin:4px 0;"><span style="width:11px;height:11px;border-radius:3px;background:'+d.c+';display:inline-block;"></span>'+d.l+' &nbsp;<b>Rs '+d.v.toFixed(2)+' Cr</b></div>'; });
+    svg+='<div style="margin-top:8px; font-size:11.5px; color:#94a3b8;">About 0.4% of the Rs 2,000 Cr industry</div>';
+    svg+='</div></div>';
+    document.getElementById('fy28Donut').innerHTML=svg;
+  })();
 })();
 </script>
 </body>
