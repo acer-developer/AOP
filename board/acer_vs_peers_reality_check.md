@@ -69,9 +69,10 @@ Mapping to the three scenarios ([`../model/scenario_comparison.md`](../model/sce
 - **What ACER is doing is acceptable and strategically sound** — it mirrors exactly how every comparable small CRA built its business (BLR-led, issuer-pays, surveillance annuity), and ACER has already cleared the ₹25 Cr net-worth barrier.
 - **FY27 is unavoidably an investment year.** With operating revenue at ~₹1 Cr and a ₹5.27 Cr cost base, ACER will run a loss funded by FD interest and reserves regardless of scenario. That is normal for a CRA at this stage — *provided the BLR licence lands*.
 - **The single most important variable is the BLR/RBI-ECAI licence.** Everything the board approves (especially the ₹95 L of hires) should be explicitly framed as *"conditional on BLR timing."*
-- **Two guardrails to set now:**
+- **Three guardrails to set now:**
   1. A **cost-discipline trigger** if BLR slips past Jan (Scenario 3 path) — e.g. stagger the second hire, freeze discretionary spend.
   2. A **revenue-ramp milestone plan** toward ~₹5 Cr (the break-even line), benchmarked against Infomerics/Acuité's early trajectory.
+  3. A **rating-quality / compliance gate that scales with BLR volume.** The Brickwork case is the warning: a top-tier CRA whose SEBI registration was cancelled in 2022 over rating-process and disclosure lapses, and whose revenue then **collapsed to ~₹10.9 Cr**. As ACER pushes BLR volume, process discipline is existential — franchise value can be destroyed by one regulatory action far faster than it is built. See [`../research/cra_peer_financials.md`](../research/cra_peer_financials.md).
 - **Solvency is not in question** (₹26 Cr corpus); **operational self-sufficiency is the goal**, and BLR is the only credible path to it.
 
 ---

@@ -21,7 +21,7 @@
 | **India Ratings** (Fitch) | n/a (not split) | 233.18 | FY2025 | 295 | not verified |
 | **Infomerics** | BLR-led (not split) | 90.74 | FY2025 | 245 | not verified |
 | **Acuité** (ex-SMERA) | BLR-led (not split) | ~55.01 | FY2024 | 164 | not verified |
-| **Brickwork** | — | not verified | — | — | SEBI reg. cancelled 2022, later settled |
+| **Brickwork** | BLR-led (not split) | **~10.9** | FY2025 | — | ⚠️ SEBI reg. cancelled 2022 → SAT reversal 2023 → ₹1.54 Cr settlement 2024; revenue collapsed |
 
 **Read-across:** the *smallest established* peer (Acuité) earns ~₹55 Cr; Infomerics ~₹91 Cr; India Ratings ~₹233 Cr. The listed leaders' **rating businesses** alone are ₹360 Cr (CARE) to ₹909 Cr (CRISIL). Employee cost runs **~43–54% of revenue** across the profitable peers — and they are still highly profitable (see §3).
 
@@ -32,7 +32,7 @@ Sources:
 - India Ratings: [TheCompanyCheck](https://www.thecompanycheck.com/company/india-ratings-and-research-private-limited/U67100MH1995FTC140049); [Tracxn](https://tracxn.com/d/legal-entities/india/india-ratings-and-research-private-limited/__YCVGwtbYChTYvYlwEvstfM4pZf-xGMdhKuXYLLNERGk) (295 staff).
 - Infomerics: [TheCompanyCheck](https://www.thecompanycheck.com/company/infomerics-valuation-and-rating-limited/U32202DL1986PLC024575) (₹90.74 Cr, +16%).
 - Acuité: [TheCompanyCheck](https://www.thecompanycheck.com/company/acuite-ratings-research-limited/U74999MH2005PLC155683) (FY24 ₹55.01 Cr).
-- Brickwork: [Angel One — SEBI case/settlement](https://www.angelone.in/news/market-updates/brickwork-ratings-resolves-sebi-case-with-%E2%82%B91-54-crore-settlement).
+- Brickwork: FY25 revenue ~₹10.9 Cr — [Tracxn](https://tracxn.com/d/legal-entities/india/brickwork-ratings-india-private-limited/__deMWrCh3SeC51fqkQMPnxz4MA9cgH0ZHP9S95UaVbMU) (do **not** confuse with the ₹75 Cr namesake "Brickwork India Pvt Ltd", a different services firm); regulatory saga — [Angel One — SEBI case/settlement](https://www.angelone.in/news/market-updates/brickwork-ratings-resolves-sebi-case-with-%E2%82%B91-54-crore-settlement). **Cautionary case:** SEBI cancelled its registration in 2022 over rating-process/disclosure lapses; revenue collapsed from top-tier to ~₹10.9 Cr. For ACER, the lesson is that compliance/rating-quality failure is existential — see [`../board/acer_vs_peers_reality_check.md`](../board/acer_vs_peers_reality_check.md).
 
 ---
 
