@@ -34,7 +34,12 @@ revenue timing changes. See [`model/scenario_comparison.md`](model/scenario_comp
 AOP/
 ├── README.md                      ← you are here (motto + structure)
 ├── board/
-│   └── 00_executive_summary.md    ← the board-facing one-pager
+│   ├── 00_executive_summary.md    ← the board-facing one-pager
+│   └── acer_vs_peers_reality_check.md ← is ACER's plan acceptable vs peers?
+├── research/
+│   ├── cra_peer_financials.md     ← peer CRA annual + Q3/Q4 revenue (deep-linked, verified)
+│   ├── industry_and_regulation.md ← BLR = RBI-ECAI; SEBI ₹25 Cr net worth
+│   └── peer_benchmark_data.csv    ← peer figures as data
 ├── model/
 │   ├── 00_baseline_cost_engine.md ← shared cost + non-BLR income + runway
 │   ├── scenario_1_blr_by_oct.md   ← S1: BLR live Oct (6 months)
@@ -58,9 +63,18 @@ AOP/
 ## How to use
 
 1. Read `board/00_executive_summary.md` for the board narrative.
-2. Read `model/scenario_comparison.md` for the side-by-side.
-3. To finalise numbers, fill the confirmed BLR inputs in
+2. Read `board/acer_vs_peers_reality_check.md` for whether the plan is realistic vs peers.
+3. Read `model/scenario_comparison.md` for the scenario side-by-side.
+4. Read `research/` for the verified peer + regulatory evidence base (all deep-linked to filings).
+5. To finalise numbers, fill the confirmed BLR inputs in
    `assumptions/03_revenue_blr_assumptions.md` — they flow into S1 and S2.
+
+## Peer benchmark headline (verified from filings)
+
+- Smallest established peer (Acuité) earns ~₹55 Cr; Infomerics ₹91 Cr; CARE Ratings ₹360 Cr; CRISIL Ratings ₹909 Cr. **ACER's ~₹1 Cr operating revenue is ~2% of the smallest peer** — true inception stage.
+- Profitable CRAs spend **43–54% of revenue on people and still earn 27–56% margins**. ACER's payroll is ~360% of its operating revenue today — a deliberate pre-BLR investment.
+- **"BLR licence" = RBI ECAI accreditation**, required *separately* after SEBI registration before banks can use ACER's bank-loan ratings. This is the swing factor across the three scenarios.
+- **Verdict:** strategy is sound and industry-validated (BLR-led is exactly how small CRAs scale); FY27 is unavoidably an investment year; the ₹95 L hire bet is acceptable *conditional on BLR timing*.
 
 ## Data provenance
 

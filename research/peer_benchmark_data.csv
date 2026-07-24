@@ -1,0 +1,34 @@
+CRA,Metric,Value (INR Cr),Period,Type,Source Note
+CRISIL,Ratings segment revenue,909.15,CY2024,Verified,Audited results PDF segment statement
+CRISIL,Total group revenue,3259.78,CY2024,Verified,Ratings is ~28% of group
+CRISIL,Ratings segment Q3,240.62,CY2024 Jul-Sep,Verified,Q3 CY24 results PDF
+CRISIL,Ratings segment Q4,253.86,CY2024 Oct-Dec,Verified,Q4 CY24 results PDF
+CRISIL,Employee cost % of revenue,54,CY2024,Verified,Computed from P&L
+CRISIL,PAT,684.07,CY2024,Verified,Results PDF
+ICRA,Total consolidated revenue,498.0,FY2025,Verified,Q4 FY25 press release
+ICRA,Ratings segment revenue (derived),279,FY2025,Derived,Not disclosed - derived from growth
+ICRA,Total revenue Q3,120.87,FY2025 Oct-Dec,Verified,Segment filing
+ICRA,Ratings segment Q3,72.30,FY2025 Oct-Dec,Verified,Segment filing
+ICRA,Total revenue Q4,136.2,FY2025 Jan-Mar,Verified,Q4 FY25 press release
+ICRA,PAT,171.2,FY2025,Verified,Press release
+ICRA,Operating margin %,36,FY2025,Verified,screener.in
+CARE,Ratings segment revenue,360.1,FY2025,Verified,Q4 FY25 press release
+CARE,Total consolidated revenue,402.32,FY2025,Verified,Annual Report P&L
+CARE,Total standalone revenue,336.69,FY2025,Verified,Annual Report P&L
+CARE,Consolidated revenue Q3,96,FY2025 Oct-Dec,Verified,screener.in
+CARE,Consolidated revenue Q4,109.7,FY2025 Jan-Mar,Verified,Q4 FY25 press release
+CARE,Employee cost % of revenue (consol),47,FY2025,Verified,Annual Report P&L
+CARE,PAT (consolidated),140.0,FY2025,Verified,Annual Report
+CARE,Employees,648,FY2026,Verified,BRSR
+India Ratings,Operating revenue,233.18,FY2025,Verified,TheCompanyCheck (MCA)
+India Ratings,Employees,295,2025,Verified,Tracxn
+Infomerics,Operating revenue,90.74,FY2025,Verified,TheCompanyCheck (MCA)
+Infomerics,Employees,245,2024,Verified,Tracxn
+Acuite,Operating revenue,55.01,FY2024,Verified,TheCompanyCheck (MCA)
+Acuite,Employees,164,2025,Verified,Tracxn
+ACER,Operating (rating) Sales revenue,0.93,FY2027 run-rate,Actual,Zoho Books - annualised from Q1
+ACER,Operating (rating) Sales revenue,0.08,FY2026,Actual,Zoho Books
+ACER,FD interest income,1.48,FY2026,Actual,Zoho Books
+ACER,Total cost base (with new hires),5.27,FY2027,Actual+Plan,Zoho Books + hires
+ACER,Employee cost % of operating revenue,360,FY2027,Actual,Payroll vs operating sales
+SEBI,Minimum CRA net worth,25,Current,Verified,SEBI CRA Amendment Regs 2018
