@@ -1,0 +1,12 @@
+Account,Type,Balance (as of ~21-Jul-2026),Note
+Bank of India FD,Other Current Asset,250000000,Primary FD corpus
+Fixed Deposits,Other Current Asset,11062646,Secondary FDs
+HDFC Bank,Bank,790868,Operating bank balance
+Petty Cash,Cash,33043,Petty cash
+Accrued Interest on FD,Other Current Asset,-1301598,Accrual contra
+GST Receivables,Other Current Asset,3946682,Recoverable
+Prepaid Expenses,Other Current Asset,3031642,Prepaid
+Accounts Receivable,Accounts Receivable,1376994,Debtors
+TDS Receivables (FY24-25 + FY26-27),Other Current Asset,2035881,Recoverable
+TOTAL FD CORPUS,,261062646,Bank of India FD + Fixed Deposits
+TOTAL LIQUID (non-FD cash+bank),,823911,HDFC + Petty Cash
