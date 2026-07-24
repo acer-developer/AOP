@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACER Credit Rating, FY27 Annual Operating Plan</title>
+<style>
+  :root{
+    --ink:#0f172a; --ink2:#334155; --muted:#64748b; --faint:#94a3b8;
+    --bg:#f1f5f9; --card:#ffffff; --line:#e2e8f0; --line2:#eef2f6;
+    --accent:#2b5cc4; --fd:#94a3b8; --rate:#0f766e; --annuity:#2b5cc4;
+    --pos:#0f766e; --loss:#dc2626; --tint:#f8fafc;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased;}
+  a{color:var(--accent); text-decoration:none;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 22px;}
+  header.top{position:sticky; top:0; z-index:40; background:rgba(255,255,255,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
+  .topin{max-width:1080px; margin:0 auto; padding:14px 22px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  .brand{font-weight:700; font-size:16px; letter-spacing:-.01em;}
+  .brand span{color:var(--accent);}
+  .topnav{display:flex; gap:20px; font-size:13.5px;}
+  .topnav a{color:var(--muted); font-weight:500;} .topnav a:hover{color:var(--ink);}
+  .hero{padding:52px 0 26px;}
+  .kicker{font-size:12px; letter-spacing:.15em; text-transform:uppercase; color:var(--accent); font-weight:600;}
+  h1{font-size:38px; line-height:1.12; font-weight:700; letter-spacing:-.02em; margin:12px 0 12px;}
+  h2{font-size:24px; font-weight:700; letter-spacing:-.01em; margin:0 0 6px;}
+  h3{font-size:15px; font-weight:600;}
+  .lead{font-size:17px; color:var(--muted); max-width:720px;}
+  section{padding:30px 0;}
+  .sectlbl{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); font-weight:600; margin-bottom:12px;}
+  .grid{display:grid; gap:15px;}
+  .g4{grid-template-columns:repeat(4,1fr);} .g3{grid-template-columns:repeat(3,1fr);} .g2{grid-template-columns:1fr 1fr;}
+  .tile{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 18px;}
+  .tile .lbl{font-size:12px; color:var(--muted); font-weight:500;}
+  .tile .val{font-size:25px; font-weight:700; letter-spacing:-.01em; margin-top:3px;}
+  .tile .sub{font-size:11.5px; color:var(--faint); margin-top:2px;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px;}
+  ul.clean{list-style:none; display:flex; flex-direction:column; gap:10px;}
+  ul.clean li{position:relative; padding-left:22px; font-size:15px; color:var(--ink2);}
+  ul.clean li::before{content:""; position:absolute; left:0; top:8px; width:8px; height:8px; border-radius:50%; background:var(--accent);}
+  .src{font-size:11.5px; color:var(--faint); margin-top:14px;}
+  /* tabs */
+  .tabs{display:flex; gap:8px; background:var(--card); border:1px solid var(--line); border-radius:40px; padding:6px; width:fit-content; margin:6px 0 20px; flex-wrap:wrap;}
+  .tab{border:none; background:transparent; padding:10px 20px; border-radius:30px; font-size:14px; font-weight:600; color:var(--muted); cursor:pointer; font-family:inherit;}
+  .tab.active{background:var(--ink); color:#fff;}
+  .tab .dot{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:7px; vertical-align:1px;}
+  .panel{display:none; animation:fade .25s ease;}
+  .panel.active{display:block;}
+  @keyframes fade{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;}}
+  .scenerow{display:grid; grid-template-columns:1.15fr .85fr; gap:20px; align-items:stretch;}
+  .pnl{width:100%; border-collapse:collapse; font-size:15px;}
+  .pnl td{padding:11px 4px; border-bottom:1px solid var(--line2);}
+  .pnl td:last-child{text-align:right; font-weight:600;}
+  .pnl tr.tot td{font-weight:700; font-size:16px; border-bottom:2px solid var(--line);}
+  .pnl tr.net td{border-bottom:none; font-size:20px; font-weight:700; padding-top:16px;}
+  .badge{display:inline-block; font-size:11.5px; font-weight:600; padding:4px 11px; border-radius:20px;}
+  .donutwrap{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;}
+  .narr{margin-top:16px; font-size:15px; color:var(--ink2); background:var(--tint); border:1px solid var(--line); border-radius:10px; padding:14px 16px;}
+  .legend{display:flex; gap:18px; font-size:12.5px; color:var(--muted); flex-wrap:wrap; margin:4px 0;}
+  .legend span{display:flex; align-items:center; gap:6px;}
+  .sw{width:12px; height:12px; border-radius:3px; display:inline-block;}
+  .funnel{display:flex; flex-direction:column; gap:10px;}
+  .fbar{height:56px; border-radius:10px; display:flex; align-items:center; justify-content:space-between; padding:0 20px; color:#fff; font-weight:600; font-size:14px;}
+  .fbar small{display:block; font-weight:400; font-size:11.5px; opacity:.9;}
+  table.mini{width:100%; border-collapse:collapse; font-size:13.5px;}
+  table.mini th{text-align:left; font-weight:600; color:var(--muted); font-size:12px; padding:9px 10px; border-bottom:1px solid var(--line);}
+  table.mini td{padding:9px 10px; border-bottom:1px solid var(--line2); color:var(--ink2); vertical-align:top;}
+  footer{padding:30px 0 60px; color:var(--faint); font-size:12.5px; border-top:1px solid var(--line); margin-top:20px;}
+  @media(max-width:820px){ .g4{grid-template-columns:1fr 1fr;} .g3{grid-template-columns:1fr;} .scenerow{grid-template-columns:1fr;} h1{font-size:30px;} .topnav{display:none;} }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topin">
+    <div class="brand">ACER <span>Credit Rating</span> · FY27 AOP</div>
+    <nav class="topnav">
+      <a href="#situation">Situation</a>
+      <a href="#engine">Revenue engine</a>
+      <a href="#scenarios">Scenarios</a>
+      <a href="#market">Market</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero" id="top">
+    <span class="kicker">Board Presentation, Confidential</span>
+    <h1>FY27 Annual Operating Plan</h1>
+    <p class="lead">Turning a capital rich, deposit dependent balance sheet into a self sustaining ratings franchise. This page models the plan across three BLR licence scenarios. Use the tabs below to switch between them.</p>
+  </section>
+
+  <section id="situation">
+    <div class="sectlbl">Where we stand today</div>
+    <div class="grid g4">
+      <div class="tile"><div class="lbl">FD corpus</div><div class="val">Rs 26.1 Cr</div><div class="sub">Rs 25 Cr is the SEBI net worth lock</div></div>
+      <div class="tile"><div class="lbl">FY26 income mix</div><div class="val">95% FD</div><div class="sub">only Rs 8 L from ratings</div></div>
+      <div class="tile"><div class="lbl">Ratings, Q1 FY27</div><div class="val">Rs 28.5 L</div><div class="sub">3.5x all of FY26, inflecting</div></div>
+      <div class="tile"><div class="lbl">FY27 run rate P&amp;L</div><div class="val" style="color:var(--loss)">Rs -2.6 Cr</div><div class="sub">investment stage loss</div></div>
+    </div>
+    <p class="src">Source: ACER financials, Zoho Books actuals to 21-Jul-2026 [1]. SEBI net worth requirement [10].</p>
+  </section>
+
+  <section id="engine">
+    <div class="sectlbl">The revenue engine</div>
+    <div class="card">
+      <h2>Unit economics of one BLR mandate</h2>
+      <p class="lead" style="margin-bottom:16px;">Every case is a Rs 100 Cr ticket. The initial fee funds the year, the surveillance fee builds the franchise.</p>
+      <div class="grid g4">
+        <div class="tile"><div class="lbl">Initial fee, 3 bps</div><div class="val">Rs 3.0 L</div><div class="sub">one time, at onboarding</div></div>
+        <div class="tile"><div class="lbl">Surveillance, 1.5 bps</div><div class="val">Rs 1.5 L</div><div class="sub">every year, recurring</div></div>
+        <div class="tile"><div class="lbl">Volume target</div><div class="val">16 / mo</div><div class="sub">4 BDs x 4 cases</div></div>
+        <div class="tile"><div class="lbl">Full run rate initial fees</div><div class="val" style="color:var(--rate)">Rs 5.76 Cr</div><div class="sub">plus Rs 2.88 Cr annuity</div></div>
+      </div>
+      <p class="src">Source: fee rates, ticket size and volume are ACER management and Board assumptions [2].</p>
+    </div>
+  </section>
+
+  <section id="scenarios">
+    <div class="sectlbl">Three scenarios, FY27</div>
+    <h2>How the year lands, by BLR licence timing</h2>
+    <p class="lead" style="margin-bottom:8px;">Same cost base, Rs 5.24 Cr, and same FD income across all three. Only the licence date changes.</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-s="0" role="tab"><span class="dot" style="background:var(--pos)"></span>BLR by Oct 1</button>
+      <button class="tab" data-s="1" role="tab"><span class="dot" style="background:var(--accent)"></span>BLR by Jan 1</button>
+      <button class="tab" data-s="2" role="tab"><span class="dot" style="background:var(--loss)"></span>No BLR this FY</button>
+    </div>
+
+    <div class="card">
+      <div class="panel active" id="panel">
+        <div class="scenerow">
+          <div>
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:6px;">
+              <h3 id="sc-title" style="font-size:18px;"></h3>
+              <span class="badge" id="sc-badge"></span>
+            </div>
+            <table class="pnl">
+              <tr><td>FD interest income</td><td id="sc-fd"></td></tr>
+              <tr><td>Ratings revenue (existing + BLR)</td><td id="sc-rate"></td></tr>
+              <tr class="tot"><td>Total income</td><td id="sc-total"></td></tr>
+              <tr><td>Total expense (incl. new hires)</td><td id="sc-exp"></td></tr>
+              <tr class="net"><td>Net P&amp;L</td><td id="sc-net"></td></tr>
+            </table>
+          </div>
+          <div class="donutwrap">
+            <div id="donut"></div>
+            <div class="legend">
+              <span><span class="sw" style="background:var(--fd)"></span>FD interest <b id="lg-fd" style="margin-left:2px;"></b></span>
+              <span><span class="sw" style="background:var(--rate)"></span>Ratings <b id="lg-rate" style="margin-left:2px;"></b></span>
+            </div>
+            <div style="font-size:12px; color:var(--muted); text-align:center;" id="sc-cases"></div>
+          </div>
+        </div>
+        <div class="narr" id="sc-narr"></div>
+      </div>
+      <p class="src">Source: FD interest and cost base from Zoho Books run rate [1]. BLR revenue from management assumptions [2], flat 16 cases per month from launch, initial fees only in FY27 (surveillance begins about 12 months after each mandate).</p>
+    </div>
+  </section>
+
+  <section id="trajectory">
+    <div class="sectlbl">The pivot and the climb</div>
+    <div class="grid g2">
+      <div class="card">
+        <h3 style="margin-bottom:4px;">Income mix flips from FD to ratings</h3>
+        <div class="legend" style="margin:8px 0;">
+          <span><span class="sw" style="background:var(--fd)"></span>FD interest</span>
+          <span><span class="sw" style="background:var(--rate)"></span>Ratings income</span>
+        </div>
+        <div id="flipChart"></div>
+        <p class="src">FY26 actual [1]; FY27 (S1) and FY28 steady state modelled [1][2].</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:4px;">Operating revenue trajectory</h3>
+        <div class="legend" style="margin:8px 0;">
+          <span><span class="sw" style="background:var(--fd)"></span>Existing + FD</span>
+          <span><span class="sw" style="background:var(--rate)"></span>BLR initial</span>
+          <span><span class="sw" style="background:var(--annuity)"></span>Surveillance</span>
+        </div>
+        <div id="trajChart"></div>
+        <p class="src">Modelled on the BLR by October path [1][2]. Values in Rs Cr.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="market">
+    <div class="sectlbl">Market opportunity</div>
+    <div class="card">
+      <h2>TAM, SAM, SOM</h2>
+      <p class="lead" style="margin-bottom:14px;">A small, credible slice of a large market, with room to grow for years.</p>
+      <div class="funnel">
+        <div class="fbar" style="background:var(--ink); width:100%;"><span>TAM, Indian credit rating industry<small>total pure rating revenue pool</small></span><span>about Rs 2,000 Cr</span></div>
+        <div class="fbar" style="background:var(--annuity); width:74%;"><span>SAM, Rs 100 Cr plus bank loan rating segment<small>mid and large corporate BLR we can serve</small></span><span>about Rs 500 Cr</span></div>
+        <div class="fbar" style="background:var(--rate); width:36%;"><span>SOM, ACER by FY28<small>192 mandates per year plus surveillance</small></span><span>about Rs 8 Cr</span></div>
+      </div>
+      <p style="font-size:15px; color:var(--ink2); margin-top:14px;">Our FY28 ambition is about 0.4% of the industry, deliberately modest and therefore credible. The runway to Rs 15 to 20 Cr sits in later years as surveillance compounds.</p>
+      <p class="src">Source: TAM is an analyst estimate built from official rating segment revenues [3][4][5]; the industry is not officially aggregated. SAM is an estimate of the Rs 100 Cr plus BLR sub segment. SOM is derived from this plan's model [2].</p>
+    </div>
+  </section>
+
+  <section id="ask">
+    <div class="sectlbl">Recommendation</div>
+    <div class="grid g2">
+      <div class="card"><h3 style="color:var(--accent); margin-bottom:8px;">What we will do</h3>
+        <ul class="clean">
+          <li>Treat FY27 as the pivot year, invest ahead of BLR, funded by FD interest and reserves.</li>
+          <li>Stand up 4 BDs to a 16 case per month engine, targeting Rs 100 Cr plus tickets.</li>
+          <li>Bank the surveillance annuity to reach profitability in FY28.</li>
+        </ul></div>
+      <div class="card"><h3 style="color:var(--accent); margin-bottom:8px;">Guardrails</h3>
+        <ul class="clean">
+          <li>Compliance first. Brickwork lost its licence and most of its revenue to process lapses, rating revenue fell from about Rs 48.5 Cr to about Rs 5 Cr. Rating quality is existential as we scale volume.</li>
+          <li>Cost trigger. If BLR slips past January, stagger the second hire and freeze discretionary spend.</li>
+        </ul></div>
+    </div>
+    <div class="card" style="margin-top:15px; background:var(--ink); color:#fff; border:none;">
+      <div style="font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:#cbd5e1; font-weight:600;">The board is asked to</div>
+      <div style="font-size:16px; font-weight:600; margin-top:6px;">Approve the FY27 cost base including the two hires, conditional on BLR timing. Endorse the 16 case per month BD plan. Note that solvency is secure, and operational self sufficiency by FY28 is the goal.</div>
+    </div>
+    <p class="src">Source: Brickwork rating revenue history, brickworkratings.com [9]. Hire and cost figures, Zoho Books [1].</p>
+  </section>
+
+  <section id="sources">
+    <div class="sectlbl">Provenance</div>
+    <div class="card">
+      <h2 style="margin-bottom:10px;">Sources and notes</h2>
+      <table class="mini">
+        <tr><th style="width:44px;">Ref</th><th>What</th><th>Source</th></tr>
+        <tr><td>[1]</td><td>ACER financials, all internal figures</td><td>Zoho Books actuals to 21-Jul-2026 (internal)</td></tr>
+        <tr><td>[2]</td><td>BLR unit economics and volume</td><td>ACER management and Board assumption</td></tr>
+        <tr><td>[3]</td><td>CRISIL CY2024 revenue and ratings segment</td><td><a href="https://www.crisil.com/content/dam/crisilcom2-0/pr/2025/02/crisil-limited-audited-financial-results-for-the-fourth-quarter-and-year-ended-december-31-2024.pdf">crisil.com audited results</a></td></tr>
+        <tr><td>[4]</td><td>ICRA FY2025 revenue</td><td><a href="https://www.icra.in/CommonService/OpenMediaS3?Key=98bcff84-3315-4f06-b1e3-b8e94dacbfb6">icra.in Q4 FY25 press release</a></td></tr>
+        <tr><td>[5]</td><td>CARE FY2026 revenue and ratings segment</td><td><a href="https://www.careratings.com/Uploads/newsfiles/FinancialReports/1780927413_care.pdf">careratings.com annual report</a></td></tr>
+        <tr><td>[6]</td><td>India Ratings FY2026 revenue</td><td><a href="https://www.indiaratings.co.in/income">indiaratings.co.in income disclosure</a></td></tr>
+        <tr><td>[7]</td><td>Infomerics FY2024 to FY2026 revenue</td><td><a href="https://www.infomerics.com/regulatory-disclosure">infomerics.com regulatory disclosure</a></td></tr>
+        <tr><td>[8]</td><td>Acuite FY2025 to FY2026 receipts</td><td><a href="https://acuite.in/Upload/Acuite/0001/FY_2025-26_Total-Receipts.pdf">acuite.in receipts disclosure</a></td></tr>
+        <tr><td>[9]</td><td>Brickwork revenue history and SEBI action</td><td><a href="https://www.brickworkratings.com/Disclosure.aspx">brickworkratings.com regulatory disclosure</a></td></tr>
+        <tr><td>[10]</td><td>SEBI Rs 25 Cr net worth requirement</td><td><a href="https://www.sebi.gov.in/acts/CreditRatingAgencies.pdf">SEBI (CRA) Regulations, 2018 amendment</a></td></tr>
+      </table>
+      <p class="src">Estimates are labelled as such on the relevant sections. Periods differ by company (CRISIL Jan to Dec, others Apr to Mar). Full per figure links are in the AOP repository under the research and data folders.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer><div class="wrap">ACER Credit Rating Pvt. Ltd. · FY27 Annual Operating Plan · Prepared for the Board · Figures sourced per section; internal actuals from Zoho Books to 21-Jul-2026.</div></footer>
+
+<script>
+(function(){
+  var S=[
+    {title:"S1. BLR live by 1 October",badge:"Best case",bc:"#d7f0eb",btc:"#0f766e",
+     fd:1.80,rate:3.75,total:5.55,exp:5.24,net:0.31,fds:32,rs:68,cases:"96 mandates in FY27 (6 months x 16)",
+     narr:"Six months of BLR revenue is enough to break even and flip the business from FD dependent to ratings led. This is what justifies putting the two hires and four BDs in place now."},
+    {title:"S2. BLR live by 1 January",badge:"Mid case",bc:"#e6ecfb",btc:"#2b5cc4",
+     fd:1.80,rate:2.31,total:4.11,exp:5.24,net:-1.13,fds:44,rs:56,cases:"48 mandates in FY27 (3 months x 16)",
+     narr:"The full cost base is carried all year but BLR revenue only lands in the final quarter. FY27 stays a loss, though it sets up a strong FY28. If the licence looks like slipping, stagger the second hire."},
+    {title:"S3. No BLR this financial year",badge:"Downside",bc:"#fbe4e4",btc:"#b91c1c",
+     fd:1.80,rate:0.87,total:2.67,exp:5.24,net:-2.57,fds:67,rs:33,cases:"0 BLR mandates in FY27",
+     narr:"An invest through year funded by reserves. Solvency is never in question given the Rs 26 Cr corpus, but the business erodes about Rs 2.6 Cr of value with no BLR offset. Tight cost discipline required."}
+  ];
+  function cr(v){return (v<0?"-Rs ":"Rs ")+Math.abs(v).toFixed(2)+" Cr";}
+  function donut(fds,rs){
+    var r=64,c=2*Math.PI*r, fdlen=c*fds/100;
+    return '<svg viewBox="0 0 170 170" width="170" height="170" role="img" aria-label="Income share, FD versus ratings">'
+      +'<circle cx="85" cy="85" r="64" fill="none" stroke="#0f766e" stroke-width="24"/>'
+      +'<circle cx="85" cy="85" r="64" fill="none" stroke="#94a3b8" stroke-width="24" stroke-dasharray="'+fdlen+' '+(c-fdlen)+'" transform="rotate(-90 85 85)"/>'
+      +'<text x="85" y="79" text-anchor="middle" font-size="15" font-weight="700" fill="#0f172a">'+rs+'%</text>'
+      +'<text x="85" y="97" text-anchor="middle" font-size="10.5" fill="#64748b">ratings</text></svg>';
+  }
+  function render(k){
+    var d=S[k];
+    document.getElementById('sc-title').textContent=d.title;
+    var b=document.getElementById('sc-badge'); b.textContent=d.badge; b.style.background=d.bc; b.style.color=d.btc;
+    document.getElementById('sc-fd').textContent=cr(d.fd);
+    document.getElementById('sc-rate').textContent=cr(d.rate);
+    document.getElementById('sc-total').textContent=cr(d.total);
+    document.getElementById('sc-exp').textContent=cr(d.exp);
+    var net=document.getElementById('sc-net');
+    net.textContent=(d.net>=0?"+":"")+cr(d.net).replace("-Rs","Rs -").replace("+Rs","Rs +");
+    net.parentNode.querySelector('td:last-child').style.color=d.net>=0?"#0f766e":"#dc2626";
+    document.getElementById('donut').innerHTML=donut(d.fds,d.rs);
+    document.getElementById('lg-fd').textContent=d.fds+"%";
+    document.getElementById('lg-rate').textContent=d.rs+"%";
+    document.getElementById('sc-cases').textContent=d.cases;
+    document.getElementById('sc-narr').textContent=d.narr;
+  }
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  tabs.forEach(function(t){ t.onclick=function(){
+    tabs.forEach(function(x){x.classList.remove('active');}); t.classList.add('active');
+    render(parseInt(t.dataset.s,10));
+  };});
+  render(0);
+
+  function stacked(el,data,unit){
+    var W=440,H=240,padB=34,padT=18,bw=78, x0=44, gap=(W-x0-14-data.length*bw)/(data.length-1);
+    var max=Math.max.apply(null,data.map(function(d){return d.a+d.b+(d.c||0);}))*1.08;
+    var sc=(H-padB-padT)/max, yb=H-padB;
+    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="stacked bars">';
+    data.forEach(function(d,k){ var x=x0+k*(bw+gap);
+      var ha=d.a*sc, hb=d.b*sc, hc=(d.c||0)*sc;
+      svg+='<rect x="'+x+'" y="'+(yb-ha)+'" width="'+bw+'" height="'+ha+'" fill="#94a3b8" rx="2"/>';
+      if(d.b)svg+='<rect x="'+x+'" y="'+(yb-ha-hb)+'" width="'+bw+'" height="'+hb+'" fill="#0f766e" rx="2"/>';
+      if(d.c)svg+='<rect x="'+x+'" y="'+(yb-ha-hb-hc)+'" width="'+bw+'" height="'+hc+'" fill="#2b5cc4" rx="2"/>';
+      var tot=d.a+d.b+(d.c||0);
+      svg+='<text x="'+(x+bw/2)+'" y="'+(yb-ha-hb-hc-6)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#0f172a">'+tot.toFixed(1)+'</text>';
+      svg+='<text x="'+(x+bw/2)+'" y="'+(yb+18)+'" text-anchor="middle" font-size="11.5" font-weight="600" fill="#334155">'+d.l+'</text>';
+    });
+    svg+='</svg>'; el.innerHTML=svg;
+  }
+  stacked(document.getElementById('flipChart'),[
+    {l:"FY26",a:1.48,b:0.08},{l:"FY27 S1",a:1.80,b:3.75},{l:"FY28",a:1.80,b:8.30}
+  ]);
+  stacked(document.getElementById('trajChart'),[
+    {l:"FY26",a:1.56,b:0,c:0},{l:"FY27",a:2.67,b:2.88,c:0},{l:"FY28",a:2.90,b:5.76,c:1.44},{l:"FY29",a:3.10,b:5.76,c:4.32}
+  ]);
+})();
+</script>
+</body>
+</html>

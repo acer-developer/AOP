@@ -1,4 +1,7 @@
-# ACER Credit Rating — FY27 Annual Operating Plan (AOP)
+# ACER Credit Rating, FY27 Annual Operating Plan (AOP)
+
+**Live board deck:** https://acer-developer.github.io/AOP/ (once GitHub Pages is enabled: Settings, Pages, Source = main branch, root)
+
 
 > **Motto:** *Plan from the numbers, not around them.*
 > Every figure in this repo is either a **booked actual** from Zoho Books or a
@@ -33,8 +36,9 @@ revenue timing changes. See [`model/scenario_comparison.md`](model/scenario_comp
 ```
 AOP/
 ├── README.md                      ← you are here (motto + structure)
+├── index.html                     ← the LIVE board deck (GitHub Pages root); 10 slides, self-contained, sourced
 ├── board/
-│   ├── AOP_board_presentation.html ← the board deck (open in any browser; 9 slides, self-contained)
+│   ├── AOP_board_presentation.pptx ← the board deck as PowerPoint (separate, editable)
 │   ├── 00_executive_summary.md    ← the board-facing one-pager
 │   └── acer_vs_peers_reality_check.md ← is ACER's plan acceptable vs peers?
 ├── research/
