@@ -1,5 +1,11 @@
 # Indian CRA Peer Financials — Verified Benchmark
 
+> 📌 **For the unlisted CRAs (India Ratings, Infomerics, Acuité, Brickwork), the
+> authoritative figures now live in [`peer_income_official_sources.md`](peer_income_official_sources.md)**,
+> sourced only from each company's own SEBI/IR disclosure pages. The aggregator-based
+> numbers in the tables below are superseded for those four — see the corrections table
+> in that file.
+
 > **Provenance:** every figure is tied to a primary source (company results PDF,
 > BSE/NSE filing, or annual report) that was fetched and read, cross-checked against
 > screener.in. Secondary sources are labelled. Figures that could **not** be verified
