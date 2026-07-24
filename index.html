@@ -36,10 +36,12 @@
   .tile .val{font-size:24px; font-weight:700; letter-spacing:-.01em; margin-top:3px;}
   .tile .sub{font-size:11px; color:var(--faint); margin-top:2px;}
   .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 22px;}
+  .cap{font-size:11.5px; color:var(--faint); margin-top:6px;}
   ul.clean{list-style:none; display:flex; flex-direction:column; gap:9px;}
   ul.clean li{position:relative; padding-left:22px; font-size:14.5px; color:var(--ink2);}
   ul.clean li::before{content:""; position:absolute; left:0; top:8px; width:8px; height:8px; border-radius:50%; background:var(--accent);}
   .src{font-size:11px; color:var(--faint); margin-top:12px;}
+  .pill{display:inline-block; font-size:10.5px; font-weight:600; padding:2px 9px; border-radius:20px; background:var(--tint); border:1px solid var(--line); color:var(--muted);}
   .tabs{display:flex; gap:8px; background:var(--card); border:1px solid var(--line); border-radius:40px; padding:6px; width:fit-content; margin:6px 0 18px; flex-wrap:wrap;}
   .tab{border:none; background:transparent; padding:9px 18px; border-radius:30px; font-size:14px; font-weight:600; color:var(--muted); cursor:pointer; font-family:inherit;}
   .tab.active{background:var(--ink); color:#fff;}
@@ -56,17 +58,18 @@
   .legend{display:flex; gap:16px; font-size:12.5px; color:var(--muted); flex-wrap:wrap; margin:4px 0;}
   .legend span{display:flex; align-items:center; gap:6px;}
   .sw{width:12px; height:12px; border-radius:3px; display:inline-block;}
+  .dash{width:16px; height:0; border-top:2px dashed currentColor; display:inline-block;}
   table.data{width:100%; border-collapse:collapse; font-size:14px;}
   table.data th{text-align:right; font-weight:600; color:var(--muted); font-size:12px; padding:9px 8px; border-bottom:1px solid var(--line);}
   table.data th:first-child{text-align:left;}
   table.data td{text-align:right; padding:9px 8px; border-bottom:1px solid var(--line2); color:var(--ink2);}
   table.data td:first-child{text-align:left; color:var(--muted);}
   table.data tr.tot td{font-weight:700; color:var(--ink); border-bottom:none; border-top:2px solid var(--line);}
-  .hbar-row{display:flex; align-items:center; gap:10px; margin:7px 0; font-size:13px;}
+  .hbar-row{display:flex; align-items:center; gap:10px; margin:6px 0; font-size:12.5px;}
   .hbar-lbl{width:150px; color:var(--ink2); flex:none;}
-  .hbar-track{flex:1; background:var(--line2); border-radius:5px; height:20px;}
-  .hbar-fill{height:20px; border-radius:5px;}
-  .hbar-val{width:60px; text-align:right; font-weight:600; color:var(--ink); flex:none;}
+  .hbar-track{flex:1; background:var(--line2); border-radius:5px; height:19px;}
+  .hbar-fill{height:19px; border-radius:5px;}
+  .hbar-val{width:56px; text-align:right; font-weight:600; color:var(--ink); flex:none;}
   .funnel{display:flex; flex-direction:column; gap:9px;}
   .fbar{min-height:54px; border-radius:10px; display:flex; align-items:center; justify-content:space-between; padding:10px 18px; color:#fff; font-weight:600; font-size:13.5px;}
   .fbar small{display:block; font-weight:400; font-size:11px; opacity:.9;}
@@ -109,7 +112,19 @@
       <div class="tile"><div class="lbl">Ratings, Q1 FY27</div><div class="val">Rs 28.5 L</div><div class="sub">3.5x all of FY26, inflecting</div></div>
       <div class="tile"><div class="lbl">FY27 run rate P&amp;L</div><div class="val" style="color:var(--loss)">Rs -2.6 Cr</div><div class="sub">before any BLR revenue</div></div>
     </div>
-    <p class="src">Source: Internal [1]. SEBI net worth requirement [10].</p>
+    <div class="card" style="margin-top:14px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+        <h3>Actual monthly income and expense, from the books</h3>
+        <span class="pill">Actuals, Apr 2025 to Jun 2026</span>
+      </div>
+      <div class="legend" style="margin:8px 0;">
+        <span><span class="sw" style="background:var(--rate)"></span>Income (FD interest + ratings)</span>
+        <span style="color:var(--ink2)"><span class="dash"></span>Expense, all in</span>
+      </div>
+      <div id="actualsChart"></div>
+      <p class="cap">Income has been carried almost entirely by FD interest, roughly Rs 14 to 15 L a month, while expense climbed past it as the team grew. Ratings income only appears in the last few months. Every value is booked.</p>
+    </div>
+    <p class="src">Source: Internal [1], monthly ledger Apr 2025 to Jun 2026. SEBI net worth requirement [10].</p>
   </section>
 
   <section id="strategy">
@@ -135,7 +150,7 @@
         <p style="font-size:14px; color:var(--ink2); margin-top:12px;">16 x Rs 100 Cr = <b>Rs 1,600 Cr of debt rated every month</b>. Full run rate initial fees Rs 5.76 Cr, plus a Rs 2.88 Cr surveillance annuity that compounds.</p>
       </div>
       <div class="card">
-        <h3 style="margin-bottom:6px;">Cumulative rated debt, base case</h3>
+        <h3 style="margin-bottom:6px;">Cumulative rated debt <span class="pill">Projection</span></h3>
         <div class="legend"><span><span class="sw" style="background:var(--accent)"></span>Rs Cr, live from October</span></div>
         <div id="cumChart"></div>
       </div>
@@ -183,7 +198,7 @@
   <section id="path">
     <div class="sectlbl">5 · Monthly path to break even</div>
     <h2>When each case turns cash positive</h2>
-    <p class="lead">Green area is total monthly income, FD plus ratings. The dark line is all in monthly expense. Where green rises above the line, the month is cash positive.</p>
+    <p class="lead">Green area is total monthly income, FD plus ratings. The dark line is all in monthly expense. Solid is actual (Apr to Jun), dashed is projected (Jul to Mar). Where green rises above the line, the month is cash positive.</p>
     <div class="grid g3" style="margin-top:14px;">
       <div class="card"><h3>S1. BLR by Oct</h3><div style="color:var(--pos); font-weight:600; font-size:13px; margin:2px 0 6px;">Break even from October</div><div id="ga1"></div></div>
       <div class="card"><h3>S2. BLR by Jan</h3><div style="color:var(--accent); font-weight:600; font-size:13px; margin:2px 0 6px;">Break even from January</div><div id="ga2"></div></div>
@@ -191,32 +206,35 @@
     </div>
     <div class="legend" style="margin-top:10px;">
       <span><span class="sw" style="background:var(--rate)"></span>Income, FD plus ratings</span>
-      <span><span class="sw" style="background:#334155"></span>Expense, all in</span>
+      <span style="color:var(--ink2)"><span class="dash"></span>Expense, all in</span>
+      <span>Solid = actual, dashed = projected</span>
     </div>
-    <p class="src">Source: monthly build from Internal run rate [1] and BLR assumptions [2]. Months Apr to Mar, values in Rs Cr.</p>
+    <p class="src">Source: actual months from Internal ledger [1]; projected months from Internal run rate [1] and BLR assumptions [2]. Values in Rs Cr.</p>
   </section>
 
   <section id="budget">
     <div class="sectlbl">6 · The operating plan, FY27 budget</div>
     <div class="grid g2" style="align-items:start;">
       <div class="card">
-        <h3 style="margin-bottom:8px;">Quarterly P&amp;L, base case (Rs Cr)</h3>
+        <h3 style="margin-bottom:8px;">Quarterly P&amp;L, base case <span class="pill">Projection</span></h3>
         <table class="data">
           <tr><th>Quarter</th><th>Income</th><th>Expense</th><th>Net</th></tr>
-          <tr><td>Q1 (Apr to Jun)</td><td>0.60</td><td>1.16</td><td style="color:var(--loss)">-0.56</td></tr>
+          <tr><td>Q1 (Apr to Jun), actual</td><td>0.60</td><td>1.16</td><td style="color:var(--loss)">-0.56</td></tr>
           <tr><td>Q2 (Jul to Sep)</td><td>0.69</td><td>1.32</td><td style="color:var(--loss)">-0.63</td></tr>
           <tr><td>Q3 (Oct to Dec)</td><td>2.13</td><td>1.38</td><td style="color:var(--pos)">+0.75</td></tr>
           <tr><td>Q4 (Jan to Mar)</td><td>2.13</td><td>1.38</td><td style="color:var(--pos)">+0.75</td></tr>
           <tr class="tot"><td>FY27 total</td><td>5.55</td><td>5.24</td><td style="color:var(--pos)">+0.31</td></tr>
         </table>
+        <p class="cap">Q1 is booked actual; Q2 to Q4 projected on the base case.</p>
       </div>
       <div class="card">
-        <h3 style="margin-bottom:10px;">FY27 cost base, Rs 5.24 Cr by head</h3>
+        <h3 style="margin-bottom:4px;">Cost base by ledger head <span class="pill">Actual to date</span></h3>
+        <p class="cap" style="margin:0 0 10px;">FY27 actual spend, Apr to 21 Jul, Rs Lakh</p>
         <div id="costBars"></div>
       </div>
     </div>
-    <p style="font-size:14px; color:var(--ink2); margin-top:12px;">People are 69% of cost, the single lever the Board controls. The two new hires add Rs 0.64 Cr in FY27; the rest of the base is largely fixed.</p>
-    <p class="src">Source: quarterly build and cost heads modelled from Internal run rate [1] and BLR assumptions [2].</p>
+    <p style="font-size:14px; color:var(--ink2); margin-top:12px;">Salary is 58% of actual spend to date and rises further as the two new hires annualise. Full year cost base is budgeted at Rs 5.24 Cr. This is the single lever the Board controls.</p>
+    <p class="src">Source: cost heads are Internal actuals to 21 Jul [1]; quarterly build uses Internal run rate [1] and BLR assumptions [2].</p>
   </section>
 
   <section id="cash">
@@ -247,6 +265,7 @@
           <span><span class="sw" style="background:var(--annuity)"></span>Surveillance</span>
         </div>
         <div id="trajChart"></div>
+        <p class="cap">FY26 actual; FY27 to FY29 projected on the base case.</p>
       </div>
       <div class="card">
         <h3 style="margin-bottom:4px;">Income mix flips, FD to ratings</h3>
@@ -255,6 +274,7 @@
           <span><span class="sw" style="background:var(--rate)"></span>Ratings income</span>
         </div>
         <div id="flipChart"></div>
+        <p class="cap">FY26 actual; FY27 and FY28 projected.</p>
       </div>
     </div>
     <p class="src">Source: FY26 actual, Internal [1]. FY27 to FY29 modelled from Internal baseline [1] and BLR assumptions [2].</p>
@@ -265,15 +285,15 @@
     <h2>What the CRAs earn, and where we go</h2>
     <p class="lead" style="margin-bottom:14px;">The Indian rating industry is about Rs 2,000 Cr. We enter small and climb a credible ladder.</p>
     <div class="grid g2" style="align-items:start;">
-      <div class="card"><h3 style="margin-bottom:10px;">Rating revenue, latest year (Rs Cr)</h3><div id="peerBars"></div></div>
-      <div class="card"><h3 style="margin-bottom:10px;">Our revenue trajectory (Rs Cr)</h3><div id="projChart"></div></div>
+      <div class="card"><h3 style="margin-bottom:4px;">Rating revenue, latest year (Rs Cr) <span class="pill">Official filings</span></h3><div style="margin-top:10px;" id="peerBars"></div></div>
+      <div class="card"><h3 style="margin-bottom:4px;">Our revenue trajectory (Rs Cr)</h3><p class="cap" style="margin:0 0 8px;">FY26 actual, FY27 to FY30 projected</p><div id="projChart"></div></div>
     </div>
     <div class="funnel" style="margin-top:14px;">
       <div class="fbar" style="background:var(--ink); width:100%;"><span>TAM, Indian rating industry<small>total pure rating revenue pool</small></span><span>~Rs 2,000 Cr</span></div>
       <div class="fbar" style="background:var(--annuity); width:74%;"><span>SAM, Rs 100 Cr plus BLR segment<small>mid and large corporate BLR</small></span><span>~Rs 500 Cr</span></div>
       <div class="fbar" style="background:var(--rate); width:38%;"><span>SOM, ACER by FY28<small>about 0.4% of the industry, rising to about 0.8% by FY30</small></span><span>~Rs 8 Cr</span></div>
     </div>
-    <p class="src">Source: peer figures from official disclosures, CRISIL [3], CARE [5], India Ratings [6], Infomerics [7], Acuite [8]. ACER, Internal [1] and plan [2]. Rating revenue in Rs Cr, latest published year per company. TAM and SAM are estimates.</p>
+    <p class="src">Source: peer figures from official disclosures, CRISIL [3], CARE [5], India Ratings [6], Infomerics [7], Acuite [8]. ACER, Internal [1] and plan [2]. TAM and SAM are estimates.</p>
   </section>
 
   <section id="plan">
@@ -343,13 +363,13 @@
         <tr><td>[9]</td><td>Brickwork revenue history and SEBI action</td><td><a href="https://www.brickworkratings.com/Disclosure.aspx">brickworkratings.com regulatory disclosure</a></td></tr>
         <tr><td>[10]</td><td>SEBI Rs 25 Cr net worth requirement</td><td><a href="https://www.sebi.gov.in/acts/CreditRatingAgencies.pdf">SEBI (CRA) Regulations, 2018 amendment</a></td></tr>
       </table>
-      <p class="src">Estimates are labelled as such. Periods differ by company (CRISIL Jan to Dec, others Apr to Mar). Full working detail and per figure links are in the AOP repository research and data folders.</p>
+      <p class="src">Estimates are labelled as such. Actual figures are ACER internal management accounts to 21 Jul 2026, and peer figures are each company's official disclosures. Periods differ by company (CRISIL Jan to Dec, others Apr to Mar).</p>
     </div>
   </section>
 
 </div>
 
-<footer><div class="wrap">ACER Credit Rating Pvt. Ltd. · FY27 Annual Operating Plan · Prepared for the Board · ACER figures are internal management accounts.</div></footer>
+<footer><div class="wrap">ACER Credit Rating Pvt. Ltd. · FY27 Annual Operating Plan · Prepared for the Board · Actuals are internal management accounts; projections are on the stated assumptions.</div></footer>
 
 <script>
 (function(){
@@ -447,33 +467,38 @@
   hbars(document.getElementById('peerBars'),[
     {l:"ACER now",v:0.9,c:"#2b5cc4"},{l:"ACER FY28",v:8,c:"#0f766e"},{l:"Acuite",v:57},{l:"Infomerics",v:95},{l:"India Ratings",v:251},{l:"CARE",v:423},{l:"CRISIL",v:909}
   ],909);
+  hbars(document.getElementById('costBars'),[
+    {l:"Salary",v:71.99,c:"#0f766e"},{l:"Rent",v:14.65},{l:"Professional",v:6.01},{l:"Sitting fees (board)",v:5.50},{l:"Travel",v:3.70},{l:"Admin & maintenance",v:2.77},{l:"Repairs",v:2.74},{l:"IT & internet",v:2.04},{l:"Other heads",v:13.88}
+  ],71.99);
 
-  function areaChart(el,inc,exp,beIdx){
-    var W=380,H=170,padB=20,padT=12,padL=6,padR=6,n=inc.length,max=0.8;
+  function areaChart(el,inc,exp,actualN,beIdx,ymax,labels){
+    var W=380,H=170,padB=22,padT=12,padL=6,padR=6,n=inc.length,max=ymax;
     var xw=(W-padL-padR)/(n-1), yb=H-padB;
-    function X(i){return padL+i*xw;} function Y(v){return yb-v/max*(yb-padT);}
-    var i, area="M"+X(0)+","+yb;
-    for(i=0;i<n;i++)area+=" L"+X(i).toFixed(1)+","+Y(inc[i]).toFixed(1);
-    area+=" L"+X(n-1)+","+yb+" Z";
-    var incL="",expL="";
-    for(i=0;i<n;i++){incL+=(i?" L":"M")+X(i).toFixed(1)+","+Y(inc[i]).toFixed(1);}
-    for(i=0;i<n;i++){expL+=(i?" L":"M")+X(i).toFixed(1)+","+Y(exp[i]).toFixed(1);}
-    var mon=["A","M","J","J","A","S","O","N","D","J","F","M"];
-    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="monthly income area versus expense line">';
-    svg+='<path d="'+area+'" fill="#0f766e" fill-opacity="0.16"/>';
-    svg+='<path d="'+incL+'" fill="none" stroke="#0f766e" stroke-width="2"/>';
-    svg+='<path d="'+expL+'" fill="none" stroke="#334155" stroke-width="1.75"/>';
-    if(beIdx>=0){ var bx=X(beIdx);
-      svg+='<line x1="'+bx+'" y1="'+padT+'" x2="'+bx+'" y2="'+yb+'" stroke="#0f766e" stroke-width="1" stroke-dasharray="3 3"/>';
-      svg+='<circle cx="'+bx+'" cy="'+Y(inc[beIdx]).toFixed(1)+'" r="4" fill="#0f766e"/>';
-    }
-    for(i=0;i<n;i++)svg+='<text x="'+X(i).toFixed(1)+'" y="'+(H-5)+'" text-anchor="middle" font-size="8" fill="#94a3b8">'+mon[i]+'</text>';
+    function X(i){return +(padL+i*xw).toFixed(1);} function Y(v){return +(yb-v/max*(yb-padT)).toFixed(1);}
+    function seg(arr,a,b){var d="";for(var i=a;i<=b;i++)d+=(i===a?"M":" L")+X(i)+","+Y(arr[i]);return d;}
+    var i, area="M"+X(0)+","+yb; for(i=0;i<n;i++)area+=" L"+X(i)+","+Y(inc[i]); area+=" L"+X(n-1)+","+yb+" Z";
+    var aN=(actualN>0?actualN:n);
+    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" role="img" aria-label="income area versus expense line">';
+    svg+='<path d="'+area+'" fill="#0f766e" fill-opacity="0.15"/>';
+    svg+='<path d="'+seg(inc,0,aN-1)+'" fill="none" stroke="#0f766e" stroke-width="2"/>';
+    if(aN<n)svg+='<path d="'+seg(inc,aN-1,n-1)+'" fill="none" stroke="#0f766e" stroke-width="2" stroke-dasharray="4 3"/>';
+    svg+='<path d="'+seg(exp,0,aN-1)+'" fill="none" stroke="#334155" stroke-width="1.75"/>';
+    if(aN<n)svg+='<path d="'+seg(exp,aN-1,n-1)+'" fill="none" stroke="#334155" stroke-width="1.75" stroke-dasharray="4 3"/>';
+    if(aN<n){var dx=X(aN-1); svg+='<line x1="'+dx+'" y1="'+padT+'" x2="'+dx+'" y2="'+yb+'" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2 2"/>';}
+    if(beIdx>=0){var bx=X(beIdx); svg+='<circle cx="'+bx+'" cy="'+Y(inc[beIdx])+'" r="4" fill="#0f766e"/>';}
+    if(labels)for(i=0;i<n;i++){ if(labels[i])svg+='<text x="'+X(i)+'" y="'+(H-6)+'" text-anchor="middle" font-size="8" fill="#94a3b8">'+labels[i]+'</text>'; }
     svg+='</svg>'; el.innerHTML=svg;
   }
+  var MON=["A","M","J","J","A","S","O","N","D","J","F","M"];
   var EXP=[0.36,0.33,0.46,0.40,0.46,0.46,0.46,0.46,0.46,0.46,0.46,0.46];
-  areaChart(document.getElementById('ga1'),[0.17,0.20,0.23,0.23,0.23,0.23,0.71,0.71,0.71,0.71,0.71,0.71],EXP,6);
-  areaChart(document.getElementById('ga2'),[0.17,0.20,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.71,0.71,0.71],EXP,9);
-  areaChart(document.getElementById('ga3'),[0.17,0.20,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.23],EXP,-1);
+  areaChart(document.getElementById('ga1'),[0.18,0.19,0.23,0.23,0.23,0.23,0.71,0.71,0.71,0.71,0.71,0.71],EXP,3,6,0.8,MON);
+  areaChart(document.getElementById('ga2'),[0.18,0.19,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.71,0.71,0.71],EXP,3,9,0.8,MON);
+  areaChart(document.getElementById('ga3'),[0.18,0.19,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.23,0.23],EXP,3,-1,0.8,MON);
+
+  var incA=[0,0,0.134,0.015,0.146,0.290,0.146,0.145,0.145,0.156,0.235,0.149,0.175,0.194,0.232];
+  var expA=[0.036,0.095,0.171,0.100,0.140,0.183,0.177,0.196,0.334,0.267,0.359,0.380,0.364,0.330,0.463];
+  var labA=["Apr25","","","Jul","","","Oct","","","Jan26","","","Apr","","Jun"];
+  areaChart(document.getElementById('actualsChart'),incA,expA,0,-1,0.5,labA);
 })();
 </script>
 </body>
