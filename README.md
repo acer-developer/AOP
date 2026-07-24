@@ -34,6 +34,7 @@ revenue timing changes. See [`model/scenario_comparison.md`](model/scenario_comp
 AOP/
 ├── README.md                      ← you are here (motto + structure)
 ├── board/
+│   ├── AOP_board_presentation.html ← the board deck (open in any browser; 9 slides, self-contained)
 │   ├── 00_executive_summary.md    ← the board-facing one-pager
 │   └── acer_vs_peers_reality_check.md ← is ACER's plan acceptable vs peers?
 ├── research/
