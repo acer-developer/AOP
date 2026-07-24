@@ -316,7 +316,13 @@
     <div class="kicker"><span class="n">08</span>Industry map</div>
     <div class="atitle">We enter a Rs 2,000 crore market at the very bottom, by design.</div>
     <p class="sub">Established agencies book hundreds of crore a year. ACER starts small and climbs a credible ladder toward the smaller-CRA tier.</p>
-    <div class="grid g2" style="align-items:start; margin-top:26px;">
+    <div class="card" style="margin-top:26px;">
+      <h3 style="margin-bottom:4px;">The CRA market pie, and where ACER concentrates</h3>
+      <p class="cap" style="margin:0 0 12px;">Share of the roughly Rs 2,000 Cr rating industry, by agency</p>
+      <div id="mktShare"></div>
+      <p class="csrc">Source: shares estimated from official rating revenues, CRISIL [3], CARE [5], ICRA [4], India Ratings [6], Infomerics [7], Acuite [8]; industry ~Rs 2,000 Cr is an analyst estimate. ACER [1][2].</p>
+    </div>
+    <div class="grid g2" style="align-items:start; margin-top:20px;">
       <div class="card">
         <h3 style="margin-bottom:4px;">Yearly rating revenue, latest year (Rs Cr)</h3>
         <p class="cap" style="margin:0 0 12px;">How much business each CRA books in a year</p>
@@ -603,6 +609,27 @@
     svg+='<text x="274" y="200" font-size="10.5" fill="#9aa7b4">rising toward 0.8% by FY30</text>';
     svg+='</svg>';
     document.getElementById('tamCircle').innerHTML=svg;
+  })();
+
+  // CRA market share donut
+  (function(){
+    var data=[{l:"CRISIL",v:44,c:"#1e4e79"},{l:"CARE",v:21,c:"#356f9c"},{l:"ICRA",v:14,c:"#5f9bc0"},{l:"India Ratings",v:12,c:"#93bdd6"},{l:"Infomerics",v:5,c:"#0f766e"},{l:"Acuite",v:3,c:"#4ca596"},{l:"Others, incl. ACER",v:1,c:"#c3ccd6"}];
+    var tot=100,r=64,C=2*Math.PI*r,off=0;
+    var svg='<div style="display:flex; align-items:center; gap:26px; flex-wrap:wrap;">';
+    svg+='<svg viewBox="0 0 180 180" width="168" height="168" role="img" aria-label="CRA market share by agency">';
+    data.forEach(function(d){ var len=C*d.v/tot;
+      svg+='<circle cx="90" cy="90" r="'+r+'" fill="none" stroke="'+d.c+'" stroke-width="26" stroke-dasharray="'+len.toFixed(1)+' '+(C-len).toFixed(1)+'" stroke-dashoffset="'+(-off).toFixed(1)+'" transform="rotate(-90 90 90)"/>';
+      off+=len;
+    });
+    svg+='<text x="90" y="85" text-anchor="middle" font-size="17" font-weight="700" font-family="Georgia,serif" fill="#0a1f33">Rs 2,000</text>';
+    svg+='<text x="90" y="103" text-anchor="middle" font-size="10.5" fill="#5b6b7b">Cr CRA market</text></svg>';
+    svg+='<div style="flex:1; min-width:260px;">';
+    svg+='<div style="display:grid; grid-template-columns:1fr 1fr; gap:5px 20px; font-size:12.5px; color:#2b3f52;">';
+    data.forEach(function(d){ svg+='<div style="display:flex; align-items:center; gap:8px;"><span style="width:11px;height:11px;background:'+d.c+';display:inline-block;flex:none;"></span>'+d.l+' <b style="margin-left:auto;">'+d.v+'%</b></div>'; });
+    svg+='</div>';
+    svg+='<div style="margin-top:14px; padding:12px 14px; background:#eef4f3; border-left:3px solid #0f766e; font-size:13px; color:#0a1f33;"><b>Where ACER concentrates.</b> Today under 0.1% of the pie. The FY28 target of Rs 8 Cr is about 0.4%, won entirely in the Rs 100 Cr plus bank loan rating segment, where a new entrant can compete on price and service.</div>';
+    svg+='</div></div>';
+    document.getElementById('mktShare').innerHTML=svg;
   })();
 
   // ACER FY28 donut
