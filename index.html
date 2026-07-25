@@ -3,64 +3,76 @@
 <title>ACER Credit Rating — FY27 Annual Operating Plan</title>
 <style>
   :root{
-    --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --bg:#ffffff; --band:#f8fafc;
+    --ink:#0f172a; --muted:#64748b; --line:#e6eaf0; --bg:#ffffff; --band:#f7f9fc;
     --navy:#1e3a8a; --teal:#0d9488; --amber:#f59e0b; --rose:#e11d48; --violet:#7c3aed;
     --green:#16a34a; --slate:#94a3b8; --sky:#0284c7;
-    --card:#ffffff; --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px rgba(15,23,42,.06);
+    --shadow:0 1px 2px rgba(15,23,42,.04),0 10px 30px rgba(15,23,42,.06);
     --radius:16px;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-  section{padding:72px 0;border-bottom:1px solid var(--line)}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
   section.alt{background:var(--band)}
-  h1,h2,h3{line-height:1.15;margin:0 0 6px;letter-spacing:-.02em}
+  h1,h2,h3{line-height:1.14;margin:0 0 6px;letter-spacing:-.02em}
   h1{font-size:clamp(30px,5vw,50px);font-weight:800}
-  h2{font-size:clamp(24px,3.4vw,34px);font-weight:800}
-  h3{font-size:18px;font-weight:700}
-  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--teal);margin-bottom:14px}
-  .lead{font-size:18px;color:#334155;max-width:760px}
-  .sub{color:var(--muted);font-size:15px;max-width:720px;margin:8px 0 0}
-  .grid{display:grid;gap:20px}
+  h2{font-size:clamp(23px,3.3vw,33px);font-weight:800}
+  h3{font-size:17px;font-weight:700}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--teal);margin-bottom:12px}
+  .lead{font-size:18px;color:#334155;max-width:780px}
+  .sub{color:var(--muted);font-size:15px;max-width:760px;margin:6px 0 0}
+  .grid{display:grid;gap:18px}
   .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
-  @media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-  .stat .v{font-size:30px;font-weight:800;letter-spacing:-.02em}
+  @media(max-width:880px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+  .stat .v{font-size:28px;font-weight:800;letter-spacing:-.02em}
   .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
-  .chip{display:inline-block;font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:#ecfdf5;color:#047857;border:1px solid #a7f3d0}
-  .src{font-size:11.5px;color:#94a3b8;margin-top:14px}
-  .src a{color:#94a3b8}
-  table{width:100%;border-collapse:collapse;font-size:14px}
-  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
-  th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
-  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
-  .legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;font-size:12.5px;color:#334155}
+  .src{font-size:11.5px;color:#9aa7b4;margin-top:12px}
+  .legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12.5px;color:#334155}
   .legend span{display:inline-flex;align-items:center;gap:6px}
   .sw{width:11px;height:11px;border-radius:3px;display:inline-block}
-  .note{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid var(--amber);border-radius:12px;padding:14px 16px;font-size:13.5px;color:#78350f}
-  .hero-badge{display:inline-flex;gap:8px;align-items:center;background:#f1f5f9;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#475569}
-  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line)}
+  th{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
   svg{display:block;width:100%;height:auto;overflow:visible}
-  .tip{font-size:9.5px;font-weight:700;fill:#0f172a}
   .axl{font-size:10px;fill:#64748b}
   .barlab{font-size:11px;font-weight:700;fill:#0f172a}
-  .center-v{font-size:22px;font-weight:800;fill:#0f172a}
+  .center-v{font-size:21px;font-weight:800;fill:#0f172a}
   .center-l{font-size:10.5px;fill:#64748b}
-  nav.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
   nav.top b{font-weight:800}
   nav.top a{color:#475569;text-decoration:none;font-size:13.5px;font-weight:600;margin-left:18px}
   @media(max-width:720px){nav.top a{display:none}}
-  footer{padding:36px 0;color:#94a3b8;font-size:12.5px;text-align:center}
+  /* tabs */
+  .tabs{display:inline-flex;background:#eef2f7;border-radius:14px;padding:5px;gap:4px;flex-wrap:wrap}
+  .tab{border:0;background:transparent;padding:11px 18px;border-radius:10px;font-size:14px;font-weight:700;
+    color:#475569;cursor:pointer;transition:.18s;white-space:nowrap}
+  .tab .d{font-weight:600;font-size:12px;color:#94a3b8;display:block;margin-top:1px}
+  .tab.on{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .tab.on.s1{box-shadow:inset 0 -3px 0 var(--green),0 1px 2px rgba(0,0,0,.06)}
+  .tab.on.s2{box-shadow:inset 0 -3px 0 var(--amber),0 1px 2px rgba(0,0,0,.06)}
+  .tab.on.s3{box-shadow:inset 0 -3px 0 var(--rose),0 1px 2px rgba(0,0,0,.06)}
+  .chip{display:inline-block;font-size:12px;font-weight:800;padding:5px 12px;border-radius:999px}
+  .note{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid var(--amber);border-radius:12px;padding:13px 15px;font-size:13px;color:#78350f}
+  .hero-badge{display:inline-flex;gap:8px;align-items:center;background:#f1f5f9;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#475569}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block}
+  .kpi{padding:16px 18px}
+  .kpi .v{font-size:26px;font-weight:800;letter-spacing:-.02em}
+  .kpi .l{font-size:12.5px;color:var(--muted);margin-top:2px}
+  footer{padding:34px 0;color:#94a3b8;font-size:12.5px;text-align:center}
+  .fade{animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 </style>
 
 <nav class="top"><div class="wrap">
   <b>ACER <span style="color:var(--teal)">·</span> FY27 AOP</b>
   <div>
-    <a href="#now">Today</a><a href="#engine">The Engine</a><a href="#market">Market</a>
-    <a href="#tam">TAM·SAM·SOM</a><a href="#scenarios">Scenarios</a>
+    <a href="#now">Today</a><a href="#engine">Engine</a><a href="#plan">Scenarios</a>
+    <a href="#market">Market</a><a href="#notes">Assumptions</a>
   </div>
 </div></nav>
 
@@ -68,15 +80,14 @@
 <section>
   <div class="wrap">
     <div class="hero-badge"><span class="dot"></span>Annual Operating Plan · Apr 2026 – Mar 2027</div>
-    <h1 style="margin-top:18px">Solvent today.<br>Built to become self-sustaining.</h1>
-    <p class="lead" style="margin-top:14px">ACER earns almost entirely from a ₹26 Cr fixed-deposit corpus. The plan turns capacity that already exists — <b>16 cases a month, ₹1,600 Cr of debt rated</b> — into an operating business, the moment the bank-loan-rating (BLR / RBI-ECAI) licence goes live.</p>
-    <div class="grid g4" style="margin-top:28px">
+    <h1 style="margin-top:16px">One licence decides<br>when ACER breaks even.</h1>
+    <p class="lead" style="margin-top:12px">ACER runs on a ₹26 Cr FD corpus today. The capacity to rate <b>₹1,600 Cr of debt a month</b> already exists — the bank-loan-rating (BLR / RBI-ECAI) licence switches it on. The three tabs below show exactly when each path reaches break-even.</p>
+    <div class="grid g4" style="margin-top:26px">
       <div class="card stat"><div class="v">₹26.1 Cr</div><div class="l">FD corpus (booked)</div></div>
-      <div class="card stat"><div class="v">₹5.27 Cr</div><div class="l">FY27 cost base to run the firm</div></div>
-      <div class="card stat"><div class="v">₹1,600 Cr</div><div class="l">debt rateable / month at full capacity</div></div>
-      <div class="card stat"><div class="v">₹8.6 Cr</div><div class="l">FY28 rating revenue at full capacity</div></div>
+      <div class="card stat"><div class="v">₹5.27 Cr</div><div class="l">FY27 cost base</div></div>
+      <div class="card stat"><div class="v">₹1,600 Cr</div><div class="l">rateable / month at full capacity</div></div>
+      <div class="card stat"><div class="v">₹23.3 L</div><div class="l">net cash burn / month before BLR</div></div>
     </div>
-    <p class="sub">Every actual below is from Zoho Books (~21-Jul-2026). Every forward figure is a clearly-labelled capacity assumption — never a booked number.</p>
   </div>
 </section>
 
@@ -84,359 +95,336 @@
 <section id="now" class="alt">
   <div class="wrap">
     <div class="eyebrow">Where ACER stands today · actuals</div>
-    <h2>The current situation</h2>
-    <p class="sub">FY27 is an investment year: a people-led cost base sized ahead of the revenue engine, cushioned by FD interest.</p>
-
-    <div class="grid g2" style="margin-top:26px">
-      <div class="card">
-        <h3>FY27 shape — income vs cost</h3>
-        <p class="sub" style="margin-bottom:8px">Locked-in non-BLR income against the full-year cost base.</p>
-        <div id="gapChart"></div>
-        <div class="legend">
-          <span><i class="sw" style="background:var(--teal)"></i>FD interest ₹1.50 Cr</span>
-          <span><i class="sw" style="background:var(--sky)"></i>Existing sales ₹0.97 Cr</span>
-          <span><i class="sw" style="background:var(--rose)"></i>Cost base ₹5.27 Cr</span>
-        </div>
-        <p class="src">Non-BLR income ₹2.47 Cr − cost ₹5.27 Cr = structural gap <b>−₹2.80 Cr</b>, the job BLR must close.</p>
-      </div>
-
+    <h2>The starting point</h2>
+    <p class="sub">Common to all three scenarios: a people-led cost base sized ahead of revenue, cushioned by FD interest.</p>
+    <div class="grid g2" style="margin-top:24px">
       <div class="card">
         <h3>Where every rupee is spent</h3>
-        <p class="sub" style="margin-bottom:8px">FY27 expense composition — payroll dominates.</p>
+        <p class="sub" style="margin-bottom:6px">FY27 expense composition — payroll dominates.</p>
         <div id="costDonut"></div>
         <div class="legend" id="costLegend"></div>
-        <p class="src">Payroll run-rate (fully staffed) ≈ ₹3.95 Cr/yr. Source: Zoho Books expense ledger, FY27 to 21-Jul-2026.</p>
+        <p class="src">Payroll run-rate (fully staffed) ≈ ₹3.95 Cr/yr. Source: Zoho Books, FY27 to 21-Jul-2026.</p>
       </div>
-    </div>
-
-    <div class="grid g4" style="margin-top:20px">
-      <div class="card stat"><div class="v">95%</div><div class="l">of FY26 income was FD interest, not operations</div></div>
-      <div class="card stat"><div class="v">₹28.5 L</div><div class="l">FY27 Q1 rating sales — 3.5× all of FY26</div></div>
-      <div class="card stat"><div class="v">~₹23 L</div><div class="l">net cash burn / month (no BLR)</div></div>
-      <div class="card stat"><div class="v">~8 mo</div><div class="l">runway on drawable ₹1.9 Cr, ex the ₹25 Cr net-worth lock</div></div>
+      <div class="card">
+        <h3>The monthly maths, before BLR</h3>
+        <div id="baseBars"></div>
+        <div class="legend">
+          <span><i class="sw" style="background:var(--teal)"></i>FD interest ₹12.5 L</span>
+          <span><i class="sw" style="background:var(--sky)"></i>Existing sales ₹8.1 L</span>
+          <span><i class="sw" style="background:var(--rose)"></i>Expense ₹43.9 L</span>
+        </div>
+        <p class="src">Non-BLR income ₹20.6 L/mo vs expense ₹43.9 L/mo → <b>−₹23.3 L/mo burn</b>. BLR revenue must close this.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- THE ENGINE -->
+<!-- ENGINE -->
 <section id="engine">
   <div class="wrap">
-    <div class="eyebrow">The revenue engine</div>
-    <h2>Capacity already exists. The licence switches it on.</h2>
-    <p class="sub">Four business-development leads, four cases each — 16 mandates a month at an average ₹100 Cr ticket.</p>
-
-    <div class="grid g4" style="margin-top:26px">
+    <div class="eyebrow">The revenue engine · same in every scenario</div>
+    <h2>Capacity exists. The licence switches it on.</h2>
+    <div class="grid g4" style="margin-top:22px">
       <div class="card stat"><div class="v">4 × 4</div><div class="l">4 BDs × 4 cases = 16 cases / month</div></div>
       <div class="card stat"><div class="v">₹1,600 Cr</div><div class="l">debt rated / month (₹19,200 Cr / yr)</div></div>
-      <div class="card stat"><div class="v">3 bps</div><div class="l">initial rating fee → ₹5.76 Cr / yr</div></div>
-      <div class="card stat"><div class="v">1.5 bps</div><div class="l">recurring surveillance → ₹2.88 Cr / yr annuity</div></div>
+      <div class="card stat"><div class="v">3 bps</div><div class="l">initial fee → ₹48 L/mo at full run-rate</div></div>
+      <div class="card stat"><div class="v">1.5 bps</div><div class="l">recurring surveillance annuity on the book</div></div>
+    </div>
+    <div class="note" style="margin-top:16px"><b>Ramp assumption (labelled, not booked):</b> after go-live, mandates build linearly to full 16-case capacity over 6 months. New-rating fees (IRF) bill up-front; the surveillance annuity (ASF) accrues on the cumulative rated book. These are capacity parameters — the upside the existing team can reach, not committed revenue.</p>
+  </div>
+</section>
+
+<!-- ===================== SCENARIOS (TABBED) ===================== -->
+<section id="plan">
+  <div class="wrap">
+    <div class="eyebrow">The plan, three ways</div>
+    <h2>Switch the scenario — the whole projection follows</h2>
+    <p class="sub">Identical cost base and non-BLR income across all three. Only the BLR go-live date changes, and with it the entire month-by-month path to break-even.</p>
+
+    <div class="tabs" id="tabs" style="margin-top:22px" role="tablist">
+      <button class="tab s1 on" data-s="s1" role="tab">BLR by 1 Oct<span class="d">6 months in FY27</span></button>
+      <button class="tab s2" data-s="s2" role="tab">BLR by 1 Jan<span class="d">3 months in FY27</span></button>
+      <button class="tab s3" data-s="s3" role="tab">No BLR this FY<span class="d">planning floor</span></button>
     </div>
 
-    <div class="grid g2" style="margin-top:20px">
-      <div class="card">
-        <h3>How ₹1,600 Cr/month builds to revenue</h3>
-        <p class="sub" style="margin-bottom:8px">At full run-rate: new-rating fees plus a compounding surveillance annuity.</p>
-        <div id="feeBars"></div>
-        <div class="legend">
-          <span><i class="sw" style="background:var(--navy)"></i>IRF, one-time @3 bps</span>
-          <span><i class="sw" style="background:var(--teal)"></i>ASF, recurring @1.5 bps</span>
+    <!-- headline -->
+    <div id="scnHead" class="card" style="margin-top:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap"></div>
+
+    <!-- KPI row -->
+    <div class="grid g4" id="kpis" style="margin-top:18px"></div>
+
+    <!-- Break-even chart -->
+    <div class="card" style="margin-top:18px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">
+        <h3 id="beTitle">Monthly income vs expense — when we cross into profit</h3>
+        <div class="legend" style="margin:0">
+          <span><i class="sw" style="background:var(--teal)"></i>Monthly income</span>
+          <span><i class="sw" style="background:var(--rose)"></i>Monthly expense</span>
+          <span><i class="sw" style="background:#dcfce7;border:1px solid #86efac"></i>Profit zone</span>
+          <span><i class="sw" style="background:#fee2e2;border:1px solid #fca5a5"></i>Loss zone</span>
         </div>
       </div>
+      <div id="beChart"></div>
+      <p class="src" id="beSrc"></p>
+    </div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <!-- cumulative -->
       <div class="card">
-        <h3>The annuity is the point</h3>
-        <p class="lead" style="font-size:16px">Each rating won is billed once up-front, then <b>every year it stays live</b>. A book built at ₹19,200 Cr/year throws off a ₹2.88 Cr surveillance annuity that <b>compounds</b> — revenue quality improves as the book grows.</p>
-        <div class="note" style="margin-top:14px">These are <b>capacity parameters</b> (16 cases, ₹100 Cr avg, 3 bps + 1.5 bps), i.e. a ceiling at full utilisation — not booked revenue. Actual ramp depends on BLR go-live and mandate wins.</div>
+        <h3>Cumulative operating P&amp;L (the J-curve)</h3>
+        <p class="sub" style="margin-bottom:4px">How deep the investment goes, and when it is fully paid back.</p>
+        <div id="cumChart"></div>
+        <p class="src" id="cumSrc"></p>
+      </div>
+      <!-- year table -->
+      <div class="card">
+        <h3>Yearly projection (₹ Cr)</h3>
+        <table id="yrTable" style="margin-top:8px"></table>
+        <div id="scnNote" class="note" style="margin-top:14px"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MARKET SIZE -->
+<!-- MARKET CONTEXT (static) -->
 <section id="market" class="alt">
   <div class="wrap">
     <div class="eyebrow">Is ₹1,600 Cr a month even doable?</div>
     <h2>Market capacity is not the constraint</h2>
-    <p class="sub">ACER's full-capacity annual volume of ₹19,200 Cr is a small, credible slice of the debt that gets rated in India every year.</p>
-
-    <div class="grid g3" style="margin-top:26px">
+    <p class="sub">ACER's full-capacity volume of ₹19,200 Cr/yr is a small, credible slice of what India rates every year.</p>
+    <div class="grid g3" style="margin-top:22px">
       <div class="card stat"><div class="v">1.9%</div><div class="l">of India's ~₹9.9 lakh cr annual corporate-bond issuance</div></div>
       <div class="card stat"><div class="v">~0.1%</div><div class="l">of India's ~₹182 lakh cr outstanding bank credit</div></div>
-      <div class="card stat"><div class="v">192</div><div class="l">mandates a year — vs CRISIL's ~19,500 rated issuers</div></div>
+      <div class="card stat"><div class="v">0.38%</div><div class="l">ACER's FY28 rating revenue share of the ₹2,250 Cr industry</div></div>
     </div>
-
-    <div class="grid g2" style="margin-top:20px">
+    <div class="grid g2" style="margin-top:18px">
       <div class="card">
-        <h3>ACER's yearly volume vs the bond market</h3>
-        <p class="sub" style="margin-bottom:8px">₹19,200 Cr rated per year against ₹9.9 lakh cr of annual bond issuance alone.</p>
-        <div id="volDonut"></div>
-        <p class="src">Bond issuance ~₹9.9 lakh cr FY25 (RBI, via press). Bank-loan ratings add a far larger pool on top.</p>
-      </div>
-      <div class="card">
-        <h3>Why the pool is huge</h3>
-        <p class="lead" style="font-size:16px">Unlike bonds — only companies tapping capital markets — <b>any</b> company borrowing from a bank is a bank-loan-rating candidate. That is why every small Indian CRA (Infomerics, Acuité, India Ratings) is BLR-led.</p>
-        <p class="sub" style="margin-top:10px">The binding constraint is <b>winning mandates against incumbents</b>, not demand. Execution and the BLR licence set the pace.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TAM SAM SOM -->
-<section id="tam">
-  <div class="wrap">
-    <div class="eyebrow">The opportunity, sized</div>
-    <h2>TAM · SAM · SOM</h2>
-    <p class="sub">Revenue lens — where ACER can realistically play, and what current capacity obtains.</p>
-    <div class="grid g2" style="margin-top:26px">
-      <div class="card">
-        <div id="funnel"></div>
-      </div>
-      <div class="card">
-        <table>
-          <tr><th>Layer</th><th class="n">₹ Cr</th><th>What it is</th></tr>
-          <tr><td><b style="color:var(--navy)">TAM</b></td><td class="n">2,250</td><td>All-India CRA rating revenue (latest FY)</td></tr>
-          <tr><td><b style="color:var(--teal)">SAM</b></td><td class="n">409</td><td>Small BLR-led tier ACER competes in <span class="sub">(India Ratings + Infomerics + Acuité + Brickwork)</span></td></tr>
-          <tr><td><b style="color:var(--amber)">SOM</b></td><td class="n">8.6</td><td>ACER FY28 obtainable at current capacity</td></tr>
-        </table>
-        <p class="sub" style="margin-top:12px">SOM is <b>0.38% of TAM</b> and <b>2.1% of SAM</b> — a deliberately modest, credible first foothold. The headroom above it is the multi-year growth runway.</p>
-        <p class="src">TAM = sum of peer rating-segment revenues, latest disclosed FY. SAM = the four smallest established CRAs. SOM = ACER FY28 at full 16-case capacity (IRF ₹5.76 Cr + ASF ₹2.88 Cr).</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MARKET SHARE PIE -->
-<section class="alt">
-  <div class="wrap">
-    <div class="eyebrow">The competitive map</div>
-    <h2>Where ACER sits among the CRAs</h2>
-    <p class="sub">Rating-segment revenue, latest disclosed financial year. ACER shown at FY28 full capacity.</p>
-    <div class="grid g2" style="margin-top:26px">
-      <div class="card">
-        <h3>Rating revenue by agency (₹ Cr)</h3>
+        <h3>Rating revenue by agency (₹ Cr, latest FY)</h3>
         <div id="peerBars"></div>
-        <p class="src">CRISIL CY2025 ₹1,078.7 Cr · CARE FY26 ~₹423 Cr · ICRA FY26 ~₹340 Cr · India Ratings FY26 ₹250.9 Cr · Infomerics FY26 ₹95.3 Cr · Acuité FY26 ₹57.3 Cr · Brickwork FY25 ₹5.9 Cr. Latest disclosures via official filings (search-sourced this session).</p>
+        <p class="src">CRISIL CY25 ₹1,078.7 · CARE FY26 ~₹423 · ICRA FY26 ~₹340 · India Ratings FY26 ₹250.9 · Infomerics ₹95.3 · Acuité ₹57.3 · Brickwork ₹5.9 · ACER FY28 (capacity) ₹8.6. Official disclosures, search-sourced this session.</p>
       </div>
       <div class="card">
-        <h3>ACER's share of the industry</h3>
-        <p class="sub" style="margin-bottom:8px">FY28 at full capacity vs total India rating revenue.</p>
-        <div id="sharePie"></div>
-        <p class="src">ACER ₹8.6 Cr of a ~₹2,250 Cr industry ≈ <b>0.38%</b>. The point is not the share — it is that ₹8.6 Cr is self-sustaining for ACER while barely registering on the industry.</p>
+        <h3>TAM · SAM · SOM (revenue lens)</h3>
+        <div id="funnel"></div>
+        <p class="src">TAM ₹2,250 Cr all-India rating revenue · SAM ₹409 Cr small BLR-led tier · SOM ₹8.6 Cr ACER FY28 at capacity (0.38% of TAM, 2.1% of SAM).</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SCENARIOS -->
-<section id="scenarios">
-  <div class="wrap">
-    <div class="eyebrow">The plan, three ways</div>
-    <h2>Scenarios turn on one thing: BLR timing</h2>
-    <p class="sub">Identical cost base and non-BLR income across all three. Only when the BLR licence goes live changes — and therefore how many months of rating revenue land in FY27.</p>
-
-    <div class="grid g3" style="margin-top:26px">
-      <div class="card">
-        <span class="chip">Scenario 1</span>
-        <h3 style="margin-top:12px">BLR live by 1 Oct</h3>
-        <p class="sub">6 months of BLR revenue in FY27</p>
-        <div class="stat" style="margin-top:10px"><div class="v" style="color:var(--green)">≈ ₹0.08 Cr</div><div class="l">FY27 net — essentially break-even at capacity</div></div>
-      </div>
-      <div class="card">
-        <span class="chip" style="background:#fffbeb;color:#b45309;border-color:#fde68a">Scenario 2</span>
-        <h3 style="margin-top:12px">BLR live by 1 Jan</h3>
-        <p class="sub">3 months of BLR revenue in FY27</p>
-        <div class="stat" style="margin-top:10px"><div class="v" style="color:var(--amber)">−₹1.36 Cr</div><div class="l">FY27 net — team carried, revenue only in Q4</div></div>
-      </div>
-      <div class="card">
-        <span class="chip" style="background:#fef2f2;color:#b91c1c;border-color:#fecaca">Scenario 3</span>
-        <h3 style="margin-top:12px">No BLR this FY</h3>
-        <p class="sub">0 months — the planning floor</p>
-        <div class="stat" style="margin-top:10px"><div class="v" style="color:var(--rose)">−₹2.80 Cr</div><div class="l">FY27 net — full cost, funded from reserves</div></div>
-      </div>
-    </div>
-
-    <div class="grid g2" style="margin-top:20px">
-      <div class="card">
-        <h3>FY27 net P&L by scenario (₹ Cr)</h3>
-        <div id="scenBars"></div>
-        <p class="src">FY27 counts new-rating fees (IRF) only; the surveillance annuity begins FY28. Figures at full 16-case capacity from BLR go-live.</p>
-      </div>
-      <div class="card">
-        <h3>Operating rating revenue trajectory (₹ Cr)</h3>
-        <p class="sub" style="margin-bottom:8px">FY26 actual → FY27 (Scenario 1) → FY28 first full year at capacity.</p>
-        <div id="trajBars"></div>
-        <p class="src">FY26 ₹0.08 Cr actual → FY27 ₹3.85 Cr (existing sales ₹0.97 + BLR IRF ₹2.88) → FY28 ₹9.6 Cr (sales ₹0.97 + BLR ₹8.64). Cost base and non-BLR income held flat.</p>
-      </div>
-    </div>
-
-    <div class="note" style="margin-top:20px">
-      <b>Read every forward number as a capacity ceiling, not a forecast.</b> It assumes the BLR licence is live and all 16 cases/month are won from day one. Real FY27 depends on licence timing and mandate ramp. What the actuals prove is the <i>cost</i> side; what this models is the <i>upside</i> the existing capacity can reach.
-    </div>
-  </div>
-</section>
-
-<!-- ASSUMPTIONS / SOURCES -->
-<section class="alt">
+<!-- ASSUMPTIONS -->
+<section id="notes">
   <div class="wrap">
     <div class="eyebrow">Provenance</div>
     <h2>Assumptions &amp; sources</h2>
-    <div class="grid g2" style="margin-top:22px">
+    <div class="grid g2" style="margin-top:20px">
       <div class="card">
         <h3>Booked actuals (hard numbers)</h3>
         <ul class="sub" style="padding-left:18px;line-height:1.9">
-          <li>All ACER financials from <b>Zoho Books</b>, as of ~21-Jul-2026 (FY = Apr–Mar).</li>
-          <li>FD corpus ₹26.1 Cr; FY27 cost base ₹5.27 Cr; non-BLR income ₹2.47 Cr.</li>
-          <li>FY26 net −₹0.88 Cr; FY27 partial (to 21-Jul) net −₹0.63 Cr.</li>
-          <li>Payroll ≈ 61% of spend; runway ~8 months on drawable ₹1.9 Cr.</li>
+          <li>ACER financials from <b>Zoho Books</b>, ~21-Jul-2026 (FY = Apr–Mar).</li>
+          <li>FD corpus ₹26.1 Cr; FY27 cost base ₹5.27 Cr (₹43.9 L/mo).</li>
+          <li>Non-BLR income ₹2.47 Cr/yr (FD ₹1.50 + sales ₹0.97) = ₹20.6 L/mo.</li>
+          <li>Payroll ≈ 61% of spend; runway ~8 mo on drawable ₹1.9 Cr.</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Capacity &amp; market assumptions</h3>
+        <h3>Capacity &amp; model assumptions</h3>
         <ul class="sub" style="padding-left:18px;line-height:1.9">
-          <li>Capacity: 16 cases/mo × ₹100 Cr avg ticket = ₹1,600 Cr/mo (₹19,200 Cr/yr).</li>
-          <li>Fees: IRF 3 bps (one-time) + ASF 1.5 bps (recurring). ASF annuity from FY28.</li>
-          <li>Market anchors: bank credit ~₹182 lakh cr (RBI, Mar-2025); bond issuance ~₹9.9 lakh cr (FY25); India CRA rating revenue ~₹2,250 Cr.</li>
-          <li>Peer figures from official SEBI/company disclosures (search-sourced; official domains were network-blocked this session — reconfirm at source before board sign-off).</li>
+          <li>16 cases/mo × ₹100 Cr = ₹1,600 Cr/mo, ramping linearly over 6 months post go-live.</li>
+          <li>Fees: IRF 3 bps up-front + ASF 1.5 bps recurring on cumulative book.</li>
+          <li>Cost base &amp; non-BLR income held flat; break-even = first month income ≥ expense.</li>
+          <li>Market anchors: bank credit ~₹182 lakh cr (RBI Mar-2025); bond issuance ~₹9.9 lakh cr (FY25); peer figures search-sourced (official domains network-blocked this session — reconfirm at source before board sign-off).</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  ACER Credit Rating Pvt. Ltd. · FY27 Annual Operating Plan · Actuals from Zoho Books; forward figures are labelled capacity assumptions, not booked revenue.
-</footer>
+<footer>ACER Credit Rating Pvt. Ltd. · FY27 Annual Operating Plan · Actuals from Zoho Books; forward figures are labelled capacity projections, not booked revenue.</footer>
 
 <script>
-// ---------- palette ----------
-var C={navy:'#1e3a8a',teal:'#0d9488',amber:'#f59e0b',rose:'#e11d48',violet:'#7c3aed',green:'#16a34a',slate:'#94a3b8',sky:'#0284c7',line:'#e2e8f0',ink:'#0f172a'};
+var C={navy:'#1e3a8a',teal:'#0d9488',amber:'#f59e0b',rose:'#e11d48',violet:'#7c3aed',green:'#16a34a',slate:'#94a3b8',sky:'#0284c7',line:'#e6eaf0',ink:'#0f172a'};
 var $=function(id){return document.getElementById(id)};
-function el(s){return document.createElementNS('http://www.w3.org/2000/svg',s)}
+function fmtCr(x){return (x>=0?'+':'−')+'₹'+Math.abs(x).toFixed(2)+' Cr'}
 
-// ---------- horizontal bars ----------
-function hbars(node,data,max,opt){
-  opt=opt||{}; var W=440,rh=34,pad=8,lblw=opt.lblw||96,H=data.length*rh+pad*2;
-  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
-  var x0=lblw, bw=W-x0-64, sc=bw/max;
-  data.forEach(function(d,i){
-    var y=pad+i*rh, w=Math.max(2,d.v*sc), col=d.c||C.teal;
+// ---------- MODEL ----------
+var MON=["Apr26","May26","Jun26","Jul26","Aug26","Sep26","Oct26","Nov26","Dec26","Jan27","Feb27","Mar27",
+         "Apr27","May27","Jun27","Jul27","Aug27","Sep27","Oct27","Nov27","Dec27","Jan28","Feb28","Mar28"];
+function project(golive){
+  var E=5.27e7/12, NB=(1.50e7+0.97e7)/12, CAP=1600e7, IRF=3e-4, ASF=1.5e-4, RAMP=6;
+  var book=0, cum=0, be=null, rows=[];
+  for(var i=0;i<MON.length;i++){
+    var irf=0, asf=0;
+    if(golive!==null && i>=golive){ var k=i-golive+1, u=Math.min(1,k/RAMP), vol=CAP*u; irf=vol*IRF; book+=vol; asf=book*ASF/12; }
+    var inc=NB+irf+asf, net=inc-E; cum+=net;
+    if(be===null && net>=0) be=MON[i];
+    rows.push({m:MON[i],inc:inc,exp:E,net:net,cum:cum,blr:irf+asf});
+  }
+  var sum=function(a,b,f){var s=0;for(var j=a;j<b;j++)s+=f(rows[j]);return s};
+  return {rows:rows, be:be, golive:golive,
+    fy27:{inc:sum(0,12,function(r){return r.inc}),exp:sum(0,12,function(r){return r.exp}),net:sum(0,12,function(r){return r.net})},
+    fy28:{inc:sum(12,24,function(r){return r.inc}),exp:sum(12,24,function(r){return r.exp}),net:sum(12,24,function(r){return r.net})},
+    trough:Math.min.apply(null,rows.map(function(r){return r.cum})),
+    payback:(function(){var t=null;for(var j=0;j<rows.length;j++){if(rows[j].cum>=0){t=rows[j].m;break}}return t})()};
+}
+var SCN={
+  s1:{key:'s1',cls:'s1',name:'Scenario 1',title:'BLR licence live by 1 Oct 2026',tag:'Best case',col:C.green,tagbg:'#dcfce7',tagfg:'#15803d',golive:6,
+      story:'Earliest licence → the team services 6 months of mandates this year. FY27 loss narrows sharply and FY28 swings firmly profitable. Cost and revenue are best aligned here.'},
+  s2:{key:'s2',cls:'s2',name:'Scenario 2',title:'BLR licence live by 1 Jan 2027',tag:'Middle case',col:C.amber,tagbg:'#fef3c7',tagfg:'#b45309',golive:9,
+      story:'Full cost base carried all year, but revenue lands only in Q4. Widest gap between committed cost and earned revenue — sets up FY28 well, but FY27 stays a clear loss.'},
+  s3:{key:'s3',cls:'s3',name:'Scenario 3',title:'No BLR licence in FY27',tag:'Planning floor',col:C.rose,tagbg:'#fee2e2',tagfg:'#b91c1c',golive:null,
+      story:'No BLR revenue at all. The firm burns ₹23.3 L every month, funded from reserves. Solvent on the ₹26 Cr corpus, but no operating break-even until the licence arrives.'}
+};
+
+// ---------- generic helpers ----------
+function el(){}
+// horizontal bars
+function hbars(node,data,max,opt){opt=opt||{};var W=440,rh=32,pad=6,lblw=opt.lblw||96,H=data.length*rh+pad*2;
+  var s='<svg viewBox="0 0 '+W+' '+H+'">',x0=lblw,bw=W-x0-60,sc=bw/max;
+  data.forEach(function(d,i){var y=pad+i*rh,w=Math.max(2,d.v*sc),col=d.c||C.teal;
     s+='<text x="'+(x0-8)+'" y="'+(y+rh/2+4)+'" text-anchor="end" class="axl" style="font-weight:600;fill:#334155">'+d.l+'</text>';
-    s+='<rect x="'+x0+'" y="'+(y+6)+'" width="0" height="'+(rh-14)+'" rx="4" fill="'+col+'"><animate attributeName="width" from="0" to="'+w+'" dur="0.9s" fill="freeze" calcMode="spline" keySplines="0.2 0.7 0.2 1" keyTimes="0;1" values="0;'+w+'"/></rect>';
-    s+='<text x="'+(x0+w+7)+'" y="'+(y+rh/2+4)+'" class="barlab">'+(d.t!==undefined?d.t:d.v.toLocaleString())+'</text>';
-  });
-  s+='</svg>'; node.innerHTML=s;
-}
-
-// ---------- grouped/stacked vertical bars (handles negatives) ----------
-function vbars(node,data,opt){
-  opt=opt||{}; var W=440,H=270,padB=46,padT=24,x0=30;
+    s+='<rect x="'+x0+'" y="'+(y+6)+'" width="0" height="'+(rh-13)+'" rx="4" fill="'+col+'"><animate attributeName="width" from="0" to="'+w+'" dur="0.9s" fill="freeze" keySplines="0.2 0.7 0.2 1" calcMode="spline" keyTimes="0;1" values="0;'+w+'"/></rect>';
+    s+='<text x="'+(x0+w+7)+'" y="'+(y+rh/2+4)+'" class="barlab">'+(d.t!==undefined?d.t:d.v)+'</text>';});
+  s+='</svg>';node.innerHTML=s;}
+// vertical bars (handles negatives)
+function vbars(node,data){var W=440,H=250,padB=42,padT=22,x0=26;
   var vals=data.map(function(d){return d.stack?d.stack.reduce(function(a,s){return a+s.v},0):d.v});
-  var maxV=Math.max.apply(null,vals.concat([0])), minV=Math.min.apply(null,vals.concat([0]));
-  var range=(maxV-minV)||1, plot=H-padT-padB, sc=plot/range, zeroY=padT+maxV*sc;
-  var n=data.length, slot=(W-x0-10)/n, bw=Math.min(68,slot*0.55);
-  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
-  s+='<line x1="'+x0+'" y1="'+zeroY+'" x2="'+W+'" y2="'+zeroY+'" stroke="'+C.line+'"/>';
-  data.forEach(function(d,i){
-    var cx=x0+slot*i+slot/2, x=cx-bw/2, bg=(i*0.08);
-    if(d.stack){ var acc=0;
-      d.stack.forEach(function(sg){var h=sg.v*sc; acc+=h;
-        s+='<rect x="'+x+'" y="'+zeroY+'" width="'+bw+'" height="0" fill="'+sg.c+'"><animate attributeName="height" from="0" to="'+h+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+zeroY+'" to="'+(zeroY-acc)+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/></rect>';
-      });
-      s+='<text x="'+cx+'" y="'+(zeroY-acc-8)+'" text-anchor="middle" class="barlab">'+d.t+'</text>';
-    } else {
-      var h=Math.abs(d.v)*sc, up=d.v>=0, col=d.c||C.teal, y=up?zeroY-h:zeroY;
-      s+='<rect x="'+x+'" y="'+zeroY+'" width="'+bw+'" height="0" rx="4" fill="'+col+'"><animate attributeName="height" from="0" to="'+h+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+zeroY+'" to="'+y+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/></rect>';
-      var ly=up?(y-8):(zeroY+h+15);
-      s+='<text x="'+cx+'" y="'+ly+'" text-anchor="middle" class="barlab" style="fill:'+(up?C.ink:col)+'">'+d.t+'</text>';
-    }
-    s+='<text x="'+cx+'" y="'+(H-14)+'" text-anchor="middle" class="axl">'+d.l+'</text>';
-  });
-  s+='</svg>'; node.innerHTML=s;
-}
-
-// ---------- donut ----------
-function donut(node,data,opt){
-  opt=opt||{}; var W=300,H=260,cx=W/2,cy=H/2,r=96,ir=opt.ir||60;
-  var tot=data.reduce(function(a,d){return a+d.v},0), ang=-Math.PI/2;
-  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
-  data.forEach(function(d){
-    var a0=ang, a1=ang+d.v/tot*Math.PI*2; ang=a1;
-    var lg=(a1-a0)>Math.PI?1:0;
+  var mx=Math.max.apply(null,vals.concat([0])),mn=Math.min.apply(null,vals.concat([0])),rg=(mx-mn)||1;
+  var plot=H-padT-padB,sc=plot/rg,z=padT+mx*sc,n=data.length,slot=(W-x0-8)/n,bw=Math.min(66,slot*0.5);
+  var s='<svg viewBox="0 0 '+W+' '+H+'"><line x1="'+x0+'" y1="'+z+'" x2="'+W+'" y2="'+z+'" stroke="'+C.line+'"/>';
+  data.forEach(function(d,i){var cx=x0+slot*i+slot/2,x=cx-bw/2,bg=i*0.08;
+    if(d.stack){var acc=0;d.stack.forEach(function(sg){var h=sg.v*sc;acc+=h;
+      s+='<rect x="'+x+'" y="'+z+'" width="'+bw+'" height="0" fill="'+sg.c+'"><animate attributeName="height" from="0" to="'+h+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+z+'" to="'+(z-acc)+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/></rect>';});
+      s+='<text x="'+cx+'" y="'+(z-acc-8)+'" text-anchor="middle" class="barlab">'+d.t+'</text>';
+    }else{var h=Math.abs(d.v)*sc,up=d.v>=0,col=d.c||C.teal,y=up?z-h:z;
+      s+='<rect x="'+x+'" y="'+z+'" width="'+bw+'" height="0" rx="4" fill="'+col+'"><animate attributeName="height" from="0" to="'+h+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+z+'" to="'+y+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/></rect>';
+      s+='<text x="'+cx+'" y="'+(up?y-8:z+h+15)+'" text-anchor="middle" class="barlab" style="fill:'+(up?C.ink:col)+'">'+d.t+'</text>';}
+    s+='<text x="'+cx+'" y="'+(H-16)+'" text-anchor="middle" class="axl">'+d.l+'</text>';});
+  s+='</svg>';node.innerHTML=s;}
+// donut
+function donut(node,data,opt){opt=opt||{};var W=300,H=250,cx=W/2,cy=H/2,r=94,ir=opt.ir||58,tot=data.reduce(function(a,d){return a+d.v},0),ang=-Math.PI/2;
+  var s='<svg viewBox="0 0 '+W+' '+H+'">';
+  data.forEach(function(d){var a0=ang,a1=ang+d.v/tot*Math.PI*2;ang=a1;var lg=(a1-a0)>Math.PI?1:0;
     var x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);
     var xi0=cx+ir*Math.cos(a0),yi0=cy+ir*Math.sin(a0),xi1=cx+ir*Math.cos(a1),yi1=cy+ir*Math.sin(a1);
-    s+='<path d="M'+x0+' '+y0+' A'+r+' '+r+' 0 '+lg+' 1 '+x1+' '+y1+' L'+xi1+' '+yi1+' A'+ir+' '+ir+' 0 '+lg+' 0 '+xi0+' '+yi0+' Z" fill="'+d.c+'" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze"/><title>'+d.l+': '+d.v+'</title></path>';
-  });
-  if(opt.cv){s+='<text x="'+cx+'" y="'+(cy-2)+'" text-anchor="middle" class="center-v">'+opt.cv+'</text>';}
-  if(opt.cl){s+='<text x="'+cx+'" y="'+(cy+16)+'" text-anchor="middle" class="center-l">'+opt.cl+'</text>';}
-  s+='</svg>'; node.innerHTML=s;
+    s+='<path d="M'+x0+' '+y0+' A'+r+' '+r+' 0 '+lg+' 1 '+x1+' '+y1+' L'+xi1+' '+yi1+' A'+ir+' '+ir+' 0 '+lg+' 0 '+xi0+' '+yi0+' Z" fill="'+d.c+'" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze"/></path>';});
+  if(opt.cv)s+='<text x="'+cx+'" y="'+(cy-2)+'" text-anchor="middle" class="center-v">'+opt.cv+'</text>';
+  if(opt.cl)s+='<text x="'+cx+'" y="'+(cy+16)+'" text-anchor="middle" class="center-l">'+opt.cl+'</text>';
+  s+='</svg>';node.innerHTML=s;}
+// nested funnel
+function funnel(node){var W=380,H=280,cx=138,cy=150;
+  var L=[{r:120,c:'#dbeafe',t:'TAM ₹2,250 Cr',tc:C.navy,ty:40},{r:74,c:'#ccfbf1',t:'SAM ₹409 Cr',tc:'#0f766e',ty:120},{r:34,c:'#fef3c7',t:'SOM ₹8.6 Cr',tc:'#b45309',ty:196}];
+  var s='<svg viewBox="0 0 '+W+' '+H+'">';
+  L.forEach(function(l,i){s+='<circle cx="'+cx+'" cy="'+cy+'" r="0" fill="'+l.c+'" stroke="#fff" stroke-width="2"><animate attributeName="r" from="0" to="'+l.r+'" dur="0.8s" begin="'+(i*0.12)+'s" fill="freeze" calcMode="spline" keySplines="0.2 0.7 0.2 1" keyTimes="0;1" values="0;'+l.r+'"/></circle>';});
+  L.forEach(function(l){s+='<text x="278" y="'+l.ty+'" style="font-size:13px;font-weight:800;fill:'+l.tc+'">'+l.t+'</text>';});
+  s+='</svg>';node.innerHTML=s;}
+
+// ---------- BREAK-EVEN line chart ----------
+function beChart(node,P){
+  var rows=P.rows,W=560,H=290,padL=42,padR=14,padT=14,padB=36,n=rows.length;
+  var maxY=0; rows.forEach(function(r){maxY=Math.max(maxY,r.inc/1e5,r.exp/1e5)});
+  maxY=Math.ceil(maxY/20)*20;
+  var x=function(i){return padL+i/(n-1)*(W-padL-padR)};
+  var y=function(v){return H-padB-v/maxY*(H-padT-padB)};
+  var beIdx=P.be?rows.findIndex(function(r){return r.m===P.be}):-1;
+  var s='<svg viewBox="0 0 '+W+' '+H+'">';
+  // zones
+  var splitX=beIdx>=0?x(beIdx):W;
+  s+='<rect x="'+padL+'" y="'+padT+'" width="'+(splitX-padL)+'" height="'+(H-padT-padB)+'" fill="#fee2e2" opacity=".55"/>';
+  if(beIdx>=0) s+='<rect x="'+splitX+'" y="'+padT+'" width="'+(W-padR-splitX)+'" height="'+(H-padT-padB)+'" fill="#dcfce7" opacity=".55"/>';
+  // gridlines Y
+  for(var g=0;g<=maxY;g+=20){s+='<line x1="'+padL+'" y1="'+y(g)+'" x2="'+(W-padR)+'" y2="'+y(g)+'" stroke="'+C.line+'"/><text x="'+(padL-6)+'" y="'+(y(g)+3)+'" text-anchor="end" class="axl">'+g+'</text>';}
+  // expense line (flat dashed)
+  var ey=y(rows[0].exp/1e5);
+  s+='<line x1="'+padL+'" y1="'+ey+'" x2="'+(W-padR)+'" y2="'+ey+'" stroke="'+C.rose+'" stroke-width="2" stroke-dasharray="5 4"/>';
+  // income path
+  var d='M';rows.forEach(function(r,i){d+=(i?' L':'')+x(i).toFixed(1)+' '+y(r.inc/1e5).toFixed(1)});
+  s+='<path d="'+d+'" fill="none" stroke="'+C.teal+'" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" from="1" to="0" dur="1.1s" fill="freeze"/></path>';
+  // break-even marker
+  if(beIdx>=0){var bx=x(beIdx),by=y(rows[beIdx].inc/1e5);
+    s+='<line x1="'+bx+'" y1="'+padT+'" x2="'+bx+'" y2="'+(H-padB)+'" stroke="'+C.green+'" stroke-width="1.5" stroke-dasharray="3 3"/>';
+    s+='<circle cx="'+bx+'" cy="'+by+'" r="5" fill="#fff" stroke="'+C.green+'" stroke-width="2.5"/>';
+    var lx=Math.min(bx,W-140);
+    s+='<rect x="'+(lx+6)+'" y="'+(padT+4)+'" width="128" height="34" rx="7" fill="#fff" stroke="'+C.green+'"/>';
+    s+='<text x="'+(lx+14)+'" y="'+(padT+18)+'" style="font-size:11px;font-weight:800;fill:'+C.green+'">BREAK-EVEN</text>';
+    s+='<text x="'+(lx+14)+'" y="'+(padT+31)+'" style="font-size:11px;fill:#334155">'+P.be+'</text>';
+  }
+  // X labels every 3
+  rows.forEach(function(r,i){if(i%3===0)s+='<text x="'+x(i)+'" y="'+(H-14)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
+  s+='</svg>';node.innerHTML=s;
 }
 
-// ---------- nested TAM/SAM/SOM ----------
-function funnel(node){
-  var W=380,H=300;
-  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img">';
-  var layers=[{r:130,c:'#dbeafe',t:'TAM ₹2,250 Cr',tc:C.navy,ty:36},
-              {r:82,c:'#ccfbf1',t:'SAM ₹409 Cr',tc:'#0f766e',ty:132},
-              {r:40,c:'#fef3c7',t:'SOM ₹8.6 Cr',tc:'#b45309',ty:210}];
-  var cx=150,cy=180;
-  layers.forEach(function(L,i){
-    s+='<circle cx="'+cx+'" cy="'+(cy)+'" r="0" fill="'+L.c+'" stroke="#fff" stroke-width="2"><animate attributeName="r" from="0" to="'+L.r+'" dur="0.8s" begin="'+(i*0.12)+'s" fill="freeze" calcMode="spline" keySplines="0.2 0.7 0.2 1" keyTimes="0;1" values="0;'+L.r+'"/></circle>';
-  });
-  // arrange SOM/SAM stacked near bottom of TAM circle
-  s+='<circle cx="'+cx+'" cy="'+cy+'" r="130" fill="none" stroke="'+C.navy+'" stroke-opacity=".25"/>';
-  layers.forEach(function(L){
-    s+='<text x="'+(cx+150<W?290:290)+'" y="'+L.ty+'" text-anchor="start" style="font-size:13px;font-weight:800;fill:'+L.tc+'">'+L.t+'</text>';
-  });
-  // leader dots
-  s+='</svg>'; node.innerHTML=s;
+// ---------- CUMULATIVE J-curve ----------
+function cumChart(node,P){
+  var rows=P.rows,W=520,H=250,padL=44,padR=14,padT=16,padB=34,n=rows.length;
+  var cums=rows.map(function(r){return r.cum/1e7});
+  var mx=Math.max.apply(null,cums.concat([0])),mn=Math.min.apply(null,cums.concat([0]));
+  mx=Math.ceil(mx);mn=Math.floor(mn);var rg=(mx-mn)||1;
+  var x=function(i){return padL+i/(n-1)*(W-padL-padR)};
+  var y=function(v){return padT+(mx-v)/rg*(H-padT-padB)};
+  var s='<svg viewBox="0 0 '+W+' '+H+'">';
+  for(var g=mn;g<=mx;g++){s+='<line x1="'+padL+'" y1="'+y(g)+'" x2="'+(W-padR)+'" y2="'+y(g)+'" stroke="'+(g===0?'#cbd5e1':C.line)+'"/><text x="'+(padL-6)+'" y="'+(y(g)+3)+'" text-anchor="end" class="axl">'+g+'</text>';}
+  // area
+  var d='M'+x(0)+' '+y(0);rows.forEach(function(r,i){d+=' L'+x(i).toFixed(1)+' '+y(r.cum/1e7).toFixed(1)});d+=' L'+x(n-1)+' '+y(0)+' Z';
+  s+='<path d="'+d+'" fill="'+C.navy+'" opacity=".08"/>';
+  var dl='M';rows.forEach(function(r,i){dl+=(i?' L':'')+x(i).toFixed(1)+' '+y(r.cum/1e7).toFixed(1)});
+  s+='<path d="'+dl+'" fill="none" stroke="'+C.navy+'" stroke-width="2.4" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" from="1" to="0" dur="1.1s" fill="freeze"/></path>';
+  // trough marker
+  var ti=cums.indexOf(Math.min.apply(null,cums));
+  s+='<circle cx="'+x(ti)+'" cy="'+y(cums[ti])+'" r="4.5" fill="#fff" stroke="'+C.rose+'" stroke-width="2.5"/>';
+  s+='<text x="'+x(ti)+'" y="'+(y(cums[ti])+18)+'" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:'+C.rose+'">trough ₹'+cums[ti].toFixed(2)+' Cr</text>';
+  // payback marker
+  if(P.payback){var pi=rows.findIndex(function(r){return r.m===P.payback});
+    s+='<circle cx="'+x(pi)+'" cy="'+y(0)+'" r="4.5" fill="#fff" stroke="'+C.green+'" stroke-width="2.5"/>';
+    s+='<text x="'+x(pi)+'" y="'+(y(0)-8)+'" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:'+C.green+'">paid back '+P.payback+'</text>';}
+  rows.forEach(function(r,i){if(i%3===0)s+='<text x="'+x(i)+'" y="'+(H-14)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
+  s+='</svg>';node.innerHTML=s;
 }
 
-// ================= RENDER =================
-// cost donut
+// ---------- RENDER a scenario ----------
+function render(key){
+  var sc=SCN[key], P=project(sc.golive);
+  // tabs
+  document.querySelectorAll('.tab').forEach(function(t){t.className='tab '+t.dataset.s+(t.dataset.s===key?' on':'')});
+  // head
+  $('scnHead').innerHTML='<span class="chip" style="background:'+sc.tagbg+';color:'+sc.tagfg+'">'+sc.tag+'</span>'+
+    '<div><div style="font-size:20px;font-weight:800">'+sc.title+'</div><div class="sub" style="margin:2px 0 0">'+sc.story+'</div></div>';
+  $('scnHead').className='card fade';
+  // KPIs
+  var beTxt=P.be?P.be:'Not in horizon';
+  var pb=P.payback?P.payback:'Beyond FY28';
+  $('kpis').innerHTML=[
+    ['Break-even month',beTxt,P.be?C.green:C.rose],
+    ['FY27 net P&L',fmtCr(P.fy27.net/1e7),P.fy27.net>=0?C.green:C.rose],
+    ['FY28 net P&L',fmtCr(P.fy28.net/1e7),P.fy28.net>=0?C.green:C.rose],
+    ['Peak cash drawdown','−₹'+Math.abs(P.trough/1e7).toFixed(2)+' Cr',C.rose]
+  ].map(function(k){return '<div class="card kpi fade"><div class="v" style="color:'+k[2]+'">'+k[1]+'</div><div class="l">'+k[0]+'</div></div>'}).join('');
+  // charts
+  beChart($('beChart'),P);
+  cumChart($('cumChart'),P);
+  $('beSrc').innerHTML=P.be?('Income (teal) rises with the mandate ramp and crosses the flat ₹43.9 L/mo expense line in <b>'+P.be+'</b> — the month ACER turns operationally profitable.'):
+    'Without BLR, income stays flat at ₹20.6 L/mo, permanently below the ₹43.9 L/mo expense line — <b>no operating break-even</b> until the licence arrives.';
+  $('cumSrc').innerHTML=P.payback?('Cumulative loss bottoms at <b>−₹'+Math.abs(P.trough/1e7).toFixed(2)+' Cr</b>, then the profit run-rate repays it — fully paid back by <b>'+P.payback+'</b>.'):
+    ('Cumulative loss keeps deepening — <b>−₹'+Math.abs(P.trough/1e7).toFixed(2)+' Cr</b> by FY28-end, funded from the FD corpus.');
+  // year table
+  var f=function(x){return (x/1e7).toFixed(2)};
+  $('yrTable').innerHTML='<tr><th>Line</th><th class="n">FY27</th><th class="n">FY28</th></tr>'+
+    '<tr><td>Total income</td><td class="n">'+f(P.fy27.inc)+'</td><td class="n">'+f(P.fy28.inc)+'</td></tr>'+
+    '<tr><td>Total expense</td><td class="n">'+f(P.fy27.exp)+'</td><td class="n">'+f(P.fy28.exp)+'</td></tr>'+
+    '<tr><td><b>Net P&L</b></td><td class="n" style="color:'+(P.fy27.net>=0?C.green:C.rose)+';font-weight:800">'+f(P.fy27.net)+'</td><td class="n" style="color:'+(P.fy28.net>=0?C.green:C.rose)+';font-weight:800">'+f(P.fy28.net)+'</td></tr>'+
+    '<tr><td>of which BLR revenue</td><td class="n">'+f(P.rows.slice(0,12).reduce(function(a,r){return a+r.blr},0))+'</td><td class="n">'+f(P.rows.slice(12,24).reduce(function(a,r){return a+r.blr},0))+'</td></tr>';
+  $('scnNote').innerHTML='<b>'+sc.name+':</b> '+(P.be?('operating break-even in <b>'+P.be+'</b>, FY28 net <b>'+fmtCr(P.fy28.net/1e7)+'</b>.'):'no operating break-even in FY27–FY28; loss funded from the ₹26 Cr corpus.');
+}
+
+// ---------- static charts ----------
 var cost=[{l:'Payroll',v:60.9,c:C.navy},{l:'Facilities',v:15.3,c:C.teal},{l:'Professional',v:4.9,c:C.violet},{l:'Board fees',v:4.5,c:C.amber},{l:'Technology',v:4.2,c:C.sky},{l:'Admin',v:4.2,c:C.slate},{l:'Travel',v:3.0,c:C.rose},{l:'Other',v:3.0,c:'#cbd5e1'}];
 donut($('costDonut'),cost,{cv:'₹5.27 Cr',cl:'FY27 cost base'});
 $('costLegend').innerHTML=cost.map(function(d){return '<span><i class="sw" style="background:'+d.c+'"></i>'+d.l+' '+d.v+'%</span>'}).join('');
-
-// gap chart (income stack vs cost)
-vbars($('gapChart'),[
-  {l:'Non-BLR income',stack:[{v:1.50,c:C.teal},{v:0.97,c:C.sky}],t:'₹2.47'},
-  {l:'Cost base',v:5.27,c:C.rose,t:'₹5.27'}
-]);
-
-// fee bars (monthly & annual)
-hbars($('feeBars'),[
-  {l:'IRF / month',v:0.48,c:C.navy,t:'₹0.48 Cr'},
-  {l:'IRF / year',v:5.76,c:C.navy,t:'₹5.76 Cr'},
-  {l:'ASF / year',v:2.88,c:C.teal,t:'₹2.88 Cr'},
-  {l:'Full run-rate',v:8.64,c:C.green,t:'₹8.64 Cr'}
-],9,{lblw:90});
-
-// volume donut — ACER vs bond issuance
-donut($('volDonut'),[{l:'ACER ₹0.19 lakh cr',v:1.94,c:C.amber},{l:'Rest of bond issuance',v:98.06,c:'#e2e8f0'}],{cv:'1.9%',cl:'of ₹9.9 lakh cr issuance'});
-
-// TAM SAM SOM
+vbars($('baseBars'),[{l:'Income / mo',stack:[{v:12.5,c:C.teal},{v:8.1,c:C.sky}],t:'₹20.6 L'},{l:'Expense / mo',v:43.9,c:C.rose,t:'₹43.9 L'}]);
+hbars($('peerBars'),[{l:'CRISIL',v:1078.7,c:C.navy},{l:'CARE',v:423,c:C.sky},{l:'ICRA',v:340,c:C.teal},{l:'India Ratings',v:250.9,c:C.violet},{l:'Infomerics',v:95.3,c:C.slate},{l:'Acuité',v:57.3,c:'#a3a3a3'},{l:'Brickwork',v:5.9,c:'#cbd5e1'},{l:'ACER FY28',v:8.6,c:C.amber}],1100);
 funnel($('funnel'));
 
-// peer bars
-hbars($('peerBars'),[
-  {l:'CRISIL',v:1078.7,c:C.navy},{l:'CARE',v:423,c:C.sky},{l:'ICRA',v:340,c:C.teal},
-  {l:'India Ratings',v:250.9,c:C.violet},{l:'Infomerics',v:95.3,c:C.slate},
-  {l:'Acuité',v:57.3,c:'#a3a3a3'},{l:'Brickwork',v:5.9,c:'#cbd5e1'},{l:'ACER FY28',v:8.6,c:C.amber}
-],1100,{lblw:96});
-
-// share pie
-donut($('sharePie'),[{l:'ACER',v:8.6,c:C.amber},{l:'Rest of industry',v:2241.4,c:'#e2e8f0'}],{cv:'0.38%',cl:'ACER of ₹2,250 Cr'});
-
-// scenario bars
-vbars($('scenBars'),[
-  {l:'S1 · Oct',v:0.08,c:C.green,t:'+0.08'},
-  {l:'S2 · Jan',v:-1.36,c:C.amber,t:'−1.36'},
-  {l:'S3 · none',v:-2.80,c:C.rose,t:'−2.80'}
-]);
-
-// trajectory
-vbars($('trajBars'),[
-  {l:'FY26',v:0.08,c:C.slate,t:'₹0.08'},
-  {l:'FY27 · S1',v:3.85,c:C.teal,t:'₹3.85'},
-  {l:'FY28',v:9.6,c:C.navy,t:'₹9.6'}
-]);
+// tab wiring
+document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){render(t.dataset.s)})});
+render('s1');
 </script>
