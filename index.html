@@ -30,6 +30,11 @@
   .stat .v{font-size:28px;font-weight:800;letter-spacing:-.02em}
   .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
   .src{font-size:11.5px;color:#9aa7b4;margin-top:12px}
+  .srcline{font-size:11.5px;color:#64748b;margin-top:10px;line-height:1.7}
+  .srcline b{color:#475569;font-weight:700}
+  .srcline a{color:var(--teal);text-decoration:none;font-weight:600;border-bottom:1px solid #99e6dd}
+  .srcline a:hover{border-bottom-color:var(--teal)}
+  .srcline .sep{color:#cbd5e1;margin:0 5px}
   .legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12.5px;color:#334155}
   .legend span{display:inline-flex;align-items:center;gap:6px}
   .sw{width:11px;height:11px;border-radius:3px;display:inline-block}
@@ -102,7 +107,7 @@
         <p class="sub" style="margin-bottom:6px">FY27 expense composition, payroll dominates.</p>
         <div id="costDonut"></div>
         <div class="legend" id="costLegend"></div>
-        <p class="src">Payroll run-rate (fully staffed) about ₹3.95 Cr/yr. Source: Zoho Books, FY27 to 21-Jul-2026.</p>
+        <p class="src">Payroll run-rate (fully staffed) about ₹3.95 Cr/yr. Source: internal management accounts, FY27 to 21-Jul-2026.</p>
       </div>
       <div class="card">
         <h3>The monthly maths, before BLR</h3>
@@ -210,13 +215,34 @@
         <p class="sub" style="margin-bottom:6px">Share by rating revenue. ACER (hatched) is the slice we target to grow.</p>
         <div id="volPie"></div>
         <div class="legend" id="shareLegend"></div>
-        <p class="src">Shares of about ₹2,260 Cr total CRA rating revenue, latest disclosed FY. Separately, ACER's ₹19,200 Cr/yr rated volume is about 1.9% of India annual bond issuance (₹9.9 lakh cr) and 0.1% of ₹182 lakh cr bank credit. Peer figures search-sourced this session.</p>
+        <p class="src">Shares of about ₹2,260 Cr total CRA rating revenue, latest disclosed FY. Separately, ACER's ₹19,200 Cr/yr rated volume is about 1.9% of India annual bond issuance (₹9.9 lakh cr) and 0.1% of ₹182 lakh cr bank credit.</p>
+        <p class="srcline"><b>Sources (rating revenue):</b>
+          <a href="https://www.crisil.com/en/home/investors.html" target="_blank" rel="noopener">CRISIL</a><span class="sep">·</span>
+          <a href="https://www.careratings.com/investor-relation" target="_blank" rel="noopener">CARE</a><span class="sep">·</span>
+          <a href="https://www.icra.in/Home/Financials" target="_blank" rel="noopener">ICRA</a><span class="sep">·</span>
+          <a href="https://www.indiaratings.co.in/income" target="_blank" rel="noopener">India Ratings</a><span class="sep">·</span>
+          <a href="https://www.infomerics.com/regulatory-disclosure" target="_blank" rel="noopener">Infomerics</a><span class="sep">·</span>
+          <a href="https://acuite.in/RegulatoryDisclosures" target="_blank" rel="noopener">Acuité</a><span class="sep">·</span>
+          <a href="https://www.brickworkratings.com/Disclosure.aspx" target="_blank" rel="noopener">Brickwork</a>.
+          <b>Market size:</b>
+          <a href="https://www.rbi.org.in/Scripts/BS_ViewBulletin.aspx" target="_blank" rel="noopener">RBI</a> (bank credit)<span class="sep">·</span>
+          <a href="https://www.sebi.gov.in/statistics.html" target="_blank" rel="noopener">SEBI</a> (bond issuance).</p>
       </div>
       <div class="card">
         <h3>Where ACER sits: TAM, SAM, SOM</h3>
         <p class="sub" style="margin-bottom:6px">Revenue lens, to scale. ACER is the SOM tier.</p>
         <div id="funnel"></div>
         <p class="src">TAM ₹2,250 Cr all-India rating revenue. SAM ₹409 Cr small BLR-led tier ACER competes in. SOM ₹8.6 Cr, ACER FY28 at capacity, 0.38% of TAM and 2.1% of SAM.</p>
+        <p class="srcline"><b>Sources:</b> TAM and SAM built from peer rating revenue,
+          <a href="https://www.crisil.com/en/home/investors.html" target="_blank" rel="noopener">CRISIL</a><span class="sep">·</span>
+          <a href="https://www.careratings.com/investor-relation" target="_blank" rel="noopener">CARE</a><span class="sep">·</span>
+          <a href="https://www.icra.in/Home/Financials" target="_blank" rel="noopener">ICRA</a><span class="sep">·</span>
+          <a href="https://www.indiaratings.co.in/income" target="_blank" rel="noopener">India Ratings</a><span class="sep">·</span>
+          <a href="https://www.infomerics.com/regulatory-disclosure" target="_blank" rel="noopener">Infomerics</a><span class="sep">·</span>
+          <a href="https://acuite.in/RegulatoryDisclosures" target="_blank" rel="noopener">Acuité</a><span class="sep">·</span>
+          <a href="https://www.brickworkratings.com/Disclosure.aspx" target="_blank" rel="noopener">Brickwork</a>.
+          SOM from ACER capacity model. Net-worth rule,
+          <a href="https://www.sebi.gov.in/legal/regulations" target="_blank" rel="noopener">SEBI (CRA) Regulations</a>.</p>
       </div>
     </div>
   </div>
@@ -231,7 +257,7 @@
       <div class="card">
         <h3>Booked actuals (hard numbers)</h3>
         <ul class="sub" style="padding-left:18px;line-height:1.9">
-          <li>ACER financials from <b>Zoho Books</b>, about 21-Jul-2026 (FY = Apr to Mar).</li>
+          <li>ACER financials from <b>internal management accounts</b>, about 21-Jul-2026 (FY = Apr to Mar).</li>
           <li>FD corpus ₹26.1 Cr. FY27 cost base ₹5.27 Cr (₹43.9 L/mo).</li>
           <li>Non-BLR income ₹2.47 Cr/yr (FD ₹1.50 + sales ₹0.97) = ₹20.6 L/mo.</li>
           <li>Payroll about 61% of spend. Runway about 8 months on drawable ₹1.9 Cr.</li>
@@ -250,7 +276,7 @@
   </div>
 </section>
 
-<footer>ACER Credit Rating Pvt. Ltd. · FY27 Annual Operating Plan · Actuals from Zoho Books. Forward figures are labelled capacity projections, not booked revenue.</footer>
+<footer>ACER Credit Rating Pvt. Ltd. · FY27 Annual Operating Plan · Actuals from internal management accounts. Forward figures are labelled capacity projections, not booked revenue.</footer>
 
 <script>
 var C={navy:'#1e3a8a',teal:'#0d9488',emerald:'#10b981',amber:'#f59e0b',rose:'#e11d48',violet:'#7c3aed',green:'#16a34a',slate:'#94a3b8',sky:'#0284c7',line:'#e6eaf0',ink:'#0f172a'};
