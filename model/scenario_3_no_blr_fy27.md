@@ -10,13 +10,13 @@
 | Existing operating Sales | 0.97 | actual-based |
 | BLR revenue | 0.00 | no licence this year |
 | **Total income** | **2.47** | |
-| Total expense | (5.27) | incl. new hires |
-| **Net P&L** | **−2.80 Cr** | full-year operating loss |
+| Total expense | (5.34) | revised bottom-up, incl. new hires, RC fees, board meetings, IT/branding — see `01_monthly_budget_fy27.md` |
+| **Net P&L** | **−2.87 Cr** | full-year operating loss |
 
 ## Runway / solvency
-- Net cash burn ≈ **₹23 L/month**.
+- Net cash burn ≈ **₹23-24 L/month** (revised expense base is ~7 L/yr higher; burn moves marginally).
 - Drawable liquidity (ex the likely-locked ₹25 Cr net-worth corpus) ≈ ₹1.9 Cr → **~8 months** before the corpus is touched.
-- Company remains **solvent** on the ₹26.1 Cr FD base, but burns ~₹2.8 Cr of value in the year with no BLR offset.
+- Company remains **solvent** on the ₹26.1 Cr FD base, but burns ~₹2.87 Cr of value in the year with no BLR offset.
 
 ## Decisions this scenario forces
 - **Cost discipline:** with no BLR revenue, the ₹95 L/yr of new hires is the largest discretionary commitment. Board should decide:
