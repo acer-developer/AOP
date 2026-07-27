@@ -85,3 +85,13 @@ offset by dropping insurance and excluding the (still-unconfirmed) consultant fe
 - [ ] Exact per-meeting board sitting-fee rate (proxied at ₹5.5 L/meeting)
 - [ ] Consultant fee per case — once known, add as a variable cost line (scales with case volume, so it should be modeled per-case, not as a flat monthly number)
 - [ ] Whether branding spend is booked as one lump in Aug or phased Aug-Dec (modeled as one lump for simplicity; doesn't change the annual total)
+
+---
+
+## UPDATE 27-Jul-2026 — branding buffer, ongoing branding, good-to-have
+
+- **Branding buffer:** ₹5 to 10 L (modelled **₹7.5 L**) one-time in the BLR-launch month, so the launch-month one-time is IT ₹3 L + branding ₹7.5 L = **₹10.5 L**.
+- **Ongoing branding:** **₹2 L per month** while BLR is live (S1 from Nov, S2 from Feb).
+- **BLR initial fee:** confirmed **2.5 bps** (was 3 bps).
+- **Labels:** Payroll shown as **Employee Expense**, Board meetings as **Secretarial Expense**.
+- **Good-to-have, kept out of the base plan:** Insurance, Festival celebration/gifts, Employee appraisal.

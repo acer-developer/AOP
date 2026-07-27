@@ -42,3 +42,20 @@ Fill these in with management's confirmed assumptions:
 2. Expected volume ramp (mandates/month) after licence.
 3. Any one-time BLR set-up cost.
 4. Whether existing operating Sales (Block B) keeps growing independent of BLR.
+
+---
+
+## CONFIRMED UNIT ECONOMICS (updated 27-Jul-2026, supersedes placeholders above)
+
+These are now management-confirmed and are what the live model, strategy page and board deck use:
+
+| Input | Confirmed value |
+|-------|-----------------|
+| BLR initial rating fee (IRF), up-front | **2.5 bps** of rated debt (was modelled 3 bps) |
+| BLR surveillance fee (ASF), recurring | **1.5 bps/yr** on the cumulative rated book |
+| Average BLR case size | **₹100 Cr** (16 cases/mo = ₹1,600 Cr/mo at full capacity) |
+| BLR up-front per case | ₹100 Cr × 2.5 bps = **₹2.5 L** |
+| IPO / rating mandate fee | **₹1.2 L per quarter per mandate** (₹0.4 L/mo, ₹4.8 L/yr) |
+| IPO book | 10 mandates now, ramping to 20 by Oct, then held (S3: keeps growing) |
+
+**Launch ramp discipline:** in the BLR-live scenarios the go-live month runs **zero BLR** (team clears the existing IPO book first), then 16 new cases a month from the next month.

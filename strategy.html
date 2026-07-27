@@ -93,7 +93,7 @@
       <div class="card stat"><div class="v">10 &rarr; 20</div><div class="l">IPO mandates by Oct, same team</div></div>
       <div class="card stat"><div class="v">₹46.7 L</div><div class="l">monthly run-rate before BLR</div></div>
     </div>
-    <div class="note" style="margin-top:18px"><b>What changed from the first model.</b> Cost base moved from ₹5.27 Cr to ₹5.34 Cr: RC meeting fees (₹20k per meeting, 10 to 12 a month) are now a real line, board sitting fees are provisioned as three discrete meetings (Aug 1, then quarterly) instead of smoothed flat, and one-time IT (₹3 L) plus a branding buffer (₹5 to 10 L, modelled at ₹7.5 L in the BLR-launch month) are added. Insurance, festival and appraisal costs are kept out as good-to-have (see below). Consultant per-case fee still excluded until confirmed.</div>
+    <div class="note" style="margin-top:18px"><b>What changed from the first model.</b> Cost base moved from ₹5.27 Cr to ₹5.34 Cr: RC meeting fees (₹20k per meeting, 10 to 12 a month) are now a real line, board sitting fees are provisioned as three discrete meetings (Aug 1, then quarterly) instead of smoothed flat, and one-time IT (₹3 L) plus a branding buffer (₹5 to 10 L, modelled at ₹7.5 L in the BLR-launch month) and ₹2 L a month of ongoing branding once BLR is live are added. Insurance, festival and appraisal costs are kept out as good-to-have (see below). Consultant per-case fee still excluded until confirmed.</div>
   </div>
 </section>
 
@@ -188,7 +188,7 @@
           <span><i class="sw" style="background:var(--teal)"></i>Other opex</span>
           <span><i class="sw" style="background:var(--violet)"></i>RC fees</span>
           <span><i class="sw" style="background:var(--amber)"></i>Secretarial Expense</span>
-          <span><i class="sw" style="background:var(--rose)"></i>IT + branding buffer</span>
+          <span><i class="sw" style="background:var(--rose)"></i>IT + branding</span>
         </div>
         <p class="src" id="expSrc"></p>
       </div>
@@ -301,7 +301,9 @@ function project(scn){
     var inc=K.FD+K.otherSales+ipo+blr;
     var rc=K.rcBase;
     if(scn!=='s3' && book>0) rc=K.rcBase+Math.min(1.8,(book/1600.0)*1.8);
-    var payroll=K.payroll, opex=K.opex, board=BOARD[m]?5.5:0, onet=(m===ot?10.5:0);
+    var brandMo=(scn!=='s3' && book>0)?2.0:0;
+    var onet=(m===ot?10.5:0)+brandMo;
+    var payroll=K.payroll, opex=K.opex, board=BOARD[m]?5.5:0;
     var exp=payroll+opex+rc+board+onet;
     var net=inc-exp; cum+=net;
     if(be===null && net>=0) be=m;
@@ -474,7 +476,7 @@ function render(key){
     ('Cumulative loss deepens to <b>−₹'+Math.abs(P.trough/100).toFixed(2)+' Cr</b> over the horizon, funded from the ₹26 Cr corpus.');
   $('rampSrc').innerHTML=key==='s3'?'No BLR this year. The whole team stays on IPO and rating cases.':
     ('Red is the launch month: the licence is live but the team clears its existing IPO mandates first, so zero BLR that month. Green is full 16-case capacity from the very next month.');
-  $('expSrc').innerHTML='Base run-rate ₹46.7 L a month. RC fees (violet) climb as BLR case volume rises. Secretarial (board) fees land in Aug, Nov and Feb; the one-time IT plus branding buffer (₹10.5 L) lands in the launch month. Neither is a monthly cost.';
+  $('expSrc').innerHTML='Base run-rate ₹46.7 L a month. RC fees (violet) climb as BLR case volume rises. Secretarial (board) fees land in Aug, Nov and Feb. IT plus the branding buffer (₹10.5 L) lands in the launch month, then ₹2 L a month of ongoing branding runs while BLR is live.';
 }
 
 // static: salary + capacity + donuts

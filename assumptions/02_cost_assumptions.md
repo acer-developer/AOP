@@ -61,3 +61,18 @@ Salary is the single largest line (~58% of total). Key fixed/semi-fixed heads:
 - [ ] Exact board sitting-fee rate per meeting (currently proxied at ₹5.5 L — may be lower if the booked figure includes committee fees beyond the board meeting itself)
 - [ ] Consultant fee per case (still open — excluded from model until provided)
 - [ ] Treat Jun-2026 spike as recurring or one-off? (affects run-rate)
+
+---
+
+## UPDATE 27-Jul-2026 — branding, rate, good-to-have
+
+- **Branding:** a **buffer of ₹5 to 10 L** (modelled ₹7.5 L) is spent one-time in the BLR-launch month, plus **₹2 L per month of ongoing branding** while BLR is live. This is on top of the ₹3 L one-time IT upgrade.
+- **Rename:** "Payroll" is presented as **Employee Expense**; "Board sitting fees" as **Secretarial Expense**.
+- **BLR rate:** initial rating fee confirmed at **2.5 bps** (not 3 bps); surveillance stays 1.5 bps.
+
+### Good-to-have (deliberately excluded from the base cost, fund as profitability allows)
+| Item | Note |
+|------|------|
+| Insurance | Group health + office cover, dropped from base case |
+| Festival celebration / gifts | Team festival spend + client gifting |
+| Employee appraisal | Annual increments + performance rewards, not in the flat salary run-rate |
