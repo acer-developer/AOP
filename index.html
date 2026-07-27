@@ -76,7 +76,7 @@
   <b>ACER <span style="color:var(--teal)">·</span> FY27 AOP</b>
   <div>
     <a href="#now">Today</a><a href="#engine">Engine</a><a href="#plan">Scenarios</a>
-    <a href="#market">Market</a><a href="#notes">Assumptions</a>
+    <a href="strategy.html">Strategy</a><a href="#market">Market</a><a href="#notes">Assumptions</a>
   </div>
 </div></nav>
 
@@ -88,9 +88,9 @@
     <p class="lead" style="margin-top:12px">ACER runs on a ₹26 Cr FD corpus today. The capacity to rate <b>₹1,600 Cr of debt a month</b> already exists, and the bank-loan-rating (BLR / RBI-ECAI) licence switches it on. The three tabs below show exactly when each path reaches break-even.</p>
     <div class="grid g4" style="margin-top:26px">
       <div class="card stat"><div class="v">₹26.1 Cr</div><div class="l">FD corpus (booked)</div></div>
-      <div class="card stat"><div class="v">₹5.27 Cr</div><div class="l">FY27 cost base</div></div>
+      <div class="card stat"><div class="v">₹5.34 Cr</div><div class="l">FY27 cost base</div></div>
       <div class="card stat"><div class="v">₹1,600 Cr</div><div class="l">rateable / month at full capacity</div></div>
-      <div class="card stat"><div class="v">₹23.3 L</div><div class="l">net cash burn / month before BLR</div></div>
+      <div class="card stat"><div class="v">₹23.9 L</div><div class="l">net cash burn / month before BLR</div></div>
     </div>
   </div>
 </section>
@@ -115,9 +115,9 @@
         <div class="legend">
           <span><i class="sw" style="background:var(--teal)"></i>FD interest ₹12.5 L</span>
           <span><i class="sw" style="background:var(--sky)"></i>Existing sales ₹8.1 L</span>
-          <span><i class="sw" style="background:var(--rose)"></i>Expense ₹43.9 L</span>
+          <span><i class="sw" style="background:var(--rose)"></i>Expense ₹44.5 L</span>
         </div>
-        <p class="src">Non-BLR income ₹20.6 L/mo against expense ₹43.9 L/mo, a burn of ₹23.3 L/mo. BLR revenue must close this.</p>
+        <p class="src">Non-BLR income ₹20.6 L/mo against expense ₹44.5 L/mo, a burn of ₹23.9 L/mo. BLR revenue must close this.</p>
       </div>
     </div>
   </div>
@@ -203,6 +203,25 @@
   </div>
 </section>
 
+<!-- CTA: EXECUTION STRATEGY -->
+<section id="strategy-cta">
+  <div class="wrap">
+    <div style="background:linear-gradient(135deg,#0d9488,#0f766e);border-radius:20px;padding:clamp(28px,5vw,52px);color:#fff;box-shadow:0 20px 50px rgba(13,148,136,.2)">
+      <div style="display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px">
+          <div style="text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:700;color:#99f6e4">How the plan actually runs</div>
+          <h2 style="color:#fff;margin-top:12px;font-size:clamp(24px,3.4vw,34px)">The execution strategy, month by month</h2>
+          <p style="color:#ccfbf1;max-width:600px;margin:12px 0 0;font-size:16px">Scenarios show when we break even. The strategy shows how: IPO and BLR sharing one 5-person team, the deliberate slow BLR launch to protect IPO delivery, the branding push, RC and one-time costs, and the real ₹1.2 L per quarter IPO fee folded in.</p>
+          <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:13px;color:#99f6e4">
+            <span>Slow-start then blitz</span><span style="color:#5eead4">·</span><span>IPO 10 to 20 by Oct</span><span style="color:#5eead4">·</span><span>Variable cost model</span>
+          </div>
+        </div>
+        <a href="strategy.html" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0f766e;text-decoration:none;font-weight:800;font-size:16px;padding:15px 30px;border-radius:12px;transition:transform .15s;white-space:nowrap" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Open the strategy <span style="font-size:18px">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MARKET CONTEXT -->
 <section id="market" class="alt">
   <div class="wrap">
@@ -257,7 +276,7 @@
         <h3>Booked actuals (hard numbers)</h3>
         <ul class="sub" style="padding-left:18px;line-height:1.9">
           <li>ACER financials from <b>internal management accounts</b>, about 21-Jul-2026 (FY = Apr to Mar).</li>
-          <li>FD corpus ₹26.1 Cr. FY27 cost base ₹5.27 Cr (₹43.9 L/mo).</li>
+          <li>FD corpus ₹26.1 Cr. FY27 cost base ₹5.34 Cr (₹44.5 L/mo).</li>
           <li>Non-BLR income ₹2.47 Cr/yr (FD ₹1.50 + sales ₹0.97) = ₹20.6 L/mo.</li>
           <li>Payroll about 61% of spend. Runway about 8 months on drawable ₹1.9 Cr.</li>
         </ul>
@@ -302,7 +321,7 @@ function grad(id,c,a0,a1){return '<linearGradient id="'+id+'" x1="0" y1="0" x2="
 var MON=["Apr26","May26","Jun26","Jul26","Aug26","Sep26","Oct26","Nov26","Dec26","Jan27","Feb27","Mar27",
          "Apr27","May27","Jun27","Jul27","Aug27","Sep27","Oct27","Nov27","Dec27","Jan28","Feb28","Mar28"];
 function project(golive){
-  var E=5.27e7/12, FD=1.50e7/12, SAL=0.97e7/12, CAP=1600e7, IRF=3e-4, ASF=1.5e-4, RAMP=6;
+  var E=5.34e7/12, FD=1.50e7/12, SAL=0.97e7/12, CAP=1600e7, IRF=3e-4, ASF=1.5e-4, RAMP=6;
   var book=0, cum=0, be=null, rows=[];
   for(var i=0;i<MON.length;i++){
     var irf=0, asf=0;
@@ -324,7 +343,7 @@ var SCN={
   s2:{cls:'s2',name:'Scenario 2',title:'BLR licence live by 1 Jan 2027',tag:'Middle case',tagbg:'#fef3c7',tagfg:'#b45309',golive:9,
       story:'Full cost base carried all year, but revenue lands only in Q4. Widest gap between committed cost and earned revenue. It sets up FY28 well, yet FY27 stays a clear loss.'},
   s3:{cls:'s3',name:'Scenario 3',title:'No BLR licence in FY27',tag:'Planning floor',tagbg:'#fee2e2',tagfg:'#b91c1c',golive:null,
-      story:'No BLR revenue at all. The firm burns ₹23.3 L every month, funded from reserves. Solvent on the ₹26 Cr corpus, but no operating break-even until the licence arrives.'}
+      story:'No BLR revenue at all. The firm burns ₹23.9 L every month, funded from reserves. Solvent on the ₹26 Cr corpus, but no operating break-even until the licence arrives.'}
 };
 
 // ---------- generic helpers ----------
@@ -405,7 +424,7 @@ function beChart(node,P){
   // expense line
   var ey=y(expL);
   s+='<line x1="'+padL+'" y1="'+ey+'" x2="'+(W-padR)+'" y2="'+ey+'" stroke="'+C.rose+'" stroke-width="2.4" stroke-dasharray="6 4"/>';
-  s+='<text x="'+(W-padR)+'" y="'+(ey-6)+'" text-anchor="end" style="font-size:10.5px;font-weight:700;fill:'+C.rose+'">Expense ₹43.9 L</text>';
+  s+='<text x="'+(W-padR)+'" y="'+(ey-6)+'" text-anchor="end" style="font-size:10.5px;font-weight:700;fill:'+C.rose+'">Expense ₹44.5 L</text>';
   // break-even marker + label
   if(beIdx>=0){var bx2=xc(beIdx);
     s+='<circle cx="'+bx2+'" cy="'+ey+'" r="5.5" fill="#fff" stroke="'+C.green+'" stroke-width="2.6"/>';
@@ -481,8 +500,8 @@ function render(key){
   beChart($('beChart'),P);
   cumChart($('cumChart'),P);
   yearBars($('yrBars'),P);
-  $('beSrc').innerHTML=P.be?('Stacked income (FD interest, existing sales, BLR revenue) rises with the mandate ramp and crosses the flat ₹43.9 L/mo expense line in <b>'+P.be+'</b>, the month ACER turns operationally profitable.'):
-    'Without BLR, income stays flat at ₹20.6 L/mo, permanently below the ₹43.9 L/mo expense line. There is <b>no operating break-even</b> until the licence arrives.';
+  $('beSrc').innerHTML=P.be?('Stacked income (FD interest, existing sales, BLR revenue) rises with the mandate ramp and crosses the flat ₹44.5 L/mo expense line in <b>'+P.be+'</b>, the month ACER turns operationally profitable.'):
+    'Without BLR, income stays flat at ₹20.6 L/mo, permanently below the ₹44.5 L/mo expense line. There is <b>no operating break-even</b> until the licence arrives.';
   $('cumSrc').innerHTML=P.payback?('Cumulative loss bottoms at <b>−₹'+Math.abs(P.trough/1e7).toFixed(2)+' Cr</b>, then the profit run-rate repays it, fully paid back by <b>'+P.payback+'</b>.'):
     ('Cumulative loss keeps deepening to <b>−₹'+Math.abs(P.trough/1e7).toFixed(2)+' Cr</b> by FY28-end, funded from the FD corpus.');
   var f=function(x){return (x/1e7).toFixed(2)};
@@ -498,9 +517,9 @@ function render(key){
 
 // ---------- static charts ----------
 var cost=[{l:'Payroll',v:60.9,c:C.navy},{l:'Facilities',v:15.3,c:C.teal},{l:'Professional',v:4.9,c:C.violet},{l:'Board fees',v:4.5,c:C.amber},{l:'Technology',v:4.2,c:C.sky},{l:'Admin',v:4.2,c:C.slate},{l:'Travel',v:3.0,c:C.rose},{l:'Other',v:3.0,c:'#cbd5e1'}];
-donut($('costDonut'),cost,{cv:'₹5.27 Cr',cl:'FY27 cost base'});
+donut($('costDonut'),cost,{cv:'₹5.34 Cr',cl:'FY27 cost base'});
 $('costLegend').innerHTML=cost.map(function(d){return '<span><i class="sw" style="background:'+d.c+'"></i>'+d.l+' '+d.v+'%</span>'}).join('');
-vbars($('baseBars'),[{l:'Income / mo',stack:[{v:12.5,c:C.teal},{v:8.1,c:C.sky}],t:'₹20.6 L'},{l:'Expense / mo',v:43.9,c:C.rose,t:'₹43.9 L'}]);
+vbars($('baseBars'),[{l:'Income / mo',stack:[{v:12.5,c:C.teal},{v:8.1,c:C.sky}],t:'₹20.6 L'},{l:"Expense / mo",v:44.5,c:C.rose,t:"₹44.5 L"}]);
 var share=[{l:'CRISIL',v:1078.7,c:C.navy},{l:'CARE',v:423,c:C.sky},{l:'ICRA',v:340,c:C.teal},{l:'India Ratings',v:250.9,c:C.violet},{l:'Infomerics',v:95.3,c:C.slate},{l:'Acuité',v:57.3,c:'#a3a3a3'},{l:'Brickwork',v:5.9,c:'#cbd5e1'},{l:'ACER',v:8.6,c:C.amber,target:true}];
 var shTot=share.reduce(function(a,d){return a+d.v},0);
 sharePie($('volPie'),share);
