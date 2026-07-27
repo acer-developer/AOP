@@ -15,10 +15,11 @@ Three scenarios, identical cost base, differing only on when BLR revenue starts:
 
 | | S1: BLR by Oct | S2: BLR by Jan | S3: No BLR FY27 |
 |--|--:|--:|--:|
-| Net P&L (₹ Cr) | −2.80 + BLR(6 mo) | −2.80 + BLR(3 mo) | **−2.80** |
+| Net P&L (₹ Cr) | −2.87 + BLR(6 mo) | −2.87 + BLR(3 mo) | **−2.87** |
 
-- Common cost base **₹5.27 Cr** (incl. new hires); locked-in non-BLR income **₹2.47 Cr**.
-- **Gap to close: ₹2.80 Cr** — the job of BLR revenue + continued Sales growth.
+- Common cost base **₹5.34 Cr** (revised, bottom-up: actual payroll + new hires + RC meeting fees + 3 board meetings + one-time IT/branding); locked-in non-BLR income **₹2.47 Cr**.
+- **Gap to close: ₹2.87 Cr** — the job of BLR revenue + continued Sales growth.
+- **Capacity risk sits alongside the licence-timing risk:** leaders exiting case execution (RC/review only) and IPO volume doubling (10 → ~20 by Oct) draw on the same 5-executor team as BLR. Even S1 (licence by Oct) doesn't guarantee Oct revenue if the team has no free capacity that month.
 
 ## 3. Two senior hires added to the plan (payroll impact)
 

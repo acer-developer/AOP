@@ -12,17 +12,23 @@
 | Existing operating Sales | 0.97 | FY27 Q1 actual ₹28.5 L annualised |
 | **Non-BLR income** | **2.47** | |
 
-## B. FY27 expense (₹ Cr)
+## B. FY27 expense (₹ Cr) — REVISED, bottom-up (27-Jul-2026)
+
+> Rebuilt monthly (see `01_monthly_budget_fy27.md`) from actual payroll run-rate + both
+> new hires + RC meeting fees + discrete board-meeting provisioning + one-time IT/branding.
+> Consultant fee excluded (not yet confirmed); insurance dropped from base case.
 
 | Component | FY27 |
 |-----------|-----:|
-| Baseline operating expense (no new hires) | 4.63 |
-| Incremental new-hire payroll (Hire A + Hire B) | 0.64 |
-| **Total expense** | **5.27** |
+| Booked actual (Apr-21 Jul) | 1.23 |
+| Rest of July (22-31, est.) | 0.16 |
+| Aug-Mar (8 months, bottom-up incl. new hires, RC fees, 3 board meetings, IT + branding one-time) | 3.95 |
+| **Total expense (revised)** | **~5.34** |
+| *Total expense (old flat model, for reference)* | *5.27* |
 
 ## C. Baseline net (BEFORE any BLR revenue)
 
-**Non-BLR income 2.47 − Expense 5.27 = −₹2.80 Cr** operating loss for FY27.
+**Non-BLR income 2.47 − Expense 5.34 = −₹2.87 Cr** operating loss for FY27 (revised from −₹2.80 Cr).
 
 BLR revenue in each scenario reduces this loss.
 

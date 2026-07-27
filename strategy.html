@@ -1,0 +1,480 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ACER FY27 Execution Strategy, BLR and IPO</title>
+<style>
+  :root{
+    --ink:#0f172a; --muted:#64748b; --line:#e6eaf0; --bg:#ffffff; --band:#f7f9fc;
+    --navy:#1e3a8a; --teal:#0d9488; --emerald:#10b981; --amber:#f59e0b; --rose:#e11d48; --violet:#7c3aed;
+    --green:#16a34a; --slate:#94a3b8; --sky:#0284c7;
+    --shadow:0 1px 2px rgba(15,23,42,.04),0 10px 30px rgba(15,23,42,.06);
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  section{padding:60px 0;border-bottom:1px solid var(--line)}
+  section.alt{background:var(--band)}
+  h1,h2,h3{line-height:1.14;margin:0 0 6px;letter-spacing:-.02em}
+  h1{font-size:clamp(30px,5vw,48px);font-weight:800}
+  h2{font-size:clamp(23px,3.3vw,33px);font-weight:800}
+  h3{font-size:17px;font-weight:700}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--teal);margin-bottom:12px}
+  .lead{font-size:18px;color:#334155;max-width:820px}
+  .sub{color:var(--muted);font-size:15px;max-width:780px;margin:6px 0 0}
+  .grid{display:grid;gap:18px}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:880px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+  .stat .v{font-size:27px;font-weight:800;letter-spacing:-.02em}
+  .stat .l{font-size:13px;color:var(--muted);margin-top:2px}
+  .src{font-size:11.5px;color:#9aa7b4;margin-top:12px}
+  .legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12.5px;color:#334155}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line)}
+  th{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .axl{font-size:10px;fill:#64748b}
+  .barlab{font-size:11px;font-weight:700;fill:#0f172a}
+  .center-v{font-size:20px;font-weight:800;fill:#0f172a}
+  .center-l{font-size:10.5px;fill:#64748b}
+  nav.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav.top b{font-weight:800}
+  nav.top a{color:#475569;text-decoration:none;font-size:13.5px;font-weight:600;margin-left:18px}
+  @media(max-width:720px){nav.top a{display:none}}
+  nav.top a.back{color:var(--teal);margin-left:0}
+  .tabs{display:inline-flex;background:#eef2f7;border-radius:14px;padding:5px;gap:4px;flex-wrap:wrap}
+  .tab{border:0;background:transparent;padding:11px 18px;border-radius:10px;font-size:14px;font-weight:700;
+    color:#475569;cursor:pointer;transition:.18s;white-space:nowrap}
+  .tab .d{font-weight:600;font-size:12px;color:#94a3b8;display:block;margin-top:1px}
+  .tab.on{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .tab.on.s1{box-shadow:inset 0 -3px 0 var(--green),0 1px 2px rgba(0,0,0,.06)}
+  .tab.on.s2{box-shadow:inset 0 -3px 0 var(--amber),0 1px 2px rgba(0,0,0,.06)}
+  .tab.on.s3{box-shadow:inset 0 -3px 0 var(--rose),0 1px 2px rgba(0,0,0,.06)}
+  .chip{display:inline-block;font-size:12px;font-weight:800;padding:5px 12px;border-radius:999px}
+  .note{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid var(--amber);border-radius:12px;padding:13px 15px;font-size:13px;color:#78350f}
+  .hero-badge{display:inline-flex;gap:8px;align-items:center;background:#f1f5f9;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#475569}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block}
+  .kpi{padding:16px 18px}
+  .kpi .v{font-size:25px;font-weight:800;letter-spacing:-.02em}
+  .kpi .l{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .play{list-style:none;padding:0;margin:10px 0 0}
+  .play li{display:flex;gap:11px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px;color:#334155}
+  .play li:last-child{border-bottom:0}
+  .play .step{flex:0 0 26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12.5px;color:#fff}
+  footer{padding:34px 0;color:#94a3b8;font-size:12.5px;text-align:center}
+  .fade{animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+</style>
+
+<nav class="top"><div class="wrap">
+  <b>ACER <span style="color:var(--teal)">·</span> FY27 Strategy</b>
+  <div>
+    <a class="back" href="index.html">&larr; Back to AOP</a>
+    <a href="#team">Team</a><a href="#plan">Playbook</a><a href="#money">Money</a>
+    <a href="warroom.html">War Room</a>
+  </div>
+</div></nav>
+
+<!-- HERO -->
+<section>
+  <div class="wrap">
+    <div class="hero-badge"><span class="dot"></span>Execution strategy, three ways to run FY27</div>
+    <h1 style="margin-top:16px">Two revenue engines,<br>one 5-person team.</h1>
+    <p class="lead" style="margin-top:12px">The IPO book and the BLR book draw on the same five executors. The plan below decides, month by month, how that capacity is split so the licence turns into revenue instead of a bottleneck. Real cost base, real IPO fee, real ramp.</p>
+    <div class="grid g4" style="margin-top:26px">
+      <div class="card stat"><div class="v">₹5.34 Cr</div><div class="l">FY27 cost base (rebuilt bottom-up)</div></div>
+      <div class="card stat"><div class="v">₹1.2 L</div><div class="l">IPO fee per mandate, per quarter</div></div>
+      <div class="card stat"><div class="v">10 &rarr; 20</div><div class="l">IPO mandates by Oct, same team</div></div>
+      <div class="card stat"><div class="v">₹46.7 L</div><div class="l">monthly run-rate before BLR</div></div>
+    </div>
+    <div class="note" style="margin-top:18px"><b>What changed from the first model.</b> Cost base moved from ₹5.27 Cr to ₹5.34 Cr: RC meeting fees (₹20k per meeting, 10 to 12 a month) are now a real line, board sitting fees are provisioned as three discrete meetings (Aug 1, then quarterly) instead of smoothed flat, and one-time IT (₹3 L) and branding (₹2.5 L) are added. Insurance dropped from the base case. Consultant per-case fee still excluded until confirmed.</div>
+  </div>
+</section>
+
+<!-- TEAM / SALARY -->
+<section id="team" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">The constraint and what it costs</div>
+    <h2>Capacity is the real swing factor</h2>
+    <p class="sub">Leaders move out of case execution into RC and review only. That leaves five executors to carry both books. One case is one person-week, so real throughput is about 20 cases a month, total, across IPO and BLR.</p>
+    <div class="grid g2" style="margin-top:24px">
+      <div class="card">
+        <h3>Where payroll goes, fully staffed</h3>
+        <p class="sub" style="margin-bottom:6px">Monthly payroll after both new hires join. Existing team is 2 leaders plus 5 executors.</p>
+        <div id="salBars"></div>
+        <p class="src">Payroll = salary + PF + gratuity + ESI + EDLI, per booked actuals. Fully staffed run-rate ₹32.92 L/mo, about ₹3.95 Cr/yr. New Hire A joined 24-Jul, New Hire B joins 1-Aug.</p>
+      </div>
+      <div class="card">
+        <h3>How 20 cases a month get split</h3>
+        <p class="sub" style="margin-bottom:6px">IPO ramps to 20 mandates by Oct. That alone can fill the team, which is exactly why the BLR start has to be paced.</p>
+        <div id="capBars"></div>
+        <div class="legend">
+          <span><i class="sw" style="background:var(--sky)"></i>IPO load</span>
+          <span><i class="sw" style="background:var(--emerald)"></i>BLR headroom (S1)</span>
+          <span><i class="sw" style="background:var(--rose)"></i>Over capacity</span>
+        </div>
+        <p class="src">Illustrative, built from the 10 to 20 IPO ramp and the ~20 case per month ceiling. By Oct, IPO alone is at capacity, so BLR launches slow on purpose.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAYBOOK (TABBED) -->
+<section id="plan">
+  <div class="wrap">
+    <div class="eyebrow">The playbook, three ways</div>
+    <h2>Pick when BLR lands, the whole plan follows</h2>
+    <p class="sub">Same team, same IPO book, same cost base. Only the BLR licence date changes, and with it how we pace the launch so IPO delivery never breaks.</p>
+
+    <div class="tabs" id="tabs" style="margin-top:22px" role="tablist">
+      <button class="tab s1 on" data-s="s1" role="tab">BLR by 1 Oct<span class="d">launch and blitz</span></button>
+      <button class="tab s2" data-s="s2" role="tab">BLR by 1 Jan<span class="d">same play, later</span></button>
+      <button class="tab s3" data-s="s3" role="tab">No BLR this FY<span class="d">IPO and operations</span></button>
+    </div>
+
+    <div id="scnHead" class="card" style="margin-top:20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap"></div>
+
+    <div class="grid g4" id="kpis" style="margin-top:18px"></div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card">
+        <h3>The month-by-month play</h3>
+        <ol class="play" id="playList"></ol>
+      </div>
+      <div class="card">
+        <h3>BLR cases closed per month</h3>
+        <p class="sub" style="margin-bottom:4px">The deliberate slow start, then the ramp to full capacity.</p>
+        <div id="rampBars"></div>
+        <p class="src" id="rampSrc"></p>
+      </div>
+    </div>
+
+    <!-- HERO break-even chart -->
+    <div class="card" style="margin-top:18px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px">
+        <h3>Monthly income build vs expense, with break-even</h3>
+        <div class="legend" style="margin:0">
+          <span><i class="sw" style="background:var(--teal)"></i>FD interest</span>
+          <span><i class="sw" style="background:var(--slate)"></i>Other sales</span>
+          <span><i class="sw" style="background:var(--sky)"></i>IPO</span>
+          <span><i class="sw" style="background:var(--emerald)"></i>BLR</span>
+          <span><i class="sw" style="background:var(--rose)"></i>Expense line</span>
+        </div>
+      </div>
+      <div id="beChart"></div>
+      <p class="src" id="beSrc"></p>
+    </div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card">
+        <h3>Cumulative operating P&amp;L</h3>
+        <p class="sub" style="margin-bottom:4px">How deep the dip goes and when it is repaid.</p>
+        <div id="cumChart"></div>
+        <p class="src" id="cumSrc"></p>
+      </div>
+      <div class="card">
+        <h3>Expense build, and how it grows with BLR</h3>
+        <p class="sub" style="margin-bottom:4px">RC fees rise with case volume. IT and branding are one-time around launch.</p>
+        <div id="expBars"></div>
+        <div class="legend">
+          <span><i class="sw" style="background:var(--navy)"></i>Payroll</span>
+          <span><i class="sw" style="background:var(--teal)"></i>Other opex</span>
+          <span><i class="sw" style="background:var(--violet)"></i>RC fees</span>
+          <span><i class="sw" style="background:var(--amber)"></i>Board + one-time</span>
+        </div>
+        <p class="src" id="expSrc"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MONEY: revenue + expense composition -->
+<section id="money" class="alt">
+  <div class="wrap">
+    <div class="eyebrow">The numbers behind the plan</div>
+    <h2>Revenue mix and cost composition</h2>
+    <p class="sub">Every figure here is built from booked actuals or the confirmed unit economics: IPO at ₹1.2 L per quarter per mandate, BLR at 3 bps up-front plus 1.5 bps recurring on a ₹100 Cr average case.</p>
+    <div class="grid g2" style="margin-top:24px">
+      <div class="card">
+        <h3>FY28 revenue mix at full run-rate (S1)</h3>
+        <p class="sub" style="margin-bottom:6px">Once both engines are firing, BLR leads, IPO is a steady annuity, FD interest becomes the smaller slice.</p>
+        <div id="revDonut"></div>
+        <div class="legend" id="revLegend"></div>
+        <p class="src">BLR revenue is a labelled capacity projection, not booked. IPO ₹96 L/yr at 20 mandates. FD and other sales held at booked run-rate.</p>
+      </div>
+      <div class="card">
+        <h3>Where the ₹5.34 Cr cost base goes</h3>
+        <p class="sub" style="margin-bottom:6px">Payroll still dominates. The new lines, RC, board, IT and branding, are the smaller wedges.</p>
+        <div id="costDonut"></div>
+        <div class="legend" id="costLegend"></div>
+        <p class="src">FY27 cost base rebuilt bottom-up. Consultant per-case fee excluded pending confirmation, insurance dropped.</p>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card">
+        <h3>The one decision that de-risks everything</h3>
+        <p class="sub">Phase IPO delivery with clients now, before the licence lands. If all 20 IPO mandates pile into October, they eat the whole team the same month BLR needs to launch. A committed Oct, Nov, Dec delivery calendar is what lets BLR start on time. This is the single highest-leverage move in the plan.</p>
+      </div>
+      <div class="card">
+        <h3>When to add the sixth executor</h3>
+        <p class="sub">Not on a hunch. Hire the moment residual capacity, team capacity minus IPO load minus BLR load, goes negative for two straight months, and only in the BLR-live scenarios. In the no-BLR case, hold, there is neither the case volume nor the cash cushion to justify it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" style="border-bottom:0">
+  <div class="wrap">
+    <div style="background:linear-gradient(135deg,#0d9488,#0f766e);border-radius:20px;padding:clamp(28px,5vw,52px);color:#fff;text-align:center;box-shadow:0 20px 50px rgba(13,148,136,.2)">
+      <div style="text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:700;color:#99f6e4">The full picture</div>
+      <h2 style="color:#fff;margin-top:12px;font-size:clamp(24px,3.4vw,36px)">See the scenarios and the board readiness</h2>
+      <p style="color:#ccfbf1;max-width:640px;margin:12px auto 0;font-size:17px">The AOP page holds the three break-even scenarios and the market context. The War Room holds every director question, the premortem and the pre-meeting brief.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#0f766e;text-decoration:none;font-weight:800;font-size:16px;padding:15px 28px;border-radius:12px">Open the AOP</a>
+        <a href="warroom.html" style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none;font-weight:800;font-size:16px;padding:15px 28px;border-radius:12px">Enter the War Room</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>ACER Credit Rating Pvt. Ltd. · FY27 Execution Strategy · Actuals from internal management accounts. IPO fee ₹1.2 L per quarter per mandate. BLR figures are labelled capacity projections, not booked revenue.</footer>
+
+<script>
+var C={navy:'#1e3a8a',teal:'#0d9488',emerald:'#10b981',amber:'#f59e0b',rose:'#e11d48',violet:'#7c3aed',green:'#16a34a',slate:'#94a3b8',sky:'#0284c7',line:'#e6eaf0',ink:'#0f172a'};
+var $=function(id){return document.getElementById(id)};
+function fmtCr(x){return (x>=0?'+':'−')+'₹'+Math.abs(x).toFixed(2)+' Cr'}
+function grad(id,c,a0,a1){return '<linearGradient id="'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c+'" stop-opacity="'+(a0||.9)+'"/><stop offset="1" stop-color="'+c+'" stop-opacity="'+(a1||.28)+'"/></linearGradient>'}
+
+// ================= MODEL (all figures in ₹ lakh/month) =================
+var MON=["Aug26","Sep26","Oct26","Nov26","Dec26","Jan27","Feb27","Mar27",
+         "Apr27","May27","Jun27","Jul27","Aug27","Sep27","Oct27","Nov27","Dec27","Jan28","Feb28","Mar28"];
+var K={payroll:32.92, opex:11.57, rcBase:2.20, FD:12.5, otherSales:4.08, ipoFee:0.40,
+       irfCase:3.0, caseCr:100, ASF:1.5e-4};
+var BOARD={Aug26:1,Nov26:1,Feb27:1,Aug27:1,Nov27:1,Feb28:1};
+
+function ipoBook(i){ if(i===0)return 10; if(i===1)return 15; return 20; }
+function blrNew(scn,i){
+  if(scn==='s1'){ if(i<2)return 0; if(i===2)return 4; return 16; }
+  if(scn==='s2'){ if(i<5)return 0; if(i===5)return 4; return 16; }
+  return 0;
+}
+var ONETIME={s1:'Oct26', s2:'Jan27', s3:'Sep26'};
+
+function project(scn){
+  var book=0, cum=0, be=null, rows=[], ot=ONETIME[scn];
+  for(var i=0;i<MON.length;i++){
+    var m=MON[i];
+    var ipo=ipoBook(i)*K.ipoFee;
+    var nc=blrNew(scn,i);
+    var irf=nc*K.irfCase;
+    book+=nc*K.caseCr;
+    var asf=book*1e7*K.ASF/1e5/12;
+    var blr=irf+asf;
+    var inc=K.FD+K.otherSales+ipo+blr;
+    var rc=K.rcBase;
+    if(scn!=='s3' && book>0) rc=K.rcBase+Math.min(1.8,(book/1600.0)*1.8);
+    var payroll=K.payroll, opex=K.opex, board=BOARD[m]?5.5:0, onet=(m===ot?5.5:0);
+    var exp=payroll+opex+rc+board+onet;
+    var net=inc-exp; cum+=net;
+    if(be===null && net>=0) be=m;
+    rows.push({m:m,fd:K.FD,os:K.otherSales,ipo:ipo,blr:blr,inc:inc,exp:exp,net:net,cum:cum,
+               rc:rc,payroll:payroll,opex:opex,board:board+onet,blrN:nc,ipoN:ipoBook(i)});
+  }
+  var sum=function(a,b,f){var s=0;for(var j=a;j<b;j++)s+=f(rows[j]);return s};
+  return {rows:rows, be:be, scn:scn,
+    p1:{inc:sum(0,8,function(r){return r.inc}),exp:sum(0,8,function(r){return r.exp}),net:sum(0,8,function(r){return r.net}),blr:sum(0,8,function(r){return r.blr}),ipo:sum(0,8,function(r){return r.ipo})},
+    fy28:{inc:sum(8,20,function(r){return r.inc}),exp:sum(8,20,function(r){return r.exp}),net:sum(8,20,function(r){return r.net}),blr:sum(8,20,function(r){return r.blr}),ipo:sum(8,20,function(r){return r.ipo})},
+    trough:Math.min.apply(null,rows.map(function(r){return r.cum}))};
+}
+
+var SCN={
+  s1:{cls:'s1',name:'Scenario 1',title:'BLR licence live by 1 Oct 2026',tag:'Launch and blitz',tagbg:'#dcfce7',tagfg:'#15803d',col:C.green,
+    story:'IPO is already at 20 mandates by October, so the team is full. Launch BLR slow that month, four cases only, while branding spends heavily to seed the pipeline. From November, BLR runs at full capacity.',
+    play:[['Oct','Spend branding heavily. Keep IPO at 20. Close only 4 BLR on purpose, protect delivery.'],
+          ['Nov','Branding pipeline converts. BLR steps up to 16 cases a month, full capacity.'],
+          ['Dec on','Both engines steady. IPO annuity plus BLR up-front and surveillance compound.'],
+          ['Trigger','If residual capacity is negative two months running, add the sixth executor.']]},
+  s2:{cls:'s2',name:'Scenario 2',title:'BLR licence live by 1 Jan 2027',tag:'Same play, later',tagbg:'#fef3c7',tagfg:'#b45309',col:C.amber,
+    story:'Exactly the same launch discipline, three months later. Use the extra runway to build the branding pipeline and push IPO and existing sales so the pre-licence months burn less.',
+    play:[['Aug to Dec','No BLR yet. Grow IPO to 20, push existing sales, keep the burn tight.'],
+          ['Jan','Licence live. Slow start, 4 BLR cases, branding push, protect IPO delivery.'],
+          ['Feb on','BLR ramps to 16 a month. FY27 still a loss, but FY28 is set up strong.'],
+          ['Trigger','Same rule, hire the sixth executor only when capacity turns negative twice.']]},
+  s3:{cls:'s3',name:'Scenario 3',title:'No BLR licence in FY27',tag:'IPO and operations',tagbg:'#fee2e2',tagfg:'#b91c1c',col:C.rose,
+    story:'No BLR revenue this year. Point the whole team at IPO and existing rating work, and sustain a floor of 10 to 12 cases a month. Preserve the corpus and stay ready to sprint the day the licence lands.',
+    play:[['All year','No BLR. Concentrate capacity on IPO and operations.'],
+          ['Floor','Close a minimum of 10 to 12 cases a month across IPO and rating work.'],
+          ['Cost','Hold discretionary spend. Do not add the sixth executor this year.'],
+          ['Ready','Keep the team primed so BLR can launch fast the moment it clears.']]}
+};
+
+// ================= CHART HELPERS =================
+// grouped/stacked vertical bars, generic
+function vbars(node,data,opt){opt=opt||{};var W=440,H=250,padB=42,padT=22,x0=28;
+  var vals=data.map(function(d){return d.stack?d.stack.reduce(function(a,s){return a+s.v},0):d.v});
+  var mx=Math.max.apply(null,vals.concat([0])),mn=Math.min.apply(null,vals.concat([opt.allowNeg?mn:0]));
+  mn=Math.min(0,Math.min.apply(null,vals));var rg=(mx-mn)||1;
+  var plot=H-padT-padB,sc=plot/rg,z=padT+mx*sc,n=data.length,slot=(W-x0-8)/n,bw=Math.min(64,slot*0.5);
+  var s='<svg viewBox="0 0 '+W+' '+H+'"><line x1="'+x0+'" y1="'+z+'" x2="'+W+'" y2="'+z+'" stroke="'+C.line+'"/>';
+  data.forEach(function(d,i){var cx=x0+slot*i+slot/2,x=cx-bw/2,bg=i*0.07;
+    if(d.stack){var acc=0;d.stack.forEach(function(sg){var h=sg.v*sc;acc+=h;
+      s+='<rect x="'+x+'" y="'+z+'" width="'+bw+'" height="0" fill="'+sg.c+'"><animate attributeName="height" from="0" to="'+h+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+z+'" to="'+(z-acc)+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/></rect>';});
+      s+='<text x="'+cx+'" y="'+(z-acc-8)+'" text-anchor="middle" class="barlab">'+d.t+'</text>';
+    }else{var h=Math.abs(d.v)*sc,up=d.v>=0,col=d.c||C.teal,y=up?z-h:z;
+      s+='<rect x="'+x+'" y="'+z+'" width="'+bw+'" height="0" rx="4" fill="'+col+'"><animate attributeName="height" from="0" to="'+h+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+z+'" to="'+y+'" dur="0.8s" begin="'+bg+'s" fill="freeze"/></rect>';
+      s+='<text x="'+cx+'" y="'+(up?y-8:z+h+15)+'" text-anchor="middle" class="barlab" style="fill:'+(up?C.ink:col)+'">'+d.t+'</text>';}
+    s+='<text x="'+cx+'" y="'+(H-16)+'" text-anchor="middle" class="axl">'+d.l+'</text>';});
+  s+='</svg>';node.innerHTML=s;}
+
+function donut(node,data,opt){opt=opt||{};var W=300,H=250,cx=W/2,cy=H/2,r=94,ir=58,tot=data.reduce(function(a,d){return a+d.v},0),ang=-Math.PI/2;
+  var s='<svg viewBox="0 0 '+W+' '+H+'">';
+  data.forEach(function(d){var a0=ang,a1=ang+d.v/tot*Math.PI*2;ang=a1;var lg=(a1-a0)>Math.PI?1:0;
+    var x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);
+    var xi0=cx+ir*Math.cos(a0),yi0=cy+ir*Math.sin(a0),xi1=cx+ir*Math.cos(a1),yi1=cy+ir*Math.sin(a1);
+    s+='<path d="M'+x0+' '+y0+' A'+r+' '+r+' 0 '+lg+' 1 '+x1+' '+y1+' L'+xi1+' '+yi1+' A'+ir+' '+ir+' 0 '+lg+' 0 '+xi0+' '+yi0+' Z" fill="'+d.c+'" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.6s" fill="freeze"/></path>';});
+  if(opt.cv)s+='<text x="'+cx+'" y="'+(cy-2)+'" text-anchor="middle" class="center-v">'+opt.cv+'</text>';
+  if(opt.cl)s+='<text x="'+cx+'" y="'+(cy+16)+'" text-anchor="middle" class="center-l">'+opt.cl+'</text>';
+  s+='</svg>';node.innerHTML=s;}
+
+// HERO break-even: monthly stacked income bars vs expense line
+function beChart(node,P){
+  var rows=P.rows,W=580,H=310,padL=40,padR=16,padT=30,padB=40,n=rows.length;
+  var maxInc=Math.max.apply(null,rows.map(function(r){return Math.max(r.inc,r.exp)}));
+  var maxY=Math.ceil(maxInc/20)*20;
+  var innerW=W-padL-padR, step=innerW/n, bw=step*0.6;
+  var xc=function(i){return padL+i*step+step/2};
+  var yb=H-padB, y=function(v){return yb-v/maxY*(H-padT-padB)};
+  var beIdx=P.be?rows.findIndex(function(r){return r.m===P.be}):-1;
+  var s='<svg viewBox="0 0 '+W+' '+H+'"><defs>'+grad('gblb',C.emerald,.95,.5)+grad('gipo',C.sky,.95,.55)+'</defs>';
+  if(beIdx>=0){var sx=padL+beIdx*step;s+='<rect x="'+sx+'" y="'+padT+'" width="'+(W-padR-sx)+'" height="'+(H-padT-padB)+'" fill="#f0fdf4"/>';}
+  for(var g=0;g<=maxY;g+=20){s+='<line x1="'+padL+'" y1="'+y(g)+'" x2="'+(W-padR)+'" y2="'+y(g)+'" stroke="'+C.line+'"/><text x="'+(padL-6)+'" y="'+(y(g)+3)+'" text-anchor="end" class="axl">'+g+'</text>';}
+  rows.forEach(function(r,i){var x=xc(i)-bw/2, bg=Math.min(i*0.03,0.6);
+    var segs=[{v:r.fd,c:C.teal},{v:r.os,c:C.slate},{v:r.ipo,c:'url(#gipo)'},{v:r.blr,c:'url(#gblb)'}], acc=0;
+    segs.forEach(function(sg){var h=sg.v/maxY*(H-padT-padB); if(h<=0.3)return; var yy=yb-acc-h;
+      s+='<rect x="'+x.toFixed(1)+'" y="'+yb+'" width="'+bw.toFixed(1)+'" height="0" fill="'+sg.c+'"><animate attributeName="height" from="0" to="'+h.toFixed(1)+'" dur="0.6s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+yb+'" to="'+yy.toFixed(1)+'" dur="0.6s" begin="'+bg+'s" fill="freeze"/></rect>';acc+=h;});
+  });
+  // expense step line
+  var dl='';rows.forEach(function(r,i){var xx=xc(i);dl+=(i?' L':'M')+(xx-step/2).toFixed(1)+' '+y(r.exp).toFixed(1)+' L'+(xx+step/2).toFixed(1)+' '+y(r.exp).toFixed(1);});
+  s+='<path d="'+dl+'" fill="none" stroke="'+C.rose+'" stroke-width="2.4" stroke-dasharray="6 4"/>';
+  s+='<text x="'+(W-padR)+'" y="'+(y(rows[rows.length-1].exp)-6)+'" text-anchor="end" style="font-size:10.5px;font-weight:700;fill:'+C.rose+'">Expense</text>';
+  if(beIdx>=0){var bx2=xc(beIdx),ey=y(rows[beIdx].exp);
+    s+='<circle cx="'+bx2+'" cy="'+ey+'" r="5.5" fill="#fff" stroke="'+C.green+'" stroke-width="2.6"/>';
+    var lx=Math.min(bx2-70,W-150);if(lx<padL)lx=padL;
+    s+='<rect x="'+lx+'" y="'+(padT-24)+'" width="144" height="21" rx="7" fill="'+C.green+'"/>';
+    s+='<text x="'+(lx+72)+'" y="'+(padT-9)+'" text-anchor="middle" style="font-size:11px;font-weight:800;fill:#fff">BREAK-EVEN · '+P.be+'</text>';
+  }
+  rows.forEach(function(r,i){if(i%2===0)s+='<text x="'+xc(i)+'" y="'+(H-14)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
+  s+='</svg>';node.innerHTML=s;
+}
+
+// cumulative J-curve
+function cumChart(node,P){
+  var rows=P.rows,W=520,H=250,padL=48,padR=14,padT=16,padB=34,n=rows.length;
+  var cums=rows.map(function(r){return r.cum/100});
+  var mx=Math.ceil(Math.max.apply(null,cums.concat([0]))),mn=Math.floor(Math.min.apply(null,cums.concat([0]))),rg=(mx-mn)||1;
+  var x=function(i){return padL+i/(n-1)*(W-padL-padR)};
+  var y=function(v){return padT+(mx-v)/rg*(H-padT-padB)};
+  var s='<svg viewBox="0 0 '+W+' '+H+'"><defs>'+grad('gcum',P.be?C.navy:C.rose,.22,.02)+'</defs>';
+  for(var g=mn;g<=mx;g++){s+='<line x1="'+padL+'" y1="'+y(g)+'" x2="'+(W-padR)+'" y2="'+y(g)+'" stroke="'+(g===0?'#cbd5e1':C.line)+'"/><text x="'+(padL-6)+'" y="'+(y(g)+3)+'" text-anchor="end" class="axl">'+g+'</text>';}
+  var d='M'+x(0)+' '+y(0);rows.forEach(function(r,i){d+=' L'+x(i).toFixed(1)+' '+y(r.cum/100).toFixed(1)});d+=' L'+x(n-1)+' '+y(0)+' Z';
+  s+='<path d="'+d+'" fill="url(#gcum)"/>';
+  var dl='M';rows.forEach(function(r,i){dl+=(i?' L':'')+x(i).toFixed(1)+' '+y(r.cum/100).toFixed(1)});
+  s+='<path d="'+dl+'" fill="none" stroke="'+(P.be?C.navy:C.rose)+'" stroke-width="2.4" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"><animate attributeName="stroke-dashoffset" from="1" to="0" dur="1.1s" fill="freeze"/></path>';
+  var ti=cums.indexOf(Math.min.apply(null,cums));
+  s+='<circle cx="'+x(ti)+'" cy="'+y(cums[ti])+'" r="4.5" fill="#fff" stroke="'+C.rose+'" stroke-width="2.5"/>';
+  s+='<text x="'+x(ti)+'" y="'+(y(cums[ti])+18)+'" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:'+C.rose+'">trough −₹'+Math.abs(cums[ti]).toFixed(2)+' Cr</text>';
+  rows.forEach(function(r,i){if(i%2===0)s+='<text x="'+x(i)+'" y="'+(H-14)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
+  s+='</svg>';node.innerHTML=s;
+}
+
+// BLR ramp bars
+function rampBars(node,P){
+  var rows=P.rows.slice(0,8),W=440,H=230,padB=40,padT=20,x0=20;
+  var mx=20,plot=H-padT-padB,sc=plot/mx,z=padT+plot,n=rows.length,slot=(W-x0-8)/n,bw=Math.min(38,slot*0.56);
+  var s='<svg viewBox="0 0 '+W+' '+H+'"><line x1="'+x0+'" y1="'+z+'" x2="'+W+'" y2="'+z+'" stroke="'+C.line+'"/>';
+  rows.forEach(function(r,i){var cx=x0+slot*i+slot/2,x=cx-bw/2,h=r.blrN*sc,bg=i*0.06;
+    var col=r.blrN===0?'#e2e8f0':(r.blrN<=4?C.amber:C.emerald);
+    s+='<rect x="'+x+'" y="'+z+'" width="'+bw+'" height="0" rx="4" fill="'+col+'"><animate attributeName="height" from="0" to="'+h+'" dur="0.7s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+z+'" to="'+(z-h)+'" dur="0.7s" begin="'+bg+'s" fill="freeze"/></rect>';
+    if(r.blrN>0)s+='<text x="'+cx+'" y="'+(z-h-7)+'" text-anchor="middle" class="barlab">'+r.blrN+'</text>';
+    s+='<text x="'+cx+'" y="'+(H-15)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
+  s+='</svg>';node.innerHTML=s;
+}
+
+// expense stacked bars per month
+function expBars(node,P){
+  var rows=P.rows.slice(0,8),W=440,H=250,padB=40,padT=22,x0=28;
+  var mx=Math.ceil(Math.max.apply(null,rows.map(function(r){return r.exp}))/10)*10;
+  var plot=H-padT-padB,sc=plot/mx,z=padT+plot,n=rows.length,slot=(W-x0-8)/n,bw=Math.min(36,slot*0.56);
+  var s='<svg viewBox="0 0 '+W+' '+H+'"><line x1="'+x0+'" y1="'+z+'" x2="'+W+'" y2="'+z+'" stroke="'+C.line+'"/>';
+  for(var g=0;g<=mx;g+=20){var yy=z-g*sc;s+='<line x1="'+x0+'" y1="'+yy+'" x2="'+W+'" y2="'+yy+'" stroke="'+C.line+'"/><text x="'+(x0-5)+'" y="'+(yy+3)+'" text-anchor="end" class="axl">'+g+'</text>';}
+  rows.forEach(function(r,i){var cx=x0+slot*i+slot/2,x=cx-bw/2,bg=i*0.05,acc=0;
+    var segs=[{v:r.payroll,c:C.navy},{v:r.opex,c:C.teal},{v:r.rc,c:C.violet},{v:r.board,c:C.amber}];
+    segs.forEach(function(sg){if(sg.v<=0)return;var h=sg.v*sc;acc+=h;
+      s+='<rect x="'+x+'" y="'+z+'" width="'+bw+'" height="0" fill="'+sg.c+'"><animate attributeName="height" from="0" to="'+h+'" dur="0.7s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+z+'" to="'+(z-acc)+'" dur="0.7s" begin="'+bg+'s" fill="freeze"/></rect>';});
+    s+='<text x="'+cx+'" y="'+(z-acc-6)+'" text-anchor="middle" class="barlab" style="font-size:9.5px">'+r.exp.toFixed(0)+'</text>';
+    s+='<text x="'+cx+'" y="'+(H-15)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
+  s+='</svg>';node.innerHTML=s;
+}
+
+// ================= RENDER =================
+function render(key){
+  var sc=SCN[key], P=project(key);
+  document.querySelectorAll('.tab').forEach(function(t){t.className='tab '+t.dataset.s+(t.dataset.s===key?' on':'')});
+  $('scnHead').innerHTML='<span class="chip" style="background:'+sc.tagbg+';color:'+sc.tagfg+'">'+sc.tag+'</span>'+
+    '<div><div style="font-size:20px;font-weight:800">'+sc.title+'</div><div class="sub" style="margin:2px 0 0">'+sc.story+'</div></div>';
+  $('scnHead').className='card fade';
+  var beTxt=P.be?P.be:'Not this horizon';
+  $('kpis').innerHTML=[
+    ['Break-even month',beTxt,P.be?C.green:C.rose],
+    ['Aug26 to Mar27 net',fmtCr(P.p1.net/100),P.p1.net>=0?C.green:C.rose],
+    ['FY28 net P&L',fmtCr(P.fy28.net/100),P.fy28.net>=0?C.green:C.rose],
+    ['Peak cash dip','−₹'+Math.abs(P.trough/100).toFixed(2)+' Cr',C.rose]
+  ].map(function(k){return '<div class="card kpi fade"><div class="v" style="color:'+k[2]+'">'+k[1]+'</div><div class="l">'+k[0]+'</div></div>'}).join('');
+  $('playList').innerHTML=sc.play.map(function(p){return '<li><span class="step" style="background:'+sc.col+'">'+p[0].charAt(0)+'</span><div><b>'+p[0]+'</b> &middot; '+p[1]+'</div></li>'}).join('');
+  beChart($('beChart'),P);
+  cumChart($('cumChart'),P);
+  rampBars($('rampBars'),P);
+  expBars($('expBars'),P);
+  $('beSrc').innerHTML=P.be?('Stacked income, FD interest, other sales, IPO and BLR, crosses the expense line in <b>'+P.be+'</b>. The deliberate slow BLR start keeps the launch month clean, then the ramp does the work.'):
+    'With no BLR, income holds around ₹24.6 L a month against ₹46.7 L expense. No operating break-even until the licence lands, but IPO growth trims the burn.';
+  $('cumSrc').innerHTML=P.be?('The dip bottoms at <b>−₹'+Math.abs(P.trough/100).toFixed(2)+' Cr</b>, shallow because break-even arrives quickly, then the run-rate repays it.'):
+    ('Cumulative loss deepens to <b>−₹'+Math.abs(P.trough/100).toFixed(2)+' Cr</b> over the horizon, funded from the ₹26 Cr corpus.');
+  $('rampSrc').innerHTML=key==='s3'?'No BLR this year. The team stays on IPO and operations.':
+    ('Amber is the deliberate 4-case slow start in the launch month. Green is full 16-case capacity from the next month.');
+  $('expSrc').innerHTML='Base run-rate ₹46.7 L a month. RC fees (violet) climb as BLR case volume rises. Board sitting fees and one-time IT and branding (amber) land in specific months, not every month.';
+}
+
+// static: salary + capacity + donuts
+vbars($('salBars'),[
+  {l:'Existing team',v:25.0,c:C.navy,t:'₹25.0 L'},
+  {l:'New Hire A',v:3.75,c:C.teal,t:'₹3.75 L'},
+  {l:'New Hire B',v:4.17,c:C.sky,t:'₹4.17 L'},
+  {l:'Total / mo',v:32.92,c:C.emerald,t:'₹32.9 L'}
+]);
+vbars($('capBars'),[
+  {l:'Aug',stack:[{v:10,c:C.sky},{v:10,c:C.emerald}],t:'20'},
+  {l:'Sep',stack:[{v:15,c:C.sky},{v:5,c:C.emerald}],t:'20'},
+  {l:'Oct',stack:[{v:20,c:C.sky},{v:4,c:C.rose}],t:'24'},
+  {l:'Nov+',stack:[{v:20,c:C.sky},{v:16,c:C.rose}],t:'36'}
+]);
+// FY28 revenue mix (S1)
+var P1=project('s1');
+var rev=[{l:'BLR',v:P1.fy28.blr,c:C.emerald},{l:'IPO',v:P1.fy28.ipo,c:C.sky},{l:'FD interest',v:12.5*12,c:C.teal},{l:'Other sales',v:4.08*12,c:C.slate}];
+var revTot=rev.reduce(function(a,d){return a+d.v},0);
+donut($('revDonut'),rev,{cv:'₹'+(revTot/100).toFixed(1)+' Cr',cl:'FY28 income (S1)'});
+$('revLegend').innerHTML=rev.map(function(d){return '<span><i class="sw" style="background:'+d.c+'"></i>'+d.l+' '+(d.v/revTot*100).toFixed(0)+'%</span>'}).join('');
+// cost composition (FY27 8-mo, S1)
+var cost=[{l:'Payroll',v:65.0,c:C.navy},{l:'Other opex',v:22.9,c:C.teal},{l:'RC fees',v:6.7,c:C.violet},{l:'Board meetings',v:4.1,c:C.amber},{l:'IT + branding',v:1.4,c:C.rose}];
+donut($('costDonut'),cost,{cv:'₹5.34 Cr',cl:'FY27 cost base'});
+$('costLegend').innerHTML=cost.map(function(d){return '<span><i class="sw" style="background:'+d.c+'"></i>'+d.l+' '+d.v+'%</span>'}).join('');
+
+document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){render(t.dataset.s)})});
+render('s1');
+</script>

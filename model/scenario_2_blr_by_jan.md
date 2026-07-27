@@ -10,12 +10,12 @@
 | Existing operating Sales | 0.97 | actual-based |
 | **BLR revenue (3 months)** | `= 3 mo × TBD` | ⚠️ INPUT — see revenue assumptions |
 | **Total income** | 2.47 + BLR | |
-| Total expense | (5.27) | incl. new hires |
+| Total expense | (5.34) | revised bottom-up, incl. new hires, RC fees, board meetings, IT/branding — see `01_monthly_budget_fy27.md` |
 | *BLR one-time set-up cost, if any* | `(TBD)` | ⚠️ INPUT |
-| **Net P&L** | **−2.80 + BLR** | only 3 months of BLR contribution |
+| **Net P&L** | **−2.87 + BLR** | only 3 months of BLR contribution |
 
 ## Break-even check
-- BLR revenue needed in FY27 to break even = **₹2.80 Cr over 3 months ≈ ₹93.3 L/month** — steep; near-certain FY27 loss.
+- BLR revenue needed in FY27 to break even = **₹2.87 Cr over 3 months ≈ ₹95.7 L/month** — steep; near-certain FY27 loss.
 - FY27 mostly absorbs the full cost base (incl. new hires) while BLR contributes only in Q4.
 
 ## Narrative for board
