@@ -204,8 +204,8 @@
     <p class="sub">Every figure here is built from booked actuals or the confirmed unit economics: IPO at ₹1.2 L per quarter per mandate, BLR at 3 bps up-front plus 1.5 bps recurring on a ₹100 Cr average case.</p>
     <div class="grid g2" style="margin-top:24px">
       <div class="card">
-        <h3>FY28 revenue mix at full run-rate (S1)</h3>
-        <p class="sub" style="margin-bottom:6px">Once both engines are firing, BLR leads, IPO is a steady annuity, FD interest becomes the smaller slice.</p>
+        <h3>Revenue mix at the Apr27 run-rate (S1)</h3>
+        <p class="sub" style="margin-bottom:6px">Annualising the April 2027 exit month: BLR leads, IPO and ratings is a steady annuity, FD interest becomes the smaller slice.</p>
         <div id="revDonut"></div>
         <div class="legend" id="revLegend"></div>
         <p class="src">ACER has only two kinds of income: rating fees and FD interest. Rating splits into IPO and ratings (existing work plus the growing IPO book) and BLR once the licence is live. BLR is a labelled capacity projection, not booked. IPO and ratings about ₹1.45 Cr/yr, FD interest held flat.</p>
@@ -255,8 +255,7 @@ function fmtCr(x){return (x>=0?'+':'−')+'₹'+Math.abs(x).toFixed(2)+' Cr'}
 function grad(id,c,a0,a1){return '<linearGradient id="'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+c+'" stop-opacity="'+(a0||.9)+'"/><stop offset="1" stop-color="'+c+'" stop-opacity="'+(a1||.28)+'"/></linearGradient>'}
 
 // ================= MODEL (all figures in ₹ lakh/month) =================
-var MON=["Aug26","Sep26","Oct26","Nov26","Dec26","Jan27","Feb27","Mar27",
-         "Apr27","May27","Jun27","Jul27","Aug27","Sep27","Oct27","Nov27","Dec27","Jan28","Feb28","Mar28"];
+var MON=["Aug26","Sep26","Oct26","Nov26","Dec26","Jan27","Feb27","Mar27","Apr27"];
 var K={payroll:32.92, opex:11.57, rcBase:2.20, FD:12.5, otherSales:4.08, ipoFee:0.40,
        irfCase:3.0, caseCr:100, ASF:1.5e-4};
 var BOARD={Aug26:1,Nov26:1,Feb27:1,Aug27:1,Nov27:1,Feb28:1};
@@ -292,8 +291,8 @@ function project(scn){
   }
   var sum=function(a,b,f){var s=0;for(var j=a;j<b;j++)s+=f(rows[j]);return s};
   return {rows:rows, be:be, scn:scn,
-    p1:{inc:sum(0,8,function(r){return r.inc}),exp:sum(0,8,function(r){return r.exp}),net:sum(0,8,function(r){return r.net}),blr:sum(0,8,function(r){return r.blr}),ipo:sum(0,8,function(r){return r.ipo})},
-    fy28:{inc:sum(8,20,function(r){return r.inc}),exp:sum(8,20,function(r){return r.exp}),net:sum(8,20,function(r){return r.net}),blr:sum(8,20,function(r){return r.blr}),ipo:sum(8,20,function(r){return r.ipo})},
+    p1:{inc:sum(0,9,function(r){return r.inc}),exp:sum(0,9,function(r){return r.exp}),net:sum(0,9,function(r){return r.net}),blr:sum(0,9,function(r){return r.blr}),ipo:sum(0,9,function(r){return r.ipo})},
+    exit:rows[8],
     trough:Math.min.apply(null,rows.map(function(r){return r.cum}))};
 }
 
@@ -308,7 +307,7 @@ var SCN={
     story:'Same launch discipline, three months later. By January the team has been taking IPO mandates since August, so the licence goes live but BLR waits, IPO first. Use the extra runway to push IPO and ratings so the pre-licence months burn less.',
     play:[['Aug to Dec','No licence yet. Grow IPO to 20 and work that book, push rating sales, keep the burn tight.'],
           ['Jan','Licence live, but the IPO book comes first. Zero BLR this month, branding push, IPO delivery protected.'],
-          ['Feb on','IPO steady, capacity frees up, BLR ramps to 16 a month. FY27 still a loss, FY28 set up strong.'],
+          ['Feb on','IPO steady, capacity frees up, BLR ramps to 16 a month. FY27 still a loss, but the exit run-rate into next year is strong.'],
           ['Trigger','Same rule, hire the sixth executor only when capacity turns negative twice.']]},
   s3:{cls:'s3',name:'Scenario 3',title:'No BLR licence in FY27',tag:'IPO and operations',tagbg:'#fee2e2',tagfg:'#b91c1c',col:C.rose,
     story:'No BLR revenue, but the IPO engine keeps running and it is strong. With the whole team on IPO and rating cases, the book keeps growing at 10 to 12 cases a month, income climbs and the burn shrinks steadily even without a licence.',
@@ -355,13 +354,13 @@ function beChart(node,P){
   var xc=function(i){return padL+i*step+step/2};
   var yb=H-padB, y=function(v){return yb-v/maxY*(H-padT-padB)};
   var beIdx=P.be?rows.findIndex(function(r){return r.m===P.be}):-1;
-  var s='<svg viewBox="0 0 '+W+' '+H+'"><defs>'+grad('gblb',C.emerald,.95,.5)+grad('gipo',C.sky,.95,.55)+'</defs>';
+  var s='<svg viewBox="0 0 '+W+' '+H+'"><defs>'+grad('gblb',C.emerald,.95,.5)+grad('gipo',C.sky,.95,.55)+grad('gfd',C.teal,.9,.45)+'</defs>';
   if(beIdx>=0){var sx=padL+beIdx*step;s+='<rect x="'+sx+'" y="'+padT+'" width="'+(W-padR-sx)+'" height="'+(H-padT-padB)+'" fill="#f0fdf4"/>';}
   for(var g=0;g<=maxY;g+=20){s+='<line x1="'+padL+'" y1="'+y(g)+'" x2="'+(W-padR)+'" y2="'+y(g)+'" stroke="'+C.line+'"/><text x="'+(padL-6)+'" y="'+(y(g)+3)+'" text-anchor="end" class="axl">'+g+'</text>';}
-  rows.forEach(function(r,i){var x=xc(i)-bw/2, bg=Math.min(i*0.03,0.6);
-    var segs=[{v:r.fd,c:C.teal},{v:r.rating,c:'url(#gipo)'},{v:r.blr,c:'url(#gblb)'}], acc=0;
+  rows.forEach(function(r,i){var x=xc(i)-bw/2, bg=Math.min(i*0.03,0.6), op=(1-i*0.045).toFixed(2);
+    var segs=[{v:r.fd,c:'url(#gfd)'},{v:r.rating,c:'url(#gipo)'},{v:r.blr,c:'url(#gblb)'}], acc=0;
     segs.forEach(function(sg){var h=sg.v/maxY*(H-padT-padB); if(h<=0.3)return; var yy=yb-acc-h;
-      s+='<rect x="'+x.toFixed(1)+'" y="'+yb+'" width="'+bw.toFixed(1)+'" height="0" fill="'+sg.c+'"><animate attributeName="height" from="0" to="'+h.toFixed(1)+'" dur="0.6s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+yb+'" to="'+yy.toFixed(1)+'" dur="0.6s" begin="'+bg+'s" fill="freeze"/></rect>';acc+=h;});
+      s+='<rect x="'+x.toFixed(1)+'" y="'+yb+'" width="'+bw.toFixed(1)+'" height="0" fill="'+sg.c+'" opacity="'+op+'"><animate attributeName="height" from="0" to="'+h.toFixed(1)+'" dur="0.6s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+yb+'" to="'+yy.toFixed(1)+'" dur="0.6s" begin="'+bg+'s" fill="freeze"/></rect>';acc+=h;});
     var totH=r.inc/maxY*(H-padT-padB);
     s+='<text x="'+xc(i)+'" y="'+(yb-totH-4).toFixed(1)+'" text-anchor="middle" style="font-size:8px;font-weight:700;fill:'+C.ink+'">'+Math.round(r.inc)+'</text>';
   });
@@ -375,7 +374,7 @@ function beChart(node,P){
     s+='<rect x="'+lx+'" y="'+(padT-24)+'" width="144" height="21" rx="7" fill="'+C.green+'"/>';
     s+='<text x="'+(lx+72)+'" y="'+(padT-9)+'" text-anchor="middle" style="font-size:11px;font-weight:800;fill:#fff">BREAK-EVEN · '+P.be+'</text>';
   }
-  rows.forEach(function(r,i){if(i%2===0)s+='<text x="'+xc(i)+'" y="'+(H-14)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
+  rows.forEach(function(r,i){s+='<text x="'+xc(i)+'" y="'+(H-14)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
   s+='</svg>';node.innerHTML=s;
 }
 
@@ -395,13 +394,13 @@ function cumChart(node,P){
   var ti=cums.indexOf(Math.min.apply(null,cums));
   s+='<circle cx="'+x(ti)+'" cy="'+y(cums[ti])+'" r="4.5" fill="#fff" stroke="'+C.rose+'" stroke-width="2.5"/>';
   s+='<text x="'+x(ti)+'" y="'+(y(cums[ti])+18)+'" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:'+C.rose+'">trough −₹'+Math.abs(cums[ti]).toFixed(2)+' Cr</text>';
-  rows.forEach(function(r,i){if(i%2===0)s+='<text x="'+x(i)+'" y="'+(H-14)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
+  rows.forEach(function(r,i){s+='<text x="'+x(i)+'" y="'+(H-14)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
   s+='</svg>';node.innerHTML=s;
 }
 
 // BLR ramp bars
 function rampBars(node,P){
-  var rows=P.rows.slice(0,8),W=440,H=230,padB=40,padT=20,x0=20;
+  var rows=P.rows.slice(0,9),W=440,H=230,padB=40,padT=20,x0=20;
   var mx=20,plot=H-padT-padB,sc=plot/mx,z=padT+plot,n=rows.length,slot=(W-x0-8)/n,bw=Math.min(38,slot*0.56);
   var s='<svg viewBox="0 0 '+W+' '+H+'"><line x1="'+x0+'" y1="'+z+'" x2="'+W+'" y2="'+z+'" stroke="'+C.line+'"/>';
   rows.forEach(function(r,i){var cx=x0+slot*i+slot/2,x=cx-bw/2,bg=i*0.06;
@@ -417,7 +416,7 @@ function rampBars(node,P){
 
 // expense stacked bars per month
 function expBars(node,P){
-  var rows=P.rows.slice(0,8),W=440,H=250,padB=40,padT=22,x0=28;
+  var rows=P.rows.slice(0,9),W=440,H=250,padB=40,padT=22,x0=28;
   var mx=Math.ceil(Math.max.apply(null,rows.map(function(r){return r.exp}))/10)*10;
   var plot=H-padT-padB,sc=plot/mx,z=padT+plot,n=rows.length,slot=(W-x0-8)/n,bw=Math.min(36,slot*0.56);
   var s='<svg viewBox="0 0 '+W+' '+H+'"><line x1="'+x0+'" y1="'+z+'" x2="'+W+'" y2="'+z+'" stroke="'+C.line+'"/>';
@@ -441,8 +440,8 @@ function render(key){
   var beTxt=P.be?P.be:'Not this horizon';
   $('kpis').innerHTML=[
     ['Break-even month',beTxt,P.be?C.green:C.rose],
-    ['Aug26 to Mar27 net',fmtCr(P.p1.net/100),P.p1.net>=0?C.green:C.rose],
-    ['FY28 net P&L',fmtCr(P.fy28.net/100),P.fy28.net>=0?C.green:C.rose],
+    ['Aug26 to Apr27 net',fmtCr(P.p1.net/100),P.p1.net>=0?C.green:C.rose],
+    ['Apr27 run-rate, annualised',fmtCr(P.exit.net*12/100),P.exit.net>=0?C.green:C.rose],
     ['Peak cash dip','−₹'+Math.abs(P.trough/100).toFixed(2)+' Cr',C.rose]
   ].map(function(k){return '<div class="card kpi fade"><div class="v" style="color:'+k[2]+'">'+k[1]+'</div><div class="l">'+k[0]+'</div></div>'}).join('');
   $('playList').innerHTML=sc.play.map(function(p){return '<li><span class="step" style="background:'+sc.col+'">'+p[0].charAt(0)+'</span><div><b>'+p[0]+'</b> &middot; '+p[1]+'</div></li>'}).join('');
@@ -462,8 +461,7 @@ function render(key){
 // static: salary + capacity + donuts
 vbars($('salBars'),[
   {l:'Salary now',v:25.0,c:C.navy,t:'₹25.0 L'},
-  {l:'Added from Sep',v:7.92,c:C.teal,t:'+₹7.92 L'},
-  {l:'Salary, Sep on',v:32.92,c:C.emerald,t:'₹32.9 L'}
+  {l:'Salary from Sep',v:32.92,c:C.emerald,t:'₹32.9 L'}
 ]);
 vbars($('capBars'),[
   {l:'Aug',stack:[{v:10,c:C.sky},{v:10,c:C.emerald}],t:'20'},
@@ -471,11 +469,11 @@ vbars($('capBars'),[
   {l:'Oct',stack:[{v:20,c:C.sky},{v:4,c:C.rose}],t:'24'},
   {l:'Nov+',stack:[{v:20,c:C.sky},{v:16,c:C.rose}],t:'36'}
 ]);
-// FY28 revenue mix (S1)
-var P1=project('s1');
-var rev=[{l:'BLR',v:P1.fy28.blr,c:C.emerald},{l:'IPO & ratings',v:P1.fy28.ipo+4.08*12,c:C.sky},{l:'FD interest',v:12.5*12,c:C.teal}];
+// Apr27 exit run-rate revenue mix (S1), annualised
+var P1=project('s1'); var ex=P1.exit;
+var rev=[{l:'BLR',v:ex.blr*12,c:C.emerald},{l:'IPO & ratings',v:ex.rating*12,c:C.sky},{l:'FD interest',v:ex.fd*12,c:C.teal}];
 var revTot=rev.reduce(function(a,d){return a+d.v},0);
-donut($('revDonut'),rev,{cv:'₹'+(revTot/100).toFixed(1)+' Cr',cl:'FY28 income (S1)'});
+donut($('revDonut'),rev,{cv:'₹'+(revTot/100).toFixed(1)+' Cr',cl:'Apr27 run-rate'});
 $('revLegend').innerHTML=rev.map(function(d){return '<span><i class="sw" style="background:'+d.c+'"></i>'+d.l+' '+(d.v/revTot*100).toFixed(0)+'%</span>'}).join('');
 // cost composition (FY27 8-mo, S1)
 var cost=[{l:'Payroll',v:65.0,c:C.navy},{l:'Other opex',v:22.9,c:C.teal},{l:'RC fees',v:6.7,c:C.violet},{l:'Board meetings',v:4.1,c:C.amber},{l:'IT + branding',v:1.4,c:C.rose}];

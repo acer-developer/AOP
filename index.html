@@ -403,23 +403,23 @@ function sharePie(node,data){
 
 // ---------- HERO break-even: monthly stacked BAR chart vs expense ----------
 function beChart(node,P){
-  var rows=P.rows,W=580,H=300,padL=40,padR=16,padT=30,padB=34,n=rows.length;
+  var rows=P.rows.slice(0,13),W=580,H=300,padL=40,padR=16,padT=30,padB=34,n=rows.length;
   var L=1e5, expL=rows[0].exp/L;
   var maxY=Math.max(60,Math.ceil(Math.max(Math.max.apply(null,rows.map(function(r){return r.inc/L})),expL)/20)*20);
   var innerW=W-padL-padR, step=innerW/n, bw=step*0.64;
   var xc=function(i){return padL+i*step+step/2};
   var yb=H-padB, y=function(v){return yb-v/maxY*(H-padT-padB)};
   var beIdx=P.be?rows.findIndex(function(r){return r.m===P.be}):-1;
-  var s='<svg viewBox="0 0 '+W+' '+H+'"><defs>'+grad('gblb',C.emerald,.95,.5)+'</defs>';
+  var s='<svg viewBox="0 0 '+W+' '+H+'"><defs>'+grad('gblb',C.emerald,.95,.5)+grad('gfd',C.teal,.9,.45)+grad('gsl',C.sky,.9,.45)+'</defs>';
   // profit zone + break-even band
   if(beIdx>=0){var sx=padL+beIdx*step;s+='<rect x="'+sx+'" y="'+padT+'" width="'+(W-padR-sx)+'" height="'+(H-padT-padB)+'" fill="#f0fdf4"/>';}
   for(var g=0;g<=maxY;g+=20){s+='<line x1="'+padL+'" y1="'+y(g)+'" x2="'+(W-padR)+'" y2="'+y(g)+'" stroke="'+C.line+'"/><text x="'+(padL-6)+'" y="'+(y(g)+3)+'" text-anchor="end" class="axl">'+g+'</text>';}
   if(beIdx>=0){var bxb=padL+beIdx*step;s+='<rect x="'+bxb+'" y="'+padT+'" width="'+step+'" height="'+(H-padT-padB)+'" fill="'+C.green+'" opacity=".10"/>';}
   // stacked bars (FD + sales + BLR)
-  rows.forEach(function(r,i){var x=xc(i)-bw/2, bg=Math.min(i*0.02,0.5);
-    var segs=[{v:r.fd/L,c:C.teal},{v:r.sal/L,c:C.sky},{v:r.blr/L,c:'url(#gblb)'}], acc=0;
+  rows.forEach(function(r,i){var x=xc(i)-bw/2, bg=Math.min(i*0.02,0.5), op=(i<4?1:(1-(i-4)*0.045)).toFixed(2);
+    var segs=[{v:r.fd/L,c:'url(#gfd)'},{v:r.sal/L,c:'url(#gsl)'},{v:r.blr/L,c:'url(#gblb)'}], acc=0;
     segs.forEach(function(sg){var h=sg.v/maxY*(H-padT-padB); if(h<=0.2)return; var yy=yb-acc-h;
-      s+='<rect x="'+x.toFixed(1)+'" y="'+yb+'" width="'+bw.toFixed(1)+'" height="0" fill="'+sg.c+'"><animate attributeName="height" from="0" to="'+h.toFixed(1)+'" dur="0.6s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+yb+'" to="'+yy.toFixed(1)+'" dur="0.6s" begin="'+bg+'s" fill="freeze"/></rect>';acc+=h;});
+      s+='<rect x="'+x.toFixed(1)+'" y="'+yb+'" width="'+bw.toFixed(1)+'" height="0" fill="'+sg.c+'" opacity="'+op+'"><animate attributeName="height" from="0" to="'+h.toFixed(1)+'" dur="0.6s" begin="'+bg+'s" fill="freeze"/><animate attributeName="y" from="'+yb+'" to="'+yy.toFixed(1)+'" dur="0.6s" begin="'+bg+'s" fill="freeze"/></rect>';acc+=h;});
   });
   // expense line
   var ey=y(expL);
@@ -438,7 +438,7 @@ function beChart(node,P){
 
 // ---------- cumulative J-curve (gradient) ----------
 function cumChart(node,P){
-  var rows=P.rows,W=520,H=250,padL=44,padR=14,padT=16,padB=34,n=rows.length;
+  var rows=P.rows.slice(0,13),W=520,H=250,padL=44,padR=14,padT=16,padB=34,n=rows.length;
   var cums=rows.map(function(r){return r.cum/1e7});
   var mx=Math.ceil(Math.max.apply(null,cums.concat([0]))),mn=Math.floor(Math.min.apply(null,cums.concat([0]))),rg=(mx-mn)||1;
   var x=function(i){return padL+i/(n-1)*(W-padL-padR)};
@@ -452,9 +452,9 @@ function cumChart(node,P){
   var ti=cums.indexOf(Math.min.apply(null,cums));
   s+='<circle cx="'+x(ti)+'" cy="'+y(cums[ti])+'" r="4.5" fill="#fff" stroke="'+C.rose+'" stroke-width="2.5"/>';
   s+='<text x="'+x(ti)+'" y="'+(y(cums[ti])+18)+'" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:'+C.rose+'">trough −₹'+Math.abs(cums[ti]).toFixed(2)+' Cr</text>';
-  if(P.payback){var pi=rows.findIndex(function(r){return r.m===P.payback});
+  if(P.payback){var pi=rows.findIndex(function(r){return r.m===P.payback}); if(pi>=0){
     s+='<circle cx="'+x(pi)+'" cy="'+y(0)+'" r="4.5" fill="#fff" stroke="'+C.green+'" stroke-width="2.5"/>';
-    s+='<text x="'+x(pi)+'" y="'+(y(0)-8)+'" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:'+C.green+'">paid back '+P.payback+'</text>';}
+    s+='<text x="'+x(pi)+'" y="'+(y(0)-8)+'" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:'+C.green+'">paid back '+P.payback+'</text>';}}
   rows.forEach(function(r,i){if(i%3===0)s+='<text x="'+x(i)+'" y="'+(H-14)+'" text-anchor="middle" class="axl">'+r.m+'</text>';});
   s+='</svg>';node.innerHTML=s;
 }
