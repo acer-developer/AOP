@@ -106,9 +106,9 @@
     <div class="grid g2" style="margin-top:24px">
       <div class="card">
         <h3>Where payroll goes, fully staffed</h3>
-        <p class="sub" style="margin-bottom:6px">Monthly payroll after both new hires join. Existing team is 2 leaders plus 5 executors.</p>
+        <p class="sub" style="margin-bottom:6px">Monthly payroll fully staffed. Existing team is 2 leaders plus 5 executors, with the added hires folded into a single line.</p>
         <div id="salBars"></div>
-        <p class="src">Payroll = salary + PF + gratuity + ESI + EDLI, per booked actuals. Fully staffed run-rate ₹32.92 L/mo, about ₹3.95 Cr/yr. New Hire A joined 24-Jul, New Hire B joins 1-Aug.</p>
+        <p class="src">Payroll = salary + PF + gratuity + ESI + EDLI, per booked actuals. Fully staffed run-rate ₹32.92 L/mo, about ₹3.95 Cr/yr.</p>
       </div>
       <div class="card">
         <h3>How 20 cases a month get split</h3>
@@ -454,8 +454,7 @@ function render(key){
 // static: salary + capacity + donuts
 vbars($('salBars'),[
   {l:'Existing team',v:25.0,c:C.navy,t:'₹25.0 L'},
-  {l:'New Hire A',v:3.75,c:C.teal,t:'₹3.75 L'},
-  {l:'New Hire B',v:4.17,c:C.sky,t:'₹4.17 L'},
+  {l:'New hires',v:7.92,c:C.teal,t:'₹7.92 L'},
   {l:'Total / mo',v:32.92,c:C.emerald,t:'₹32.9 L'}
 ]);
 vbars($('capBars'),[
