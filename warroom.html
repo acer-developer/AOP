@@ -103,6 +103,11 @@
   .st-todo{color:#b91c1c;border-color:#fecaca;background:#fef2f2}
   .st-partial{color:#b45309;border-color:#fde68a;background:#fffbeb}
   .st-ready{color:#15803d;border-color:#bbf7d0;background:#f0fdf4}
+  .rsrc{font-size:11.5px;color:#64748b;margin-top:12px;border-top:1px dashed var(--line);padding-top:9px;line-height:1.7}
+  .rsrc a{color:var(--accent);text-decoration:none;border-bottom:1px solid #c7d2fe}
+  .rsrc a:hover{border-bottom-color:var(--accent)}
+  .lbl{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:6px}
+  .lbl-off{background:#eef2ff;color:#4338ca}.lbl-int{background:#ecfdf5;color:#047857}.lbl-assm{background:#fff7ed;color:#c2410c}.lbl-der{background:#f1f5f9;color:#475569}.lbl-tc{background:#fef2f2;color:#b91c1c}
   .foot{color:#94a3b8;font-size:12px;text-align:center;padding:26px 0}
   .ring{--p:0;width:104px;height:104px;border-radius:50%;background:conic-gradient(var(--accent) calc(var(--p)*1%),#e5e7eb 0);display:grid;place-items:center}
   .ring>div{width:80px;height:80px;border-radius:50%;background:#fff;display:grid;place-items:center;text-align:center}
@@ -124,6 +129,7 @@
   <button data-z="dept">Dept Readiness</button>
   <button data-z="qb">Question Bank</button>
   <button data-z="war">Executive War Room</button>
+  <button data-z="res">Research &amp; Appendix</button>
 </div></nav>
 
 <main><div class="wrap">
@@ -133,6 +139,7 @@
   <section class="zone" data-zone="dept" id="z-dept"></section>
   <section class="zone" data-zone="qb" id="z-qb"></section>
   <section class="zone" data-zone="war" id="z-war"></section>
+  <section class="zone" data-zone="res" id="z-res"></section>
   <div class="foot">Internal board-preparation tool. Financials from ACER internal management accounts and the FY27 AOP model. Ownership, deadlines and readiness states are management-entered and default to <b>To confirm</b>. Not for external distribution.</div>
 </div></main>
 
@@ -147,25 +154,9 @@ var DIRECTORS=[
   appetite:'Growth-oriented, but demands credible, evidenced execution before capital.',
   qs:[
    {q:'Once BLR is live, will banks actually accept and use ACER’s ratings?',cat:'Market',dept:'BD',pri:'H',a:'Show lender-side validation: named banks aware of ACER, any panel-empanelment intent, and the ECAI adoption path once RBI accredits.'},
-   {q:'How many lender relationships do we hold at credit-head / CEO level today?',cat:'Sales',dept:'BD',pri:'H',a:'Present a relationship map with named institutions and contact seniority, not a count.'},
-   {q:'How many merchant bankers / arrangers are actively referring mandates?',cat:'Sales',dept:'BD',pri:'H',a:'Give active arranger list, referral volume, and concentration among top 3.'},
    {q:'How many issuers are in active discussion, with names and ticket sizes?',cat:'Sales',dept:'BD',pri:'H',a:'A live pipeline document with stage, ticket size and probability, distinct from the 16/month capacity.'},
-   {q:'What is the realistic mandate-conversion rate vs the 16/month capacity?',cat:'Execution',dept:'BD',pri:'H',a:'Capacity is the ceiling; show the assumed conversion and the basis for it.'},
    {q:'Why would a mid-corporate pick ACER over CRISIL, CARE or ICRA?',cat:'Competition',dept:'BD',pri:'H',a:'Articulate turnaround, service, pricing and second-rating positioning.'},
-   {q:'Do we have any signed MoUs, LOIs or empanelment with banks or arrangers?',cat:'Sales',dept:'BD',pri:'M',a:'List signed instruments; if none, state the plan and timeline to first.'},
-   {q:'Is the BD organisation sized and incentivised to reach ₹1,600 Cr/month?',cat:'People',dept:'BD',pri:'M',a:'BD headcount, quota design and incentive linkage to the capacity target.'},
-   {q:'How concentrated are we on a handful of merchant-banker relationships?',cat:'Risk',dept:'BD',pri:'M',a:'Show top-3 referral concentration and diversification plan.'},
-   {q:'What is the brand-visibility plan pre- and post-BLR?',cat:'Strategy',dept:'Research',pri:'M',a:'Outreach, thought-leadership and market-education plan with budget.'},
-   {q:'How do we withstand pricing pressure if incumbents undercut us?',cat:'Competition',dept:'Finance',pri:'M',a:'Fee-floor economics and the service differentiation that protects price.'},
-   {q:'Which regions and sectors do we target first, and why?',cat:'Growth',dept:'BD',pri:'M',a:'Prioritised segments with rationale tied to relationships and demand.'},
-   {q:'What does the first ₹1 Cr of real BLR revenue look like, and by when?',cat:'Growth',dept:'BD',pri:'H',a:'Name the mandates that make up the first crore and the month.'},
-   {q:'What is the plan if bank adoption is slower than assumed?',cat:'Risk',dept:'BD',pri:'H',a:'Slower-adoption scenario with cost levers and revised ramp.'},
-   {q:'How are we using board members’ networks to open bank doors?',cat:'Strategy',dept:'BD',pri:'M',a:'Specific introductions requested from the board and their targets.'},
-   {q:'What is the team’s track record of actually winning rating mandates?',cat:'Execution',dept:'People',pri:'M',a:'BD leadership pedigree and any mandates won to date.'},
-   {q:'What is our differentiated value proposition to lenders and issuers?',cat:'Strategy',dept:'BD',pri:'H',a:'One crisp positioning statement backed by service metrics.'},
-   {q:'Show me a pipeline document, not a projection.',cat:'Sales',dept:'BD',pri:'H',a:'CRM export of named opportunities is the evidence to have ready.'},
-   {q:'What conversion and ramp did peers like Infomerics and Acuité see early?',cat:'Market',dept:'Research',pri:'L',a:'Benchmarked early-trajectory read-across as a reality check.'},
-   {q:'What is our retention/surveillance-renewal expectation on won mandates?',cat:'Growth',dept:'BD',pri:'M',a:'Annuity assumption and renewal logic behind the ASF line.'}
+   {q:'What is the plan if bank adoption is slower than assumed?',cat:'Risk',dept:'BD',pri:'H',a:'Slower-adoption scenario with cost levers and a revised ramp.'}
   ]},
  {id:'ac',name:'Ajay Kumar Choudhary',init:'AC',role:'Independent Director',bg:'Former Executive Director, RBI; Chairman, NPCI',
   expertise:['RBI / ECAI','Operational risk','Technology','Cyber & data','Governance'],
@@ -175,25 +166,9 @@ var DIRECTORS=[
   appetite:'Low on operational and regulatory risk; wants tested controls.',
   qs:[
    {q:'What is the exact status of the RBI ECAI accreditation application?',cat:'Compliance',dept:'Compliance',pri:'H',a:'Filing date, current stage, queries raised, and documented RBI correspondence.'},
-   {q:'What is the realistic RBI timeline and what have they signalled?',cat:'Compliance',dept:'Compliance',pri:'H',a:'Honest timeline with the basis; avoid presenting hope as schedule.'},
    {q:'What is our contingency if RBI delays BLR beyond January 2027?',cat:'Risk',dept:'Compliance',pri:'H',a:'Scenario 3 cost-discipline plan; the firm stays solvent on the corpus.'},
-   {q:'Have we met every ECAI eligibility criterion, with evidence?',cat:'Compliance',dept:'Compliance',pri:'H',a:'Criterion-by-criterion checklist mapped to evidence.'},
-   {q:'What operational-risk controls govern the rating process end to end?',cat:'Operations',dept:'Rating Operations',pri:'H',a:'Documented workflow, maker-checker, committee sign-off, audit trail.'},
-   {q:'How robust and automated is the rating IT platform?',cat:'Technology',dept:'IT',pri:'M',a:'Platform, automation level, and manual-dependency risks.'},
-   {q:'What is our cyber-security and data-security posture?',cat:'Technology',dept:'IT',pri:'H',a:'Controls, testing cadence, and any external assessment.'},
-   {q:'Are business continuity and disaster recovery tested, not just documented?',cat:'Technology',dept:'IT',pri:'M',a:'Last DR test date and result.'},
-   {q:'Can operations scale to 16 mandates/month without quality breakdown?',cat:'Execution',dept:'Rating Operations',pri:'H',a:'Analyst capacity math vs throughput and TAT at scale.'},
-   {q:'What is analyst capacity and turnaround time per rating today?',cat:'Operations',dept:'Rating Operations',pri:'M',a:'Headcount, cases/analyst, and current TAT.'},
-   {q:'How is independence enforced between BD and the rating committee?',cat:'Governance',dept:'Compliance',pri:'H',a:'Information barriers and committee-composition rules.'},
-   {q:'What is surveillance capacity as the rated book compounds?',cat:'Operations',dept:'Rating Operations',pri:'M',a:'Surveillance load model as ASF book grows.'},
-   {q:'Any open regulatory observations with SEBI or RBI?',cat:'Compliance',dept:'Compliance',pri:'H',a:'Open-items register with status and owner.'},
-   {q:'How are operational-risk incidents monitored and escalated to the board?',cat:'Risk',dept:'Rating Operations',pri:'M',a:'Incident framework and board reporting cadence.'},
-   {q:'Is the technology investment plan funded within the cost base?',cat:'Technology',dept:'IT',pri:'M',a:'Tech capex/opex line and its place in the ₹5.27 Cr base.'},
-   {q:'How are data integrity and audit trails maintained for every rating?',cat:'Technology',dept:'IT',pri:'M',a:'Immutable logging and record-retention policy.'},
-   {q:'What third-party and vendor dependencies create operational risk?',cat:'Risk',dept:'IT',pri:'L',a:'Critical-vendor list and concentration.'},
-   {q:'Is there a single point of failure in rating operations or leadership?',cat:'Risk',dept:'Rating Operations',pri:'M',a:'Key-person and process SPOF analysis.'},
-   {q:'How do we ensure ECAI-grade process rigour from day one of volume?',cat:'Operations',dept:'Rating Operations',pri:'H',a:'Quality gates that scale with volume.'},
-   {q:'What is our data-subscription and market-data continuity plan?',cat:'Technology',dept:'IT',pri:'L',a:'Data sources, contracts and fallback.'}
+   {q:'Can operations scale to 16 mandates/month without quality breakdown?',cat:'Execution',dept:'Rating Operations',pri:'H',a:'Analyst capacity math vs throughput and TAT at scale, with quality gates.'},
+   {q:'What is our cyber-security and data-security posture?',cat:'Technology',dept:'IT',pri:'H',a:'Controls, testing cadence, external assessment, and BCP/DR test status.'}
   ]},
  {id:'ms',name:'Dr. M. S. Sahoo',init:'MS',role:'Independent Director',bg:'Former Chairman, IBBI; Former Whole-Time Member, SEBI',
   expertise:['Corporate governance','SEBI / regulation','Board process','Legal framework','Systemic risk'],
@@ -202,26 +177,10 @@ var DIRECTORS=[
   style:'Socratic, principled, tests the framework behind the answer.',
   appetite:'Very low on governance and reputational risk.',
   qs:[
-   {q:'Have we stress-tested governance against a rating failure or default?',cat:'Governance',dept:'Compliance',pri:'H',a:'A tabletop of a bad rating and the governance response.'},
    {q:'How do we manage the conflict of interest inherent in issuer-pays?',cat:'Governance',dept:'Compliance',pri:'H',a:'Structural separation, committee independence, fee-blind analysis.'},
-   {q:'What is the composition and independence of the rating committee?',cat:'Governance',dept:'Rating Operations',pri:'H',a:'Members, external voices and quorum rules.'},
-   {q:'Are board processes, minutes and disclosures at regulatory standard?',cat:'Governance',dept:'Compliance',pri:'M',a:'Board calendar, minute quality and disclosure register.'},
-   {q:'Which SEBI CRA compliance thresholds are we near or exceeding?',cat:'Compliance',dept:'Compliance',pri:'H',a:'Threshold dashboard incl. ₹25 Cr net worth maintenance.'},
-   {q:'What are shareholders and stakeholders not seeing in this plan?',cat:'Governance',dept:'Finance',pri:'H',a:'Name the uncomfortable truths: FD-interest dependence, unproven BLR ramp.'},
-   {q:'How do we prevent rating shopping and protect analytical integrity?',cat:'Governance',dept:'Rating Operations',pri:'M',a:'Policy on unaccepted ratings and disclosure.'},
-   {q:'What is our policy on analyst rotation and cooling-off?',cat:'People',dept:'HR',pri:'L',a:'Rotation policy vs SEBI norms.'},
-   {q:'How is the board informed of material risks between meetings?',cat:'Governance',dept:'Compliance',pri:'M',a:'Interim escalation protocol.'},
-   {q:'What reputational safeguards exist as we push rating volume?',cat:'Risk',dept:'Compliance',pri:'H',a:'Quality gate that scales with volume; the Brickwork lesson.'},
-   {q:'Is the whistle-blower and internal-controls framework operational?',cat:'Governance',dept:'Compliance',pri:'M',a:'Policy, channel and test of use.'},
    {q:'What exactly happened in the Brickwork case and are we protected?',cat:'Risk',dept:'Compliance',pri:'H',a:'2022 SEBI cancellation over process/disclosure lapses; map our controls against each.'},
-   {q:'How do we ensure disclosure quality and timeliness?',cat:'Compliance',dept:'Compliance',pri:'M',a:'Disclosure SLA and review.'},
-   {q:'Are related-party transactions and promoter holdings compliant?',cat:'Governance',dept:'Legal',pri:'M',a:'RPT register and promoter-holding compliance (≥26% / cross-holding cap).'},
-   {q:'What is the escalation path for a contested or withdrawn rating?',cat:'Operations',dept:'Rating Operations',pri:'M',a:'Appeals and withdrawal procedure.'},
-   {q:'How independent is the internal-audit function?',cat:'Governance',dept:'Compliance',pri:'M',a:'Reporting line and scope.'},
-   {q:'Does our incentive structure encourage the right analyst behaviour?',cat:'People',dept:'HR',pri:'M',a:'No linkage of analyst pay to fee outcomes.'},
-   {q:'How mature is our policy framework versus an established CRA?',cat:'Governance',dept:'Compliance',pri:'M',a:'Policy inventory and gap list.'},
-   {q:'What governance conditions should the board attach to approvals?',cat:'Governance',dept:'Compliance',pri:'H',a:'Propose the guardrails: quality gate, cost-discipline trigger, milestone review.'},
-   {q:'Who owns rating quality at board level, and how is it measured?',cat:'Governance',dept:'Rating Operations',pri:'M',a:'Quality KPI and board owner.'}
+   {q:'What are shareholders and stakeholders not seeing in this plan?',cat:'Governance',dept:'Finance',pri:'H',a:'Name the uncomfortable truths: FD-interest dependence, unproven BLR ramp.'},
+   {q:'What governance conditions should the board attach to approvals?',cat:'Governance',dept:'Compliance',pri:'H',a:'Propose the guardrails: quality gate, cost-discipline trigger, milestone review.'}
   ]},
  {id:'gg',name:'Dr. Girraj Prasad Gupta',init:'GG',role:'Independent Director',bg:'Former Controller General of Accounts (CGA), Ministry of Finance',
   expertise:['Financial discipline','Budgeting','Accounting controls','Capital allocation','Audit','Public finance'],
@@ -231,25 +190,9 @@ var DIRECTORS=[
   appetite:'Conservative; protects capital and demands controls.',
   qs:[
    {q:'Which revenue assumptions have zero historical evidence?',cat:'Finance',dept:'Finance',pri:'H',a:'Be candid: the entire BLR line is a capacity model, not booked; existing sales have only Q1 history.'},
-   {q:'How sensitive is break-even to the mandate ramp assumption?',cat:'Finance',dept:'Finance',pri:'H',a:'Show break-even under half-speed ramp vs full capacity.'},
-   {q:'What happens to the P&L if BLR revenue is delayed six months?',cat:'Risk',dept:'Finance',pri:'H',a:'Scenario 2/3 output: loss widens toward ₹2.29–2.80 Cr in FY27.'},
-   {q:'Is capital allocation optimal given the ₹26 Cr corpus?',cat:'Capital',dept:'Finance',pri:'H',a:'Corpus is largely the SEBI net-worth lock; only ~₹1.9 Cr is drawable.'},
-   {q:'How long can we survive with zero BLR revenue?',cat:'Finance',dept:'Finance',pri:'H',a:'~8 months on drawable ₹1.9 Cr at ₹23.3 L/mo burn, before touching the corpus.'},
-   {q:'What is the monthly cash burn and is it tracking to budget?',cat:'Finance',dept:'Finance',pri:'M',a:'~₹23.3 L/mo; show budget-vs-actual variance.'},
-   {q:'Is the ₹25 Cr FD confirmed as the SEBI net-worth lock?',cat:'Compliance',dept:'Finance',pri:'H',a:'Confirm status; it drives true runway and must be maintained at all times.'},
-   {q:'What are the cost-overrun risks in the ₹5.27 Cr base?',cat:'Finance',dept:'Finance',pri:'M',a:'Lumpy months (e.g. Jun spike) and hiring timing.'},
-   {q:'Show me best, base and worst case with explicit assumptions.',cat:'Finance',dept:'Finance',pri:'H',a:'The three BLR scenarios with every driver stated.'},
-   {q:'What is the FD interest assumption and its rate sensitivity?',cat:'Finance',dept:'Finance',pri:'M',a:'~₹1.5 Cr/yr; sensitivity to rate and corpus intactness.'},
-   {q:'Are the two senior hires justified on FY27 economics?',cat:'People',dept:'Finance',pri:'M',a:'Justified if BLR lands early (S1); most at risk in S2/S3.'},
-   {q:'What accounting controls and audit processes are in place?',cat:'Governance',dept:'Finance',pri:'M',a:'Controls, approvals and external-audit status.'},
-   {q:'What is the working-capital and receivables position?',cat:'Finance',dept:'Finance',pri:'L',a:'Debtors, GST and TDS receivables position.'},
-   {q:'What is the funding plan if we breach the drawable-liquidity buffer?',cat:'Capital',dept:'Finance',pri:'M',a:'Trigger and options before touching the locked corpus.'},
-   {q:'Is there a documented budget-versus-actual variance process?',cat:'Finance',dept:'Finance',pri:'M',a:'Monthly variance pack and owner.'},
-   {q:'What discretionary spend can be cut immediately if BLR slips?',cat:'Risk',dept:'Finance',pri:'H',a:'Named cost levers and quantum, e.g. stagger second hire.'},
-   {q:'What is the ROI timeline for this operating plan?',cat:'Capital',dept:'Finance',pri:'M',a:'Payback path: FY28 profitability under S1.'},
-   {q:'Are revenue-recognition and fee policies audit-ready?',cat:'Compliance',dept:'Finance',pri:'M',a:'IRF/ASF recognition policy documented.'},
-   {q:'What single assumption, if wrong, breaks the plan?',cat:'Finance',dept:'Finance',pri:'H',a:'BLR timing and mandate conversion, above all.'},
-   {q:'Does the ₹5.27 Cr base include all committed and one-time costs?',cat:'Finance',dept:'Finance',pri:'M',a:'Confirm capex and BLR set-up costs are captured or flagged.'}
+   {q:'How sensitive is break-even to the mandate ramp assumption?',cat:'Finance',dept:'Finance',pri:'H',a:'Show break-even under a half-speed ramp against full capacity.'},
+   {q:'How long can we survive with zero BLR revenue?',cat:'Finance',dept:'Finance',pri:'H',a:'About 8 months on drawable ₹1.9 Cr at ₹23.3 L/mo burn, before touching the corpus.'},
+   {q:'What discretionary spend can be cut immediately if BLR slips?',cat:'Risk',dept:'Finance',pri:'H',a:'Named cost levers and quantum, for example staggering the second hire.'}
   ]},
  {id:'sg',name:'Suyash Gayawal',init:'SG',role:'Executive Director',bg:'Executive Management',
   expertise:['Execution','Strategy implementation','Operations','Org building','Growth'],
@@ -258,18 +201,10 @@ var DIRECTORS=[
   style:'Accountable owner; converts challenge into action.',
   appetite:'Balances ambition with delivery credibility.',
   qs:[
-   {q:'Is every director’s likely question mapped to an owner and evidence?',cat:'Execution',dept:'Rating Operations',pri:'H',a:'This portal is that map; close the red items first.'},
-   {q:'Do we have one single source of truth for all board numbers?',cat:'Execution',dept:'Finance',pri:'H',a:'The AOP model; ensure every pack ties to it.'},
-   {q:'Do we have a documented pipeline, not projections, to table?',cat:'Sales',dept:'BD',pri:'H',a:'CRM-backed named pipeline.'},
-   {q:'What are the three decisions we need from the board, framed clearly?',cat:'Strategy',dept:'Finance',pri:'H',a:'Approve cost base incl. hires; confirm BLR assumptions; set cost-discipline triggers.'},
-   {q:'Is the org structure ready to execute the plan?',cat:'People',dept:'HR',pri:'M',a:'Org chart, gaps and hiring plan.'},
-   {q:'What is our 90-day execution plan after the board meeting?',cat:'Execution',dept:'Rating Operations',pri:'M',a:'Milestone plan with owners.'},
-   {q:'Where are we most likely to be caught without an answer?',cat:'Risk',dept:'Rating Operations',pri:'H',a:'The open red items in Dept Readiness.'},
-   {q:'Are all departmental readiness packs complete and consistent?',cat:'Execution',dept:'Rating Operations',pri:'M',a:'Readiness dashboard at or above target.'},
-   {q:'What are the top three risks we must proactively disclose?',cat:'Risk',dept:'Compliance',pri:'H',a:'BLR timing, mandate conversion, key-person risk.'},
-   {q:'What is our narrative if the board pushes to defer the hires?',cat:'Strategy',dept:'Finance',pri:'M',a:'Stagger-hire option with revenue-linked trigger.'},
-   {q:'How do we show execution credibility, not just a plan?',cat:'Execution',dept:'BD',pri:'M',a:'Early wins, signed relationships, delivered milestones.'},
-   {q:'Do we have a crisp one-page ask for each decision?',cat:'Strategy',dept:'Finance',pri:'M',a:'Decision memos prepared.'}
+   {q:'What are the three decisions we need from the board, framed clearly?',cat:'Strategy',dept:'Finance',pri:'H',a:'Approve the cost base including the hires; confirm BLR assumptions; set cost-discipline triggers.'},
+   {q:'Do we have a documented pipeline, not projections, to table?',cat:'Sales',dept:'BD',pri:'H',a:'A CRM-backed named pipeline is the evidence to walk in with.'},
+   {q:'Where are we most likely to be caught without an answer?',cat:'Risk',dept:'Rating Operations',pri:'H',a:'The open red items in Department Readiness are the exposure.'},
+   {q:'What are the top three risks we must proactively disclose?',cat:'Risk',dept:'Compliance',pri:'H',a:'BLR timing, mandate conversion, and key-person risk.'}
   ]}
 ];
 
@@ -342,7 +277,7 @@ function updateScore(){var s=readiness();$('#scoreTop').textContent=s+'%';$('#sc
 
 function renderDash(){
  var hi=RISKS.filter(function(x){return x.p==='H'||x.i==='H'}).length;
- var s='<div class="zh"><div class="eyebrow">Executive dashboard</div><h2>Board War Room — readiness at a glance</h2><p>Live readiness is management-entered in Department Readiness. Everything defaults to <b>To confirm</b> until evidence is attached.</p></div>';
+ var s='<div class="zh"><div class="eyebrow">Executive dashboard</div><h2>Board War Room readiness at a glance</h2><p>Live readiness is management-entered in Department Readiness. Everything defaults to <b>To confirm</b> until evidence is attached.</p></div>';
  s+='<div class="grid g4">';
  s+='<div class="card" style="display:flex;gap:16px;align-items:center"><div class="ring" id="ring" style="--p:0"><div><b id="ringN">0%</b></div></div><div><div class="sm muted">Overall board readiness</div><div class="xs muted" style="margin-top:6px">Weighted across '+DEPTS.length+' departments</div></div></div>';
  s+='<div class="card kpi"><div class="v num">'+RISKS.length+'</div><div class="l">Tracked risks ('+hi+' high severity)</div></div>';
@@ -467,6 +402,81 @@ function renderWar(){
  $('#z-war').innerHTML=s;
 }
 
+/* ---- RESEARCH & APPENDIX (sourced, labelled) ---- */
+var SRC={
+ crisil:'https://www.crisil.com/content/crisilcom/en/home/investors.html',
+ care:'https://www.careratings.com/investors.aspx',
+ icra:'https://www.icra.in/',
+ indra:'https://www.indiaratings.co.in/income',
+ info:'https://www.infomerics.com/regulatory-disclosure',
+ acuite:'https://acuite.in/RegulatoryDisclosures',
+ brick:'https://www.brickworkratings.com/Disclosure.aspx',
+ sebi:'https://www.sebi.gov.in/legal/regulations/jan-2026/securities-and-exchange-board-of-india-credit-rating-agencies-regulations-1999-last-amended-on-january-15-2026-_99126.html',
+ rbi:'https://www.rbi.org.in/Scripts/Statistics.aspx'
+};
+var PEERS=[
+ {n:'CRISIL Ratings',rev:'₹1,078.7 Cr',fy:'CY2025',s:'crisil'},
+ {n:'CARE Ratings',rev:'~₹423 Cr',fy:'FY2026',s:'care'},
+ {n:'ICRA (rating segment)',rev:'~₹340 Cr',fy:'FY2026 (derived)',s:'icra'},
+ {n:'India Ratings',rev:'₹250.9 Cr',fy:'FY2026',s:'indra'},
+ {n:'Infomerics',rev:'₹95.3 Cr',fy:'FY2026 (unaudited)',s:'info'},
+ {n:'Acuité',rev:'₹57.3 Cr',fy:'FY2026',s:'acuite'},
+ {n:'Brickwork',rev:'₹5.9 Cr',fy:'FY2025 (audited)',s:'brick'},
+ {n:'ACER (target at capacity)',rev:'~₹8.6 Cr',fy:'FY2028',s:''}
+];
+var MOREQ={
+ sm:['Lender relationships at credit-head level and the full relationship map','Merchant-banker referral volume and concentration among the top three','Realistic mandate-conversion rate against the 16-per-month ceiling','Signed MoUs, LOIs or empanelment with banks or arrangers','BD team sizing and incentives against the capacity target','First regions and sectors to target, and why','What the first ₹1 Cr of BLR revenue is actually made of','Early-ramp read-across from Infomerics and Acuité'],
+ ac:['The realistic RBI timeline and what they have signalled','ECAI eligibility criteria met, criterion by criterion, with evidence','Operational-risk controls across the full rating process','Independence enforced between BD and the rating committee','Analyst capacity, turnaround time and surveillance load at scale','Technology funding, data integrity and audit trails','Single points of failure in operations or leadership'],
+ ms:['Governance stress-test against a rating failure or default','Rating-committee composition and independence','SEBI compliance thresholds, including net-worth maintenance','Rating-shopping controls and analytical integrity','Whistle-blower and internal-controls framework','Related-party and promoter-holding compliance','A named board owner and KPI for rating quality'],
+ gg:['P&L impact if BLR is delayed six months','Capital allocation given the largely locked corpus','Formal confirmation that the ₹25 Cr FD is the net-worth lock','Cost-overrun risks in the ₹5.27 Cr base','FD interest rate sensitivity','Budget-versus-actual variance discipline','Whether the base captures all one-time and capex costs'],
+ sg:['A single source of truth for every board number','A 90-day execution plan after the meeting','The narrative if the board asks to defer the hires','One-page decision memos for each ask','Execution credibility shown through early wins']
+};
+function srcline(label,cls,links){var l=(links||[]).map(function(x){return '<a href="'+x[1]+'" target="_blank" rel="noopener">'+x[0]+'</a>'}).join(' · ');return '<div class="rsrc"><b>Source:</b> '+(l?l+' ':'')+'<span class="lbl lbl-'+cls+'">'+label+'</span></div>'}
+function renderResearch(){
+ var s='<div class="zh"><div class="eyebrow">Research and appendix</div><h2>The evidence behind the numbers</h2><p>Every figure here carries a source and a confidence label. Nothing is invented. A note on sourcing: peer figures come from each agency’s own official disclosures, read via web search this session because the official domains are network-blocked from this environment, so reconfirm at source before board sign-off.</p></div>';
+ s+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">'
+  +'<span class="lbl lbl-off">Official disclosure</span><span class="lbl lbl-int">Internal accounts</span><span class="lbl lbl-assm">Management assumption</span><span class="lbl lbl-der">Derived</span><span class="lbl lbl-tc">To confirm</span></div>';
+ // peer benchmark
+ var rows=PEERS.map(function(p){return '<tr><td>'+p.n+'</td><td class="num">'+p.rev+'</td><td>'+p.fy+'</td><td>'+(p.s?'<a href="'+SRC[p.s]+'" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid #c7d2fe">disclosure</a>':'capacity model')+'</td></tr>'}).join('');
+ s+='<div class="grid g2" style="margin-top:16px"><div class="card"><h3>Peer rating revenue (latest disclosed FY)</h3><table style="margin-top:10px"><tr><th>Agency</th><th class="num">Rating revenue</th><th>Period</th><th>Link</th></tr>'+rows+'</table>'
+  +'<div class="rsrc">ICRA FY26 rating-segment figure is <b>derived</b> from disclosed segment growth, not a single reported line. ACER FY28 is a <b>capacity model</b> output, not booked revenue. Peer links open each agency’s official investor or SEBI disclosure page.</div></div>';
+ // market sizing
+ s+='<div class="card"><h3>Market sizing (revenue lens)</h3><table style="margin-top:10px"><tr><th>Layer</th><th class="num">₹ Cr</th><th>Basis</th></tr>'
+  +'<tr><td><b>TAM</b></td><td class="num">2,250</td><td>Sum of peer rating revenue</td></tr>'
+  +'<tr><td><b>SAM</b></td><td class="num">409</td><td>Small BLR-led tier (India Ratings + Infomerics + Acuité + Brickwork)</td></tr>'
+  +'<tr><td><b>SOM</b></td><td class="num">8.6</td><td>ACER FY28 at full capacity</td></tr></table>'
+  +'<div class="rsrc"><b>Basis:</b> TAM and SAM are computed from the peer rating revenue above <span class="lbl lbl-der">Derived</span>. SOM is the ACER capacity model <span class="lbl lbl-assm">Management assumption</span>. By volume, ACER ₹19,200 Cr/yr rated capacity is about 1.9% of India annual bond issuance (~₹9.9 lakh cr) and 0.1% of ~₹182 lakh cr bank credit, <a href="'+SRC.rbi+'" target="_blank" rel="noopener">RBI statistics</a>.</div></div></div>';
+ // fee + capacity
+ s+='<div class="grid g2" style="margin-top:16px"><div class="card"><h3>Revenue engine (capacity parameters)</h3><ul class="list-clean">'
+  +'<li>16 cases/month (4 BDs, 4 each), ₹100 Cr average ticket = ₹1,600 Cr rated/month</li>'
+  +'<li>Initial rating fee 3 bps, about ₹48 L/month at full run-rate (₹5.76 Cr/yr)</li>'
+  +'<li>Annual surveillance fee 1.5 bps, a compounding annuity on the rated book (₹2.88 Cr/yr at one full year)</li>'
+  +'<li>Ramp assumption: linear to full capacity over 6 months after go-live</li></ul>'
+  +'<div class="rsrc"><b>These are management capacity parameters, not external facts or booked revenue.</b> <span class="lbl lbl-assm">Management assumption</span></div></div>';
+ // regulation
+ s+='<div class="card"><h3>Regulatory context</h3><ul class="list-clean">'
+  +'<li><b>SEBI minimum net worth for a CRA is ₹25 crore</b>, to be maintained at all times (raised from ₹5 Cr by the 2018 amendment). This is why ACER’s ₹25 Cr FD is treated as a lock, pending formal confirmation.</li>'
+  +'<li><b>BLR uses RBI ECAI accreditation.</b> A SEBI-registered CRA needs separate RBI accreditation before banks can use its bank-loan ratings for Basel capital. This is the swing factor across the three scenarios.</li></ul>'
+  +'<div class="rsrc"><b>Source:</b> <a href="'+SRC.sebi+'" target="_blank" rel="noopener">SEBI (CRA) Regulations, 1999</a> <span class="lbl lbl-off">Official</span>. The separate RBI ECAI requirement is drawn from the Basel framework; <span class="lbl lbl-tc">verify against the RBI master circular before board use</span>.</div></div></div>';
+ // brickwork
+ s+='<div class="card" style="margin-top:16px"><h3>Cautionary case: Brickwork Ratings</h3><p class="sm" style="color:#334155">SEBI cancelled Brickwork’s registration in 2022 over rating-process and disclosure lapses; the Securities Appellate Tribunal set the cancellation aside in June 2023, and the matter was settled in December 2024 for about ₹1.54 crore. Rating revenue collapsed to single-digit crore (₹5.9 Cr audited FY25). The lesson for ACER: as BLR volume rises, process and rating-quality discipline is existential, because one regulatory action can destroy franchise value far faster than it is built.</p>'
+  +'<div class="rsrc"><b>Source:</b> <a href="'+SRC.brick+'" target="_blank" rel="noopener">Brickwork disclosures</a> <span class="lbl lbl-off">Official</span> · regulatory-action dates <span class="lbl lbl-tc">search-confirmed, reconfirm against the primary SEBI and SAT orders</span></div></div>';
+ // ACER base
+ s+='<div class="card" style="margin-top:16px"><h3>ACER financial base</h3><div class="grid g4" style="margin-top:6px">'
+  +'<div><div class="kpi"><div class="v num" style="font-size:22px">₹26.1 Cr</div><div class="l">FD corpus</div></div></div>'
+  +'<div><div class="kpi"><div class="v num" style="font-size:22px">₹5.27 Cr</div><div class="l">FY27 cost base</div></div></div>'
+  +'<div><div class="kpi"><div class="v num" style="font-size:22px">₹2.47 Cr</div><div class="l">Non-BLR income/yr</div></div></div>'
+  +'<div><div class="kpi"><div class="v num" style="font-size:22px">~₹23.3 L</div><div class="l">Monthly burn</div></div></div></div>'
+  +'<div class="rsrc"><b>Source:</b> ACER internal management accounts and the FY27 AOP model, as of about 21-Jul-2026 <span class="lbl lbl-int">Internal</span></div></div>';
+ // data to validate
+ s+='<div class="card" style="margin-top:16px"><h3>Data still to validate before sign-off</h3><ul class="list-clean">'+WARROOM.validate.concat(WARROOM.dontknow).filter(function(v,i,a){return a.indexOf(v)===i}).map(function(x){return '<li><span class="badge-tc">VALIDATE</span> '+x+'</li>'}).join('')+'</ul></div>';
+ // other angles per director
+ s+='<div class="card" style="margin-top:16px"><h3>Other angles each director may probe</h3><p class="sm muted">Beyond the four headline questions per director, these are the deeper threads to have covered. Analytical, based on each director’s stated background.</p>';
+ DIRECTORS.forEach(function(d){if(!MOREQ[d.id])return;s+='<div style="margin-top:12px"><b class="sm">'+d.name+' <span class="muted">('+d.role+')</span></b><ul class="list-clean">'+MOREQ[d.id].map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>'});
+ s+='</div>';
+ $('#z-res').innerHTML=s;
+}
+
 /* ============================ WIRING ============================ */
 function show(z){document.querySelectorAll('.zone').forEach(function(el){el.classList.toggle('on',el.dataset.zone===z)});
  document.querySelectorAll('nav.tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.z===z)});window.scrollTo({top:0,behavior:'smooth'})}
@@ -481,5 +491,5 @@ document.addEventListener('click',function(e){
  var qc=e.target.closest('#qbChips .chip');if(qc){qbCat=qc.dataset.c;document.querySelectorAll('#qbChips .chip').forEach(function(c){c.classList.toggle('on',c===qc)});paintQB()}
 });
 
-renderDash();renderDir();renderPre();renderDept();renderQB();renderWar();
+renderDash();renderDir();renderPre();renderDept();renderQB();renderWar();renderResearch();
 </script>
