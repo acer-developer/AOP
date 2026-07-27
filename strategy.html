@@ -93,7 +93,7 @@
       <div class="card stat"><div class="v">10 &rarr; 20</div><div class="l">IPO mandates by Oct, same team</div></div>
       <div class="card stat"><div class="v">₹46.7 L</div><div class="l">monthly run-rate before BLR</div></div>
     </div>
-    <div class="note" style="margin-top:18px"><b>What changed from the first model.</b> Cost base moved from ₹5.27 Cr to ₹5.34 Cr: RC meeting fees (₹20k per meeting, 10 to 12 a month) are now a real line, board sitting fees are provisioned as three discrete meetings (Aug 1, then quarterly) instead of smoothed flat, and one-time IT (₹3 L) and branding (₹2.5 L) are added. Insurance dropped from the base case. Consultant per-case fee still excluded until confirmed.</div>
+    <div class="note" style="margin-top:18px"><b>What changed from the first model.</b> Cost base moved from ₹5.27 Cr to ₹5.34 Cr: RC meeting fees (₹20k per meeting, 10 to 12 a month) are now a real line, board sitting fees are provisioned as three discrete meetings (Aug 1, then quarterly) instead of smoothed flat, and one-time IT (₹3 L) plus a branding buffer (₹5 to 10 L, modelled at ₹7.5 L in the BLR-launch month) are added. Insurance, festival and appraisal costs are kept out as good-to-have (see below). Consultant per-case fee still excluded until confirmed.</div>
   </div>
 </section>
 
@@ -184,11 +184,11 @@
         <p class="sub" style="margin-bottom:4px">RC fees rise with case volume. IT and branding are one-time around launch.</p>
         <div id="expBars"></div>
         <div class="legend">
-          <span><i class="sw" style="background:var(--navy)"></i>Payroll</span>
+          <span><i class="sw" style="background:var(--navy)"></i>Employee Expense</span>
           <span><i class="sw" style="background:var(--teal)"></i>Other opex</span>
           <span><i class="sw" style="background:var(--violet)"></i>RC fees</span>
-          <span><i class="sw" style="background:var(--amber)"></i>Board meetings</span>
-          <span><i class="sw" style="background:var(--rose)"></i>IT + branding</span>
+          <span><i class="sw" style="background:var(--amber)"></i>Secretarial Expense</span>
+          <span><i class="sw" style="background:var(--rose)"></i>IT + branding buffer</span>
         </div>
         <p class="src" id="expSrc"></p>
       </div>
@@ -201,7 +201,7 @@
   <div class="wrap">
     <div class="eyebrow">The numbers behind the plan</div>
     <h2>Revenue mix and cost composition</h2>
-    <p class="sub">Every figure here is built from booked actuals or the confirmed unit economics: IPO at ₹1.2 L per quarter per mandate, BLR at 3 bps up-front plus 1.5 bps recurring on a ₹100 Cr average case.</p>
+    <p class="sub">Every figure here is built from booked actuals or the confirmed unit economics: IPO at ₹1.2 L per quarter per mandate, BLR at 2.5 bps up-front plus 1.5 bps recurring on a ₹100 Cr average case.</p>
     <div class="grid g2" style="margin-top:24px">
       <div class="card">
         <h3>Revenue mix at the Apr27 run-rate (S1)</h3>
@@ -212,7 +212,7 @@
       </div>
       <div class="card">
         <h3>Where the ₹5.34 Cr cost base goes</h3>
-        <p class="sub" style="margin-bottom:6px">Payroll still dominates. The new lines, RC, board, IT and branding, are the smaller wedges.</p>
+        <p class="sub" style="margin-bottom:6px">Employee expense still dominates. The new lines, RC, secretarial, IT and the branding buffer, are the smaller wedges.</p>
         <div id="costDonut"></div>
         <div class="legend" id="costLegend"></div>
         <p class="src">FY27 cost base rebuilt bottom-up. Consultant per-case fee excluded pending confirmation, insurance dropped.</p>
@@ -226,6 +226,25 @@
       <div class="card">
         <h3>When to add the sixth executor</h3>
         <p class="sub">Not on a hunch. Hire the moment residual capacity, team capacity minus IPO load minus BLR load, goes negative for two straight months, and only in the BLR-live scenarios. In the no-BLR case, hold, there is neither the case volume nor the cash cushion to justify it.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px">
+      <h3>Good to have, kept out of the base plan</h3>
+      <p class="sub" style="margin-bottom:6px">Deliberately excluded from every number above so the plan stays honest on committed cost. Fund these as profitability allows, once BLR revenue is real.</p>
+      <div class="grid g3" style="margin-top:14px">
+        <div class="card" style="box-shadow:none;background:var(--band)">
+          <h3 style="font-size:15px">Insurance</h3>
+          <p class="sub" style="margin-top:4px">Group health and office cover, dropped from the base case earlier. Add back once the loss narrows.</p>
+        </div>
+        <div class="card" style="box-shadow:none;background:var(--band)">
+          <h3 style="font-size:15px">Festival celebration &amp; gifts</h3>
+          <p class="sub" style="margin-top:4px">Team festival spend and client gifting. Small, morale and relationship building, but discretionary.</p>
+        </div>
+        <div class="card" style="box-shadow:none;background:var(--band)">
+          <h3 style="font-size:15px">Employee appraisal</h3>
+          <p class="sub" style="margin-top:4px">Annual increments and performance rewards. Not in the flat salary run-rate; budget once revenue supports it.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -257,7 +276,7 @@ function grad(id,c,a0,a1){return '<linearGradient id="'+id+'" x1="0" y1="0" x2="
 // ================= MODEL (all figures in ₹ lakh/month) =================
 var MON=["Aug26","Sep26","Oct26","Nov26","Dec26","Jan27","Feb27","Mar27","Apr27"];
 var K={payroll:32.92, opex:11.57, rcBase:2.20, FD:12.5, otherSales:4.08, ipoFee:0.40,
-       irfCase:3.0, caseCr:100, ASF:1.5e-4};
+       irfCase:2.5, caseCr:100, ASF:1.5e-4};
 var BOARD={Aug26:1,Nov26:1,Feb27:1,Aug27:1,Nov27:1,Feb28:1};
 
 function ipoBook(scn,i){ var b=(i===0?10:i===1?15:20); if(scn==='s3'&&i>2)b=Math.min(45,20+(i-2)*2); return b; }
@@ -282,7 +301,7 @@ function project(scn){
     var inc=K.FD+K.otherSales+ipo+blr;
     var rc=K.rcBase;
     if(scn!=='s3' && book>0) rc=K.rcBase+Math.min(1.8,(book/1600.0)*1.8);
-    var payroll=K.payroll, opex=K.opex, board=BOARD[m]?5.5:0, onet=(m===ot?5.5:0);
+    var payroll=K.payroll, opex=K.opex, board=BOARD[m]?5.5:0, onet=(m===ot?10.5:0);
     var exp=payroll+opex+rc+board+onet;
     var net=inc-exp; cum+=net;
     if(be===null && net>=0) be=m;
@@ -455,7 +474,7 @@ function render(key){
     ('Cumulative loss deepens to <b>−₹'+Math.abs(P.trough/100).toFixed(2)+' Cr</b> over the horizon, funded from the ₹26 Cr corpus.');
   $('rampSrc').innerHTML=key==='s3'?'No BLR this year. The whole team stays on IPO and rating cases.':
     ('Red is the launch month: the licence is live but the team clears its existing IPO mandates first, so zero BLR that month. Green is full 16-case capacity from the very next month.');
-  $('expSrc').innerHTML='Base run-rate ₹46.7 L a month. RC fees (violet) climb as BLR case volume rises. Board sitting fees and one-time IT and branding (amber) land in specific months, not every month.';
+  $('expSrc').innerHTML='Base run-rate ₹46.7 L a month. RC fees (violet) climb as BLR case volume rises. Secretarial (board) fees land in Aug, Nov and Feb; the one-time IT plus branding buffer (₹10.5 L) lands in the launch month. Neither is a monthly cost.';
 }
 
 // static: salary + capacity + donuts
@@ -476,7 +495,7 @@ var revTot=rev.reduce(function(a,d){return a+d.v},0);
 donut($('revDonut'),rev,{cv:'₹'+(revTot/100).toFixed(1)+' Cr',cl:'Apr27 run-rate'});
 $('revLegend').innerHTML=rev.map(function(d){return '<span><i class="sw" style="background:'+d.c+'"></i>'+d.l+' '+(d.v/revTot*100).toFixed(0)+'%</span>'}).join('');
 // cost composition (FY27 8-mo, S1)
-var cost=[{l:'Payroll',v:65.0,c:C.navy},{l:'Other opex',v:22.9,c:C.teal},{l:'RC fees',v:6.7,c:C.violet},{l:'Board meetings',v:4.1,c:C.amber},{l:'IT + branding',v:1.4,c:C.rose}];
+var cost=[{l:'Employee Expense',v:64.7,c:C.navy},{l:'Other opex',v:22.7,c:C.teal},{l:'RC fees',v:6.7,c:C.violet},{l:'Secretarial Expense',v:3.6,c:C.amber},{l:'IT + branding buffer',v:2.3,c:C.rose}];
 donut($('costDonut'),cost,{cv:'₹5.34 Cr',cl:'FY27 cost base'});
 $('costLegend').innerHTML=cost.map(function(d){return '<span><i class="sw" style="background:'+d.c+'"></i>'+d.l+' '+d.v+'%</span>'}).join('');
 

@@ -104,7 +104,7 @@
     <div class="grid g2" style="margin-top:24px">
       <div class="card">
         <h3>Where every rupee is spent</h3>
-        <p class="sub" style="margin-bottom:6px">FY27 expense composition, payroll dominates.</p>
+        <p class="sub" style="margin-bottom:6px">FY27 expense composition, employee expense dominates.</p>
         <div id="costDonut"></div>
         <div class="legend" id="costLegend"></div>
         <p class="src">Payroll run-rate (fully staffed) about ₹3.95 Cr/yr. Source: internal management accounts, FY27 to 21-Jul-2026.</p>
@@ -131,7 +131,7 @@
     <div class="grid g4" style="margin-top:22px">
       <div class="card stat"><div class="v">4 × 4</div><div class="l">4 BDs, 4 cases each, 16 cases / month</div></div>
       <div class="card stat"><div class="v">₹1,600 Cr</div><div class="l">debt rated / month (₹19,200 Cr / yr)</div></div>
-      <div class="card stat"><div class="v">3 bps</div><div class="l">initial fee, about ₹48 L/mo at full run-rate</div></div>
+      <div class="card stat"><div class="v">2.5 bps</div><div class="l">initial fee, about ₹40 L/mo at full run-rate</div></div>
       <div class="card stat"><div class="v">1.5 bps</div><div class="l">recurring surveillance annuity on the book</div></div>
     </div>
     <div class="note" style="margin-top:16px"><b>Ramp assumption (labelled, not booked):</b> after go-live, mandates build linearly to full 16-case capacity over 6 months. New-rating fees (IRF) bill up-front, and the surveillance annuity (ASF) accrues on the cumulative rated book. These are capacity parameters, the upside the existing team can reach, not committed revenue.</div>
@@ -278,17 +278,26 @@
           <li>ACER financials from <b>internal management accounts</b>, about 21-Jul-2026 (FY = Apr to Mar).</li>
           <li>FD corpus ₹26.1 Cr. FY27 cost base ₹5.34 Cr (₹44.5 L/mo).</li>
           <li>Non-BLR income ₹2.47 Cr/yr (FD ₹1.50 + sales ₹0.97) = ₹20.6 L/mo.</li>
-          <li>Payroll about 61% of spend. Runway about 8 months on drawable ₹1.9 Cr.</li>
+          <li>Employee expense about 61% of spend. Runway about 8 months on drawable ₹1.9 Cr.</li>
         </ul>
       </div>
       <div class="card">
         <h3>Capacity and model assumptions</h3>
         <ul class="sub" style="padding-left:18px;line-height:1.9">
           <li>16 cases/mo of ₹100 Cr = ₹1,600 Cr/mo, ramping linearly over 6 months post go-live.</li>
-          <li>Fees: IRF 3 bps up-front plus ASF 1.5 bps recurring on the cumulative book.</li>
+          <li>Fees: IRF 2.5 bps up-front plus ASF 1.5 bps recurring on the cumulative book.</li>
           <li>Cost base and non-BLR income held flat. Break-even = first month income at or above expense.</li>
           <li>Market anchors: bank credit about ₹182 lakh cr (RBI Mar-2025), bond issuance about ₹9.9 lakh cr (FY25). Peer figures search-sourced (official domains were network-blocked this session, reconfirm at source before board sign-off).</li>
         </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <h3>Good to have, kept out of the base plan</h3>
+      <p class="sub" style="margin-bottom:6px">Excluded from the cost base above so the numbers stay honest on committed spend. Fund as profitability allows.</p>
+      <div class="legend" style="gap:22px">
+        <span><b>Insurance</b> &middot; group health and office cover</span>
+        <span><b>Festival celebration &amp; gifts</b> &middot; team and client</span>
+        <span><b>Employee appraisal</b> &middot; increments and rewards</span>
       </div>
     </div>
   </div>
@@ -321,7 +330,7 @@ function grad(id,c,a0,a1){return '<linearGradient id="'+id+'" x1="0" y1="0" x2="
 var MON=["Apr26","May26","Jun26","Jul26","Aug26","Sep26","Oct26","Nov26","Dec26","Jan27","Feb27","Mar27",
          "Apr27","May27","Jun27","Jul27","Aug27","Sep27","Oct27","Nov27","Dec27","Jan28","Feb28","Mar28"];
 function project(golive){
-  var E=5.34e7/12, FD=1.50e7/12, SAL=0.97e7/12, CAP=1600e7, IRF=3e-4, ASF=1.5e-4, RAMP=6;
+  var E=5.34e7/12, FD=1.50e7/12, SAL=0.97e7/12, CAP=1600e7, IRF=2.5e-4, ASF=1.5e-4, RAMP=6;
   var book=0, cum=0, be=null, rows=[];
   for(var i=0;i<MON.length;i++){
     var irf=0, asf=0;
@@ -516,7 +525,7 @@ function render(key){
 }
 
 // ---------- static charts ----------
-var cost=[{l:'Payroll',v:60.9,c:C.navy},{l:'Facilities',v:15.3,c:C.teal},{l:'Professional',v:4.9,c:C.violet},{l:'Board fees',v:4.5,c:C.amber},{l:'Technology',v:4.2,c:C.sky},{l:'Admin',v:4.2,c:C.slate},{l:'Travel',v:3.0,c:C.rose},{l:'Other',v:3.0,c:'#cbd5e1'}];
+var cost=[{l:'Employee Expense',v:60.9,c:C.navy},{l:'Facilities',v:15.3,c:C.teal},{l:'Professional',v:4.9,c:C.violet},{l:'Secretarial Expense',v:4.5,c:C.amber},{l:'Technology',v:4.2,c:C.sky},{l:'Admin',v:4.2,c:C.slate},{l:'Travel',v:3.0,c:C.rose},{l:'Other',v:3.0,c:'#cbd5e1'}];
 donut($('costDonut'),cost,{cv:'₹5.34 Cr',cl:'FY27 cost base'});
 $('costLegend').innerHTML=cost.map(function(d){return '<span><i class="sw" style="background:'+d.c+'"></i>'+d.l+' '+d.v+'%</span>'}).join('');
 vbars($('baseBars'),[{l:'Income / mo',stack:[{v:12.5,c:C.teal},{v:8.1,c:C.sky}],t:'₹20.6 L'},{l:"Expense / mo",v:44.5,c:C.rose,t:"₹44.5 L"}]);
