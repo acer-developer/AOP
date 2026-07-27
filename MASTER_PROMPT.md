@@ -49,13 +49,34 @@ You are a senior strategy designer. Build a clean, professional, visually striki
 ## THE LAUNCH DISCIPLINE (key idea)
 The scenarios differ only on when the BLR licence lands. In every BLR-live scenario the go-live month runs ZERO BLR on purpose, because the team must first clear its existing IPO book. BLR then ramps to 16 new cases a month from the very next month. Break-even is the first month total income covers the full expense line.
 
-## THREE SCENARIOS (horizon Aug 2026 to Apr 2027; all figures in ₹ lakh a month unless noted)
+## THREE SCENARIOS (full fiscal year, April 2026 to March 2027; all monthly figures in ₹ lakh)
+
+How each monthly value is built (use these to plot the graphs):
+- FD return: ₹12.5 L a month, flat (₹1.50 Cr a year run-rate). Note: FY27 to date actual FD interest is tracking lower, about ₹8.5 L a month; reconcile before sign-off but use ₹12.5 for the projection.
+- IPO only: number of active IPO mandates times ₹0.4 L. Book is 10 through August, 15 in September, 20 from October (Scenario 3 keeps growing past 20, plus 2 mandates a month).
+- Other rating: ₹4.08 L a month, flat (existing non-IPO rating work).
+- BLR: new cases that month times ₹2.5 L up-front (2.5 bps on a ₹100 Cr case), plus 1.5 bps a year surveillance on the cumulative rated book. In a launch month BLR is zero on purpose, then 16 new cases a month.
+- Expense: employee expense ₹25.0 L a month through July, then ₹32.92 L from August (both hires in); other opex ₹11.57 L; RC fees ₹2.2 L rising with BLR volume; secretarial (board) ₹5.5 L in August, November and February; one-time IT ₹3 L plus branding buffer ₹7.5 L in the launch month; ₹2 L a month ongoing branding while BLR is live.
+- April to July 2026 are the actual or current period (pre new-hire cost base). The on-screen deck and website focus on the forward window from August; this table is the complete fiscal year for the graphs.
+- Break-even month is unchanged either way: Scenario 1 November 2026, Scenario 2 February 2027, Scenario 3 none.
 
 ### Scenario 1 — BLR licence live by 1 Oct 2026 (tag: Launch and blitz, color emerald/green)
-- Break-even: November 2026. Aug 2026 to Apr 2027 net: +₹0.27 Cr. Apr 2027 run-rate annualised: +₹3.13 Cr. Peak cash dip: −₹0.88 Cr.
-- Monthly income: Aug 20.6, Sep 22.6, Oct 24.6, Nov 66.6, Dec 68.6, Jan 70.6, Feb 72.6, Mar 74.6, Apr 76.6.
-- Monthly expense: Aug 52.2, Sep 46.7, Oct 57.2, Nov 56.0, Dec 50.5, Jan 50.5, Feb 56.0, Mar 50.5, Apr 50.5.
-- BLR new cases a month: Aug 0, Sep 0, Oct 0, Nov 16, Dec 16, Jan 16, Feb 16, Mar 16, Apr 16.
+- Break-even: November 2026. FY27 (Apr 26 to Mar 27) income ₹5.03 Cr, expense ₹5.75 Cr, net −₹0.72 Cr. March 2027 exit run-rate annualised about +₹2.9 Cr. Peak cash dip −₹0.88 Cr.
+
+| Month | FD return | IPO only | Other rating | BLR | Total income | Expense | Net | Highlight |
+|---|--:|--:|--:|--:|--:|--:|--:|---|
+| Apr 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| May 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| Jun 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| Jul 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| Aug 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 52.2 | −31.6 | hires in, board meeting |
+| Sep 26 | 12.5 | 6.0 | 4.1 | 0.0 | 22.6 | 46.7 | −24.1 | IPO ramping |
+| Oct 26 | 12.5 | 8.0 | 4.1 | 0.0 | 24.6 | 57.2 | −32.6 | LAUNCH, zero BLR, branding + IT |
+| Nov 26 | 12.5 | 8.0 | 4.1 | 42.0 | 66.6 | 56.0 | +10.6 | BREAK-EVEN, BLR to 16 |
+| Dec 26 | 12.5 | 8.0 | 4.1 | 44.0 | 68.6 | 50.5 | +18.1 | BLR 16 cases |
+| Jan 27 | 12.5 | 8.0 | 4.1 | 46.0 | 70.6 | 50.5 | +20.1 | BLR 16 cases |
+| Feb 27 | 12.5 | 8.0 | 4.1 | 48.0 | 72.6 | 56.0 | +16.6 | BLR 16, board meeting |
+| Mar 27 | 12.5 | 8.0 | 4.1 | 50.0 | 74.6 | 50.5 | +24.1 | BLR 16 cases |
 - Branding: ₹5 to 10 L buffer at the October launch, then ₹2 L a month while BLR runs.
 - Month by month play:
   - OCT: Licence live, but IPO is at 20 and the team is full. Zero BLR this month by choice. Branding spends heavily, one-time IT upgrade lands.
@@ -64,10 +85,22 @@ The scenarios differ only on when the BLR licence lands. In every BLR-live scena
   - HIRE: Add the sixth executor only if residual capacity is negative two months running.
 
 ### Scenario 2 — BLR licence live by 1 Jan 2027 (tag: Same play, later, color amber)
-- Break-even: February 2027. Aug 2026 to Apr 2027 net: −₹1.11 Cr. Apr 2027 run-rate annualised: +₹2.41 Cr. Peak cash dip: −₹1.60 Cr.
-- Monthly income: Aug 20.6, Sep 22.6, Oct 24.6, Nov 24.6, Dec 24.6, Jan 24.6, Feb 66.6, Mar 68.6, Apr 70.6.
-- Monthly expense: Aug 52.2, Sep 46.7, Oct 46.7, Nov 52.2, Dec 46.7, Jan 57.2, Feb 56.0, Mar 50.5, Apr 50.5.
-- BLR new cases a month: Aug to Jan all 0, Feb 16, Mar 16, Apr 16.
+- Break-even: February 2027. FY27 (Apr 26 to Mar 27) income ₹3.59 Cr, expense ₹5.63 Cr, net −₹2.04 Cr. March 2027 exit run-rate annualised about +₹2.2 Cr. Peak cash dip −₹1.60 Cr.
+
+| Month | FD return | IPO only | Other rating | BLR | Total income | Expense | Net | Highlight |
+|---|--:|--:|--:|--:|--:|--:|--:|---|
+| Apr 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| May 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| Jun 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| Jul 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| Aug 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 52.2 | −31.6 | hires in, board meeting |
+| Sep 26 | 12.5 | 6.0 | 4.1 | 0.0 | 22.6 | 46.7 | −24.1 | IPO ramping |
+| Oct 26 | 12.5 | 8.0 | 4.1 | 0.0 | 24.6 | 46.7 | −22.1 | IPO at 20, no licence yet |
+| Nov 26 | 12.5 | 8.0 | 4.1 | 0.0 | 24.6 | 52.2 | −27.6 | board meeting |
+| Dec 26 | 12.5 | 8.0 | 4.1 | 0.0 | 24.6 | 46.7 | −22.1 | holding |
+| Jan 27 | 12.5 | 8.0 | 4.1 | 0.0 | 24.6 | 57.2 | −32.6 | LAUNCH, zero BLR, branding + IT |
+| Feb 27 | 12.5 | 8.0 | 4.1 | 42.0 | 66.6 | 56.0 | +10.6 | BREAK-EVEN, BLR to 16 |
+| Mar 27 | 12.5 | 8.0 | 4.1 | 44.0 | 68.6 | 50.5 | +18.1 | BLR 16 cases |
 - Branding: ₹5 to 10 L buffer at the January launch, then ₹2 L a month while BLR runs.
 - Month by month play:
   - AUG to DEC: No licence yet. Grow IPO to 20 and work that book, push rating sales, keep the burn tight.
@@ -76,10 +109,22 @@ The scenarios differ only on when the BLR licence lands. In every BLR-live scena
   - HIRE: Same rule, add the sixth executor only when capacity turns negative twice.
 
 ### Scenario 3 — No BLR licence in FY27 (tag: IPO and operations, color rose/red)
-- Break-even: none this year. Aug 2026 to Apr 2027 net: −₹2.15 Cr. Apr 2027 run-rate annualised: −₹2.08 Cr. Peak cash dip: −₹2.15 Cr.
-- Monthly income: Aug 20.6, Sep 22.6, Oct 24.6, Nov 25.4, Dec 26.2, Jan 27.0, Feb 27.8, Mar 28.6, Apr 29.4.
-- Monthly expense: Aug 52.2, Sep 57.2, Oct 46.7, Nov 52.2, Dec 46.7, Jan 46.7, Feb 52.2, Mar 46.7, Apr 46.7.
-- BLR new cases a month: 0 all year. IPO and ratings book keeps growing so income climbs and the burn shrinks.
+- Break-even: none this year. FY27 (Apr 26 to Mar 27) income ₹2.85 Cr, expense ₹5.48 Cr, net −₹2.63 Cr. March 2027 exit run-rate annualised about −₹2.2 Cr. Peak cash dip −₹2.63 Cr. No BLR, but the IPO and ratings book grows so income climbs and the burn shrinks month on month.
+
+| Month | FD return | IPO only | Other rating | BLR | Total income | Expense | Net | Highlight |
+|---|--:|--:|--:|--:|--:|--:|--:|---|
+| Apr 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| May 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| Jun 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| Jul 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 38.8 | −18.2 | actual / current period |
+| Aug 26 | 12.5 | 4.0 | 4.1 | 0.0 | 20.6 | 55.2 | −34.6 | hires in, board + IT |
+| Sep 26 | 12.5 | 6.0 | 4.1 | 0.0 | 22.6 | 46.7 | −24.1 | IPO ramping |
+| Oct 26 | 12.5 | 8.0 | 4.1 | 0.0 | 24.6 | 46.7 | −22.1 | IPO at 20 |
+| Nov 26 | 12.5 | 8.8 | 4.1 | 0.0 | 25.4 | 52.2 | −26.8 | IPO book grows, board meeting |
+| Dec 26 | 12.5 | 9.6 | 4.1 | 0.0 | 26.2 | 46.7 | −20.5 | IPO book grows |
+| Jan 27 | 12.5 | 10.4 | 4.1 | 0.0 | 27.0 | 46.7 | −19.7 | IPO book grows |
+| Feb 27 | 12.5 | 11.2 | 4.1 | 0.0 | 27.8 | 52.2 | −24.4 | IPO book grows, board meeting |
+| Mar 27 | 12.5 | 12.0 | 4.1 | 0.0 | 28.6 | 46.7 | −18.1 | burn at its smallest |
 - Branding: focus on IPO brand building, no BLR launch spend this year.
 - Month by month play:
   - ALL YEAR: No BLR. Pour the whole team into IPO and rating cases.
@@ -87,7 +132,7 @@ The scenarios differ only on when the BLR licence lands. In every BLR-live scena
   - COST: Hold discretionary spend. Do not add the sixth executor this year.
   - READY: Keep the team primed so BLR can launch fast the moment it clears.
 
-## REVENUE MIX AT THE APR 2027 RUN-RATE (Scenario 1, annualised, about ₹9.2 Cr)
+## REVENUE MIX AT THE MARCH 2027 RUN-RATE (Scenario 1, annualised, about ₹9.0 Cr)
 BLR about 68%, IPO and ratings about 16%, FD interest about 16%.
 
 ## GOOD TO HAVE (deliberately excluded from the base plan, fund as profitability allows)
@@ -107,10 +152,10 @@ CRA rating market about ₹2,260 Cr a year. ACER full-capacity rated volume ₹1
 1. Cover (dark): title "Two revenue engines, one five person team." Subtitle: when the BLR licence lands decides when ACER breaks even. Four stat chips: ₹26.1 Cr FD corpus, ₹5.34 Cr FY27 cost base, 2.5 bps BLR initial fee, about 20 cases a month capacity.
 2. Where we stand (white): stat tiles (₹26.1 Cr corpus, 95% FY26 income from FD interest, ₹23.9 L monthly burn, ₹28.5 L Q1 sales) + cost composition donut + the core message.
 3. The engine and capacity (white): salary steps up chart, the 20-cases-a-month split, unit economics strip (₹1.2 L per IPO per quarter, 2.5 bps, 1.5 bps, 5 executors).
-4. Scenario 1 slide: income vs expense chart to Apr 2027 with break-even marked, KPI tiles, the month by month play, branding note.
+4. Scenario 1 slide: income vs expense chart across the full fiscal year (April 2026 to March 2027) with break-even marked, KPI tiles, the month by month play, branding note.
 5. Scenario 2 slide: same structure.
 6. Scenario 3 slide: same structure.
-7. Scenario comparison table: break-even month, Aug26 to Apr27 net, Apr27 run-rate annualised, peak cash dip, posture, across the three scenarios.
+7. Scenario comparison table: break-even month, FY27 (Apr26 to Mar27) net, March 2027 exit run-rate annualised, peak cash dip, posture, across the three scenarios.
 8. Good to have (white): three cards, Insurance, Festival celebration and gifts, Employee appraisal.
 9. Closing (dark): the three decisions that carry the year.
 (Charts: use stacked columns for monthly income by source with a dashed expense line and a break-even marker; render projected or future months in a lighter shade than near months.)
