@@ -1,36 +1,36 @@
-CRA,Metric,Value (INR Cr),Period,Type,Source Note
-CRISIL,Ratings segment revenue,909.15,CY2024,Verified,Audited results PDF segment statement
-CRISIL,Total group revenue,3259.78,CY2024,Verified,Ratings is ~28% of group
-CRISIL,Ratings segment Q3,240.62,CY2024 Jul-Sep,Verified,Q3 CY24 results PDF
-CRISIL,Ratings segment Q4,253.86,CY2024 Oct-Dec,Verified,Q4 CY24 results PDF
-CRISIL,Employee cost % of revenue,54,CY2024,Verified,Computed from P&L
-CRISIL,PAT,684.07,CY2024,Verified,Results PDF
-ICRA,Total consolidated revenue,498.0,FY2025,Verified,Q4 FY25 press release
-ICRA,Ratings segment revenue (derived),279,FY2025,Derived,Not disclosed - derived from growth
-ICRA,Total revenue Q3,120.87,FY2025 Oct-Dec,Verified,Segment filing
-ICRA,Ratings segment Q3,72.30,FY2025 Oct-Dec,Verified,Segment filing
-ICRA,Total revenue Q4,136.2,FY2025 Jan-Mar,Verified,Q4 FY25 press release
-ICRA,PAT,171.2,FY2025,Verified,Press release
-ICRA,Operating margin %,36,FY2025,Verified,screener.in
-CARE,Ratings segment revenue,360.1,FY2025,Verified,Q4 FY25 press release
-CARE,Total consolidated revenue,402.32,FY2025,Verified,Annual Report P&L
-CARE,Total standalone revenue,336.69,FY2025,Verified,Annual Report P&L
-CARE,Consolidated revenue Q3,96,FY2025 Oct-Dec,Verified,screener.in
-CARE,Consolidated revenue Q4,109.7,FY2025 Jan-Mar,Verified,Q4 FY25 press release
-CARE,Employee cost % of revenue (consol),47,FY2025,Verified,Annual Report P&L
-CARE,PAT (consolidated),140.0,FY2025,Verified,Annual Report
-CARE,Employees,648,FY2026,Verified,BRSR
-India Ratings,Total revenue,253.79,FY2026,Official,indiaratings.co.in/income - SEBI disclosure (replaces aggregator 233.18)
-India Ratings,Employees,295,2025,Verified,Tracxn
-Infomerics,Total revenue,98.89,FY2026 (unaudited),Official,infomerics.com income disclosure (replaces aggregator 90.74; official FY25 was 77.22)
-Infomerics,Employees,245,2024,Verified,Tracxn
-Acuite,Total receipts,58.53,FY2026,Official,acuite.in SEBI receipts PDF (replaces aggregator 55.01; official FY25 was 47.37)
-Acuite,Employees,164,2025,Verified,Tracxn
-Brickwork,Total revenue,6.20,FY2025 (audited),Official,brickworkratings.com Disclosure.aspx (replaces aggregator 10.9; FY26 unaudited 17.38)
-Brickwork,SEBI registration status,,2022 cancelled / 2023 SAT reversal / 2024 settled,Verified,Angel One - cautionary compliance case
-ACER,Operating (rating) Sales revenue,0.93,FY2027 run-rate,Actual,Zoho Books - annualised from Q1
-ACER,Operating (rating) Sales revenue,0.08,FY2026,Actual,Zoho Books
-ACER,FD interest income,1.48,FY2026,Actual,Zoho Books
-ACER,Total cost base (with new hires),5.27,FY2027,Actual+Plan,Zoho Books + hires
-ACER,Employee cost % of operating revenue,360,FY2027,Actual,Payroll vs operating sales
-SEBI,Minimum CRA net worth,25,Current,Verified,SEBI CRA Amendment Regs 2018
+CRA,Metric,Value (INR Cr),Period,Confidence,Source
+CRISIL,Ratings segment revenue,1078.7,CY2025,Confirmed (derived +18.4% on CY2024 909.15),crisil.com CY2025 audited results + Business Standard
+CRISIL,Group revenue from operations,3649.0,CY2025,Confirmed,Business Standard (CRISIL CY2025 results)
+CRISIL,Ratings segment revenue,909.15,CY2024,Confirmed,CRISIL CY2024 audited results PDF (segment statement)
+CRISIL,Group revenue from operations,3259.78,CY2024,Confirmed,CRISIL CY2024 audited results PDF
+CRISIL,PAT (group),766.0,CY2025,Confirmed,Business Standard
+CARE,Consolidated revenue from operations,473.1,FY2026,Confirmed,Free Press Journal + BSE filing (CARE FY26 results)
+CARE,Standalone revenue,387.72,FY2026,Confirmed,CARE FY26 results
+CARE,Ratings segment revenue,423,FY2026,Derived (~89% of consolidated),CARE FY26 results (segment share)
+CARE,Consolidated revenue from operations,402.32,FY2025,Confirmed,CARE FY25 Annual Report
+CARE,PAT (consolidated),173.7,FY2026,Confirmed,Whalesbook/Business Standard (CARE FY26)
+ICRA,Consolidated revenue from operations,599.5,FY2026,Confirmed,icra.in Q4 FY26 press release
+ICRA,Consolidated revenue from operations,498.0,FY2025,Confirmed,icra.in Q4 FY25 press release
+ICRA,Ratings segment revenue,340,FY2026,Derived (segment +14.2% YoY; not disclosed as absolute),icra.in Q3/Q4 FY26 segment growth
+ICRA,PAT,182.5,FY2026,Confirmed,scanx/Whalesbook (ICRA FY26)
+India Ratings,Total revenue,253.79,FY2026,Official disclosure (not re-verified live this session),indiaratings.co.in/income
+India Ratings,Rating services revenue,250.91,FY2026,Official disclosure (not re-verified live this session),indiaratings.co.in/income
+Infomerics,Total revenue,98.89,FY2026 (unaudited),Official disclosure (recorded 24-Jul-2026; FY25 ~90.7 per aggregator),infomerics.com regulatory-disclosure
+Infomerics,Rating fees revenue,95.34,FY2026 (unaudited),Official disclosure (not re-verified live this session),infomerics.com regulatory-disclosure
+Acuite,Total receipts,58.53,FY2026,Official disclosure (recorded 24-Jul-2026; FY25 47.37),acuite.in Regulatory Disclosures / receipts PDF
+Acuite,Rating services receipts,57.33,FY2026,Official disclosure (not re-verified live this session),acuite.in receipts PDF
+Brickwork,Total revenue,6.20,FY2025 (audited),Official disclosure (recorded 24-Jul-2026),brickworkratings.com Disclosure.aspx
+Brickwork,Rating services revenue,5.87,FY2025 (audited),Official disclosure (recorded 24-Jul-2026),brickworkratings.com Disclosure.aspx
+Brickwork,SEBI registration status,,2022 cancelled / Jun-2023 SAT set aside / Dec-2024 settled Rs 1.54 Cr,Confirmed,Business Standard + Angel One
+Industry,Total CRA rating revenue (approx),2250,Latest FY,Derived (sum of peer rating-segment revenues),Computed from rows above
+SEBI,Minimum CRA net worth,25,Since 2018 (from Rs 5 Cr),Confirmed,SEBI (CRA) Amendment Regulations 2018 notified 30-May-2018
+India bank credit,Gross outstanding (lakh cr),182.44,Mar-2025,Confirmed,RBI BSR-1 / Economic Survey 2025-26 statistical appendix
+India corporate bonds,Issuance FY25 (lakh cr),9.9,FY2025,Confirmed (+28% YoY record),RBI report via Business Standard
+India corporate bonds,Outstanding stock (lakh cr),53.6,FY2025,Confirmed,RBI report via Business Standard
+ACER,Operating (rating) sales,0.08,FY2026,Internal actual,Internal management accounts
+ACER,Operating (rating) sales run-rate,0.97,FY2027,Internal actual (Q1 annualised),Internal management accounts
+ACER,FD interest income,1.48,FY2026,Internal actual,Internal management accounts
+ACER,FD corpus,26.11,as of 21-Jul-2026,Internal actual,Internal management accounts (balance sheet)
+ACER,Total cost base,5.27,FY2027,Internal actual + run-rate,Internal management accounts
+ACER,Employee cost % of operating revenue,309,FY2027,Internal actual (payroll ~3.0 Cr / operating revenue 0.97 Cr; corrected from 360),Internal management accounts
+ACER,BLR revenue engine,,FY2027-28,Management assumption (NOT booked),16 cases/mo x Rs 100 Cr; IRF 3 bps + ASF 1.5 bps
