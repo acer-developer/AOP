@@ -59,3 +59,13 @@ These are now management-confirmed and are what the live model, strategy page an
 | IPO book | 10 mandates now, ramping to 20 by Oct, then held (S3: keeps growing) |
 
 **Launch ramp discipline:** in the BLR-live scenarios the go-live month runs **zero BLR** (team clears the existing IPO book first), then 16 new cases a month from the next month.
+
+---
+
+## CORRECTION 27-Jul-2026 (timing of surveillance and IPO)
+
+Two management corrections now applied across the model, website, deck and master prompt:
+1. **Surveillance fee (1.5 bps) is next year, not FY27.** It bills from each case's anniversary, so cases rated in FY27 (from the launch month onward) first pay surveillance in FY28. **FY27 BLR income is up-front fees (2.5 bps) only.**
+2. **IPO income stops once the team pivots to BLR execution** (Scenario 1 from November, Scenario 2 from February), because the same 5 executors cannot run both books at full tilt. Scenario 3 (no BLR) keeps growing the IPO book.
+
+Effect: FY27 is a planned loss in all three scenarios (S1 about −₹1.4 Cr, S2 about −₹2.3 Cr, S3 about −₹2.6 Cr on the full-year Apr-Mar view). The surveillance annuity and full profitability land in FY28. Break-even months are unchanged (S1 Nov-2026, S2 Feb-2027, S3 none).

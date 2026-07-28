@@ -285,7 +285,7 @@
         <h3>Capacity and model assumptions</h3>
         <ul class="sub" style="padding-left:18px;line-height:1.9">
           <li>16 cases/mo of ₹100 Cr = ₹1,600 Cr/mo, ramping linearly over 6 months post go-live.</li>
-          <li>Fees: IRF 2.5 bps up-front plus ASF 1.5 bps recurring on the cumulative book.</li>
+          <li>Fees: IRF 2.5 bps up-front (booked in year) plus ASF 1.5 bps surveillance, which bills from each case anniversary so it starts a year later.</li>
           <li>Cost base and non-BLR income held flat. Break-even = first month income at or above expense.</li>
           <li>Market anchors: bank credit about ₹182 lakh cr (RBI Mar-2025), bond issuance about ₹9.9 lakh cr (FY25). Peer figures search-sourced (official domains were network-blocked this session, reconfirm at source before board sign-off).</li>
         </ul>
@@ -334,7 +334,7 @@ function project(golive){
   var book=0, cum=0, be=null, rows=[];
   for(var i=0;i<MON.length;i++){
     var irf=0, asf=0;
-    if(golive!==null && i>=golive){ var k=i-golive+1, u=Math.min(1,k/RAMP), vol=CAP*u; irf=vol*IRF; book+=vol; asf=book*ASF/12; }
+    if(golive!==null && i>=golive){ var k=i-golive+1, u=Math.min(1,k/RAMP), vol=CAP*u; irf=vol*IRF; book+=vol; asf=(i-golive>=12)?book*ASF/12:0; }
     var blr=irf+asf, inc=FD+SAL+blr, net=inc-E; cum+=net;
     if(be===null && net>=0) be=MON[i];
     rows.push({m:MON[i],fd:FD,sal:SAL,blr:blr,inc:inc,exp:E,net:net,cum:cum});

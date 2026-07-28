@@ -201,7 +201,7 @@
   <div class="wrap">
     <div class="eyebrow">The numbers behind the plan</div>
     <h2>Revenue mix and cost composition</h2>
-    <p class="sub">Every figure here is built from booked actuals or the confirmed unit economics: IPO at ₹1.2 L per quarter per mandate, BLR at 2.5 bps up-front plus 1.5 bps recurring on a ₹100 Cr average case.</p>
+    <p class="sub">Every figure here is built from booked actuals or the confirmed unit economics: IPO at ₹1.2 L per quarter per mandate, BLR at 2.5 bps up-front on a ₹100 Cr average case. The 1.5 bps surveillance fee bills from each case anniversary, so it lands next year, not in FY27. IPO income stops once the team moves to BLR execution.</p>
     <div class="grid g2" style="margin-top:24px">
       <div class="card">
         <h3>Revenue mix at the Apr27 run-rate (S1)</h3>
@@ -286,23 +286,23 @@ function blrNew(scn,i){
   if(scn==='s2'){ return i<6?0:16; }
   return 0;
 }
-var ONETIME={s1:'Oct26', s2:'Jan27', s3:'Sep26'};
+var ONETIME={s1:'Oct26', s2:'Jan27', s3:'Aug26'};
 
 function project(scn){
   var book=0, cum=0, be=null, rows=[], ot=ONETIME[scn];
   for(var i=0;i<MON.length;i++){
     var m=MON[i];
-    var ipo=ipoBook(scn,i)*K.ipoFee;
     var nc=blrNew(scn,i);
+    var ipo=(scn!=='s3' && (nc>0 || book>0)) ? 0 : ipoBook(scn,i)*K.ipoFee;   // IPO stops once the team pivots to BLR
     var irf=nc*K.irfCase;
     book+=nc*K.caseCr;
-    var asf=book*1e7*K.ASF/1e5/12;
+    var asf=0;   // surveillance (1.5 bps) bills from each case anniversary, i.e. next FY, so zero within FY27
     var blr=irf+asf;
     var inc=K.FD+K.otherSales+ipo+blr;
     var rc=K.rcBase;
     if(scn!=='s3' && book>0) rc=K.rcBase+Math.min(1.8,(book/1600.0)*1.8);
     var brandMo=(scn!=='s3' && book>0)?2.0:0;
-    var onet=(m===ot?10.5:0)+brandMo;
+    var onet=(m===ot?(scn==='s3'?3.0:10.5):0)+brandMo;   // S3 has no BLR launch, so IT only
     var payroll=K.payroll, opex=K.opex, board=BOARD[m]?5.5:0;
     var exp=payroll+opex+rc+board+onet;
     var net=inc-exp; cum+=net;
@@ -368,7 +368,7 @@ function donut(node,data,opt){opt=opt||{};var W=300,H=250,cx=W/2,cy=H/2,r=94,ir=
 
 // HERO break-even: monthly stacked income bars vs expense line
 function beChart(node,P){
-  var rows=P.rows,W=580,H=310,padL=40,padR=16,padT=30,padB=40,n=rows.length;
+  var rows=P.rows,W=640,H=228,padL=38,padR=16,padT=26,padB=34,n=rows.length;
   var maxInc=Math.max.apply(null,rows.map(function(r){return Math.max(r.inc,r.exp)}));
   var maxY=Math.ceil(maxInc/20)*20;
   var innerW=W-padL-padR, step=innerW/n, bw=step*0.6;
